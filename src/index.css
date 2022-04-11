@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+	--color-primary: #b3d6ff;
+	--color-tomato: #f78094;
+	--color-nude: #f4d6db;
+	--color-sky: #54a1f8;
+	--color-forest: #b3dbd3;
+	--color-default: #f7f7f7;
+	--color-cloud: #777;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	min-height: 100%;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* LEGACY MOBILE (iPhone 5 and older) | PORTRAIT */
+@media only screen and (min-width: 200px) {
+	html {
+		font-size: 50%;
+	}
+}
+
+/* MOBILE | PORTRAIT */
+@media only screen and (min-width: 321px) and (min-height: 568px) {
+	html {
+		font-size: 80%;
+	}
+}
+
+/* MOBILE | LANDSCAPE */
+@media only screen and (min-width: 568px) and (min-height: 768px) {
+	html {
+		font-size: 90%;
+	}
+}
+
+/* TABLET */
+@media only screen and (min-width: 768px) and (min-height: 1280px) {
+	html {
+		font-size: 100%;
+	}
+}
+
+/* LAPTOP */
+@media only screen and (min-width: 1280px) and (min-height: 1680px) {
+	html {
+		font-size: 110%;
+	}
+}
+
+/* DESKTOP & INFO SCREENS */
+@media only screen and (min-width: 1680px) and (min-height: 1680px) {
+	html {
+		font-size: 120%;
+	}
 }
