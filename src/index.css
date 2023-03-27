@@ -2,10 +2,12 @@
 	--color-primary: #b3d6ff;
 	--color-tomato: #f78094;
 	--color-nude: #f4d6db;
-	--color-sky: #54a1f8;
-	--color-forest: #b3dbd3;
+	--color-sky: hsl(212, 92%, 75%);
+	--color-forest: hsl(168, 37%, 63%);
+	--color-forest-dark: hsl(168, 20%, 78%);
 	--color-default: #f7f7f7;
-	--color-cloud: hsla(0, 0%, 47%, 0.8);
+	--color-cloud: hsla(0, 0%, 47%, 0.5);
+	--color-mud: hsla(0, 0%, 20%, 0.7);
 }
 
 html {
