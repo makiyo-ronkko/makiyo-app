@@ -5,7 +5,7 @@
 	--color-sky: #54a1f8;
 	--color-forest: #b3dbd3;
 	--color-default: #f7f7f7;
-	--color-cloud: #777;
+	--color-cloud: hsla(0, 0%, 47%, 0.8);
 }
 
 html {
