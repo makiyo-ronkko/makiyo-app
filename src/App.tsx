@@ -34,7 +34,7 @@ export const App = () => {
 						<p className={AppStyles.text}>
 							<b>Others</b>
 						</p>
-						Figma Github Gitlab Torello Postman
+						Figma Github Gitlab Torello
 					</div>
 					<button className={`${AppStyles.card} ${AppStyles.project}`}>
 						<p>Project 1</p>
