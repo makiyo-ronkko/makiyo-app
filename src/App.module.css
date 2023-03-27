@@ -139,35 +139,51 @@
 .contactContainer {
 	padding: 3rem;
 	color: var(--color-cloud);
-	text-transform: uppercase;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 }
 
 .cardContainer {
-	display: flex;
-	justify-content: space-around;
-	height: 10rem;
+	min-height: 20rem;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
 }
 
 .card {
-	width: 30%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--color-forest);
 	border-radius: 1rem;
 	mix-blend-mode: multiply;
 	letter-spacing: 2px;
 	font-size: 1.2rem;
 	color: var(--color-default);
-	background-color: var(--color-forest);
 	padding: 1.5rem;
 	box-shadow: 0.5rem 0.5rem var(--color-cloud);
 	gap: 1rem;
 	text-align: center;
+}
+
+.backgroundColor {
+	background-color: var(--color-forest);
+}
+
+.project {
+	background-color: var(--color-sky);
+}
+
+.project,
+button {
+	border: none;
+	cursor: pointer;
+}
+
+.project:hover {
+	background-color: var(--color-primary);
 }
 
 .section {
@@ -208,16 +224,8 @@
 		display: flex;
 		gap: 1rem;
 	}
-	.frontend {
-		flex: 100%;
-		width: 100%;
-	}
-	.backend {
-		flex: 100%;
-		width: 100%;
-	}
-	.others {
-		flex: 100%;
+
+	.card {
 		width: 100%;
 	}
 }
