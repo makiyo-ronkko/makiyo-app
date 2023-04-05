@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AppStyles from './App.module.css';
 
 export const App = () => {
@@ -36,9 +37,11 @@ export const App = () => {
 						</p>
 						Figma Github Gitlab Torello
 					</div>
-					<button className={`${AppStyles.card} ${AppStyles.project}`}>
-						<p>Project 1</p>
-					</button>
+					<Link to={'project'} className={AppStyles.link}>
+						<button className={`${AppStyles.card} ${AppStyles.project}`}>
+							<p>Project 1</p>
+						</button>
+					</Link>
 					<button className={`${AppStyles.card} ${AppStyles.project}`}>
 						<p>Project 2</p>
 					</button>
