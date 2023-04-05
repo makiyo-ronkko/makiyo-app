@@ -1,0 +1,47 @@
+.newTodoForm {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+.newTodoForm label {
+	min-width: 100%;
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+}
+
+.newTodoForm input {
+	width: 100%;
+	border: none;
+	background: var(--color-default);
+	padding: 0 1.5em;
+	font-size: 1rem;
+	outline: none;
+	border-radius: 5px;
+}
+
+.button {
+	width: 12rem;
+	padding: 0 1rem;
+	margin-top: 1rem;
+	border: none;
+	background-color: transparent;
+	color: var(--color-defalt);
+	text-transform: uppercase;
+	font-weight: bold;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	cursor: pointer;
+	transition: background 0.4s ease-out;
+	outline: none;
+	border-radius: 5px;
+}
+
+.newTodoForm button:hover {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.newTodoForm input,
+.newTodoForm button {
+	height: 3rem;
+}

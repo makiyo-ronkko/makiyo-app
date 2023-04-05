@@ -1,0 +1,26 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 5rem;
+}
+
+.button {
+	height: 100%;
+	width: 100%;
+}
+
+.backButton {
+	height: 3rem;
+	width: 5rem;
+	border-radius: 0.5rem;
+	background-color: var(--color-sky);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--color-default);
+	margin: 1rem;
+	box-shadow: 6px 6px 0px 0px var(--color-cloud);
+}
