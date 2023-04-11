@@ -37,27 +37,27 @@ export const App = () => {
 						</p>
 						Figma Github Gitlab Torello
 					</div>
-					<div className={`${AppStyles.project} ${AppStyles.card}`}>
-						<Link to={'project'} className={AppStyles.link}>
+					<Link to={'project'} className={AppStyles.link}>
+						<div className={`${AppStyles.project} ${AppStyles.card}`}>
 							<button className={AppStyles.projectButton}>
 								<b className={AppStyles.text}>Project 1</b>
 							</button>
-						</Link>
-					</div>
-					<div className={`${AppStyles.project} ${AppStyles.card}`}>
-						<Link to={'project-2'} className={AppStyles.link}>
+						</div>
+					</Link>
+					<Link to={'project-2'} className={AppStyles.link}>
+						<div className={`${AppStyles.project} ${AppStyles.card}`}>
 							<button className={AppStyles.projectButton}>
 								<b className={AppStyles.text}>Project 2</b>
 							</button>
-						</Link>
-					</div>
-					<div className={`${AppStyles.project} ${AppStyles.card}`}>
-						<Link to={'project-3'} className={AppStyles.link}>
+						</div>
+					</Link>
+					<Link to={'project-3'} className={AppStyles.link}>
+						<div className={`${AppStyles.project} ${AppStyles.card}`}>
 							<button className={AppStyles.projectButton}>
 								<b className={AppStyles.text}>Project 3</b>
 							</button>
-						</Link>
-					</div>
+						</div>
+					</Link>
 				</div>
 			</div>
 			<div
