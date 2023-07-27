@@ -130,30 +130,58 @@
 	text-transform: uppercase;
 }
 
+.section3 {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 5rem;
+	padding: 5rem 0;
+}
+
 .text {
 	text-align: center;
 	font-size: 1.5rem;
 }
 
-.introContainer,
-.contactContainer {
-	padding: 3rem;
+.height {
+	height: 10rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.portfolioWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3rem;
+}
+
+.container {
 	color: var(--color-mud);
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 }
 
+.padding {
+	padding: 3rem;
+}
+
 .cardContainer {
 	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+	grid-template-rows: auto;
 	gap: 1.5rem;
+	padding: 0 3rem;
 }
 
 .card {
 	height: 12rem;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -174,11 +202,21 @@
 	box-shadow: 0.5rem 0.5rem var(--color-forest-dark);
 }
 
+.projectContainer {
+	display: flex;
+	gap: 2rem;
+}
+
 .project {
-	width: 100%;
+	height: 20rem;
+	width: 20rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--color-sky);
 	box-shadow: 0.5rem 0.5rem var(--color-cloud);
 	cursor: pointer;
+	border-radius: 0.5rem;
 }
 
 .project:hover {
@@ -232,13 +270,18 @@ button {
 @media screen and (max-width: 800px) {
 	.cardContainer {
 		flex-wrap: wrap;
-		height: 100vh;
 		display: flex;
-		gap: 1rem;
 	}
 
-	.card {
+	.height {
+		padding: 2rem 2rem 0 2rem;
+	}
+
+	.projectContainer {
+		flex-direction: column;
+		align-items: center;
 		width: 100%;
+		padding-bottom: 3rem;
 	}
 }
 

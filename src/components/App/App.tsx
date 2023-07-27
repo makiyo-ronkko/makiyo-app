@@ -12,56 +12,70 @@ export const App = () => {
 					<span className={AppStyles.name}>Makiyo Rönkkö</span>
 				</div>
 			</div>
-			<div className={AppStyles.introContainer}>
-				<p className={AppStyles.text}>
+
+			<div className={AppStyles.section3}>
+				<p className={`${AppStyles.text} ${AppStyles.height}`}>
 					I'm a web developer in frontend. My aim is to build applications that
 					carry DRY code, good usability, modern design and meaningful for
 					users.
 				</p>
-				<div className={AppStyles.cardContainer}>
-					<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
-						<p className={AppStyles.text}>
-							<b>Frontend</b>
-						</p>
-						Javascript Typescript React Redux HTML5 CSS3 MUI
-					</div>
-					<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
-						<p className={AppStyles.text}>
-							<b>Backend</b>
-						</p>
-						Node.js Express REST API
-					</div>
-					<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
-						<p className={AppStyles.text}>
-							<b>Others</b>
-						</p>
-						Figma Github Gitlab Torello
-					</div>
-					<Link to={'project'} className={AppStyles.link}>
-						<div className={`${AppStyles.project} ${AppStyles.card}`}>
-							<button className={AppStyles.projectButton}>
-								<b className={AppStyles.text}>Project 1</b>
-							</button>
+
+				<div className={AppStyles.portfolioWrapper}>
+					<div className={AppStyles.cardContainer}>
+						<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
+							<p className={AppStyles.text}>
+								<b>Frontend</b>
+							</p>
+							Javascript Typescript React Redux HTML5 CSS3 MUI
 						</div>
-					</Link>
-					<Link to={'project-2'} className={AppStyles.link}>
-						<div className={`${AppStyles.project} ${AppStyles.card}`}>
-							<button className={AppStyles.projectButton}>
-								<b className={AppStyles.text}>Project 2</b>
-							</button>
+						<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
+							<p className={AppStyles.text}>
+								<b>Backend</b>
+							</p>
+							Node.js Express REST API
 						</div>
-					</Link>
-					<Link to={'project-3'} className={AppStyles.link}>
-						<div className={`${AppStyles.project} ${AppStyles.card}`}>
-							<button className={AppStyles.projectButton}>
-								<b className={AppStyles.text}>Project 3</b>
-							</button>
+						<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
+							<p className={AppStyles.text}>
+								<b>Others</b>
+							</p>
+							Figma Github Gitlab Torello
 						</div>
-					</Link>
+					</div>
+
+					<div className={AppStyles.projectContainer}>
+						<Link to={'project'} className={AppStyles.link}>
+							<div className={`${AppStyles.project}`}>
+								<button className={AppStyles.projectButton}>
+									<b className={AppStyles.text}>Project 1</b>
+								</button>
+							</div>
+						</Link>
+						<Link to={'project-2'} className={AppStyles.link}>
+							<div className={`${AppStyles.project}`}>
+								<button className={AppStyles.projectButton}>
+									<b className={AppStyles.text}>Project 2</b>
+								</button>
+							</div>
+						</Link>
+						<Link to={'project-3'} className={AppStyles.link}>
+							<div className={`${AppStyles.project}`}>
+								<button className={AppStyles.projectButton}>
+									<b className={AppStyles.text}>Project 3</b>
+								</button>
+							</div>
+						</Link>
+						<Link to={'project-4'} className={AppStyles.link}>
+							<div className={`${AppStyles.project}`}>
+								<button className={AppStyles.projectButton}>
+									<b className={AppStyles.text}>Project 4</b>
+								</button>
+							</div>
+						</Link>
+					</div>
 				</div>
 			</div>
 			<div
-				className={`${AppStyles.gradient2} ${AppStyles.section} ${AppStyles.contactContainer}`}
+				className={`${AppStyles.gradient2} ${AppStyles.section} ${AppStyles.container} ${AppStyles.padding}`}
 			>
 				<h3 className={AppStyles.contact}>Contact</h3>
 				<div className={AppStyles.socialMedia}>
