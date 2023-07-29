@@ -6,7 +6,7 @@ export const ErrorPage = () => {
 	const error: any = useRouteError();
 	return (
 		<div className={`${errorStyle.errorWrapper} ${appStyles.gradient1}`}>
-			<h2 className={errorStyle.h2}>This page is under maintenance.</h2>
+			<h2 className={errorStyle.h2}>This page is under maintenance</h2>
 			<p>
 				<i>{error.statusText || error.message}</i>
 			</p>

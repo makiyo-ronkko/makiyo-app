@@ -14,7 +14,7 @@ export const App = () => {
 			</div>
 
 			<div className={AppStyles.section3}>
-				<p className={`${AppStyles.text} ${AppStyles.height}`}>
+				<p className={AppStyles.description}>
 					I'm a web developer in frontend. My aim is to build applications that
 					carry DRY code, good usability, modern design and meaningful for
 					users.

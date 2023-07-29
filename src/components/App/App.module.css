@@ -123,6 +123,15 @@
 	}
 }
 
+.description {
+	border-radius: 1rem;
+	border: var(--color-cloud) 4px double;
+	padding: 2rem;
+	margin: 2rem;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
 .name {
 	color: var(--color-default);
 	font-size: 3rem;
@@ -136,7 +145,7 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	gap: 5rem;
+	gap: 3rem;
 	padding: 5rem 0;
 }
 
