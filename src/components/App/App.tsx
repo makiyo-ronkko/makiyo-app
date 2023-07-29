@@ -26,19 +26,19 @@ export const App = () => {
 							<p className={AppStyles.text}>
 								<b>Frontend</b>
 							</p>
-							Javascript Typescript React Redux HTML5 CSS3 MUI
+							<p>Javascript Typescript React Redux HTML5 CSS3 MUI</p>
 						</div>
 						<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
 							<p className={AppStyles.text}>
 								<b>Backend</b>
 							</p>
-							Node.js Express REST API
+							<p>Node.js Express REST API</p>
 						</div>
 						<div className={`${AppStyles.card} ${AppStyles.backgroundColor}`}>
 							<p className={AppStyles.text}>
 								<b>Others</b>
 							</p>
-							Figma Github Gitlab Torello
+							<p>Figma Github Gitlab Torello</p>
 						</div>
 					</div>
 

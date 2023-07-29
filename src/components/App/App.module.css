@@ -143,6 +143,7 @@
 .text {
 	text-align: center;
 	font-size: 1.5rem;
+	width: 100%;
 }
 
 .height {
@@ -171,9 +172,9 @@
 }
 
 .cardContainer {
-	height: 100%;
+	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(16rem, auto));
 	grid-template-rows: auto;
 	gap: 1.5rem;
 	padding: 0 3rem;
@@ -204,7 +205,9 @@
 
 .projectContainer {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 2rem;
+	padding: 3rem;
 }
 
 .project {
