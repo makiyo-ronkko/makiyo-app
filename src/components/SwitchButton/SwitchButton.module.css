@@ -1,0 +1,40 @@
+.button {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 1rem;
+	box-shadow: 0.5rem 0.5rem var(--color-sky);
+	background: var(--color-nude);
+	border: 0;
+	position: fixed;
+	right: 1%;
+	top: 1%;
+}
+
+.circle {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	border: 0.4rem solid var(--color-tomato);
+	display: inline-block;
+}
+
+.circleActive {
+	border-color: var(--color-forest);
+}
+
+.button:active,
+.button:focus {
+	border: 0;
+	outline: none;
+}
+
+.active {
+	box-shadow: inset 7px 6px 15px -7px hsla(0, 0%, 0%, 0.17),
+		inset -6px -5px 26px -6px hsla(0, 0%, 100%, 0.6);
+}
+
+@media screen and (max-width: 800px) {
+	.button {
+		right: 2%;
+	}
+}
