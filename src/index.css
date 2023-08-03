@@ -8,6 +8,53 @@
 	--color-default: #f7f7f7;
 	--color-cloud: hsla(0, 0%, 47%, 0.5);
 	--color-mud: hsla(0, 0%, 20%, 0.7);
+
+	--content-xxxl: 22rem;
+	--content-xxl: 20rem;
+	--content-xl: 18rem;
+	--content-lg: 16rem;
+	--content-md: 14rem;
+	--content-sm: 12rem;
+	--content-xs: 10rem;
+	--content-xxs: 8rem;
+	--content-xxxs: 6rem;
+
+	--element-xl: 5rem;
+	--element-lg: 4.5rem;
+	--element-md: 4rem;
+	--element-sm: 3.5rem;
+	--element-xs: 3rem;
+	--element-xxs: 2.5rem;
+	--element-xxxs: 2rem;
+	--element-xxxxs: 1.5rem;
+	--element-root: 1rem;
+
+	--margin-xl: 2.5rem;
+	--margin-lg: 2rem;
+	--margin-md: 1.5rem;
+	--margin-sm: 1rem;
+	--margin-xs: 0.5rem;
+	--margin-xxs: 0.25rem;
+
+	--padding-xl: 2.5rem;
+	--padding-lg: 2rem;
+	--padding-md: 1.5rem;
+	--padding-sm: 1rem;
+	--padding-xs: 0.5rem;
+	--padding-xxs: 0.25rem;
+
+	--font-size-h1: 6rem;
+	--font-size-h2: 3.75rem;
+	--font-size-h3: 3rem;
+	--font-size-h4: 2.125rem;
+	--font-size-h5: 1.5rem;
+	--font-size-h6: 1.25rem;
+	--font-size-subtitle: 1rem;
+	--font-size-body: 1rem;
+	--font-size-button-text: 0.875rem;
+	--font-caption-text: 0.75rem;
+	--font-description-text: 0.75rem;
+	--font-overline-text: 0.75rem;
 }
 
 html {
