@@ -16,11 +16,11 @@ export const SwitchButton = ({ handleClick, active }: SwitchButtonProps) => {
 				})}`}
 				onClick={handleClick}
 			>
-				<span
+				<div
 					className={`${Styles.circle} ${classNames({
 						[Styles.circleActive]: active,
 					})}`}
-				></span>
+				></div>
 			</button>
 		</div>
 	);
