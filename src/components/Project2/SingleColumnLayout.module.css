@@ -2,3 +2,42 @@
 	background-color: var(--color-default);
 	color: var(--color-mud);
 }
+
+.menuItem {
+	white-space: normal;
+}
+
+.mainWrapper {
+	height: 100vh;
+}
+
+.main {
+	background-color: var(--color-forest-dark);
+}
+
+.button {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+
+.backButton {
+	height: 3rem;
+	width: 5rem;
+	border-radius: 0.5rem;
+	background-color: var(--color-forest-dark);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--color-mud);
+	margin: 0.5rem 1rem;
+	box-shadow: 6px 6px 0px 0px var(--color-cloud);
+}
+
+@media only screen and (min-width: 1600px) {
+	.main {
+		height: 56rem;
+	}
+}

@@ -1,63 +1,69 @@
-import React from 'react';
-import {
-	Grid,
-	AppBar,
-	Toolbar,
-	Typography,
-	Container,
-	Menu,
-	Paper,
-} from '@mui/material';
-import Styles from './SingleColumnLayout.module';
+import React, { useEffect } from 'react';
+import { Grid, Typography, Paper, Divider, Box } from '@mui/material';
+import Styles from './SingleColumnLayout.module.css';
 import { Header } from './Header.tsx';
+import { Link, useLocation } from 'react-router-dom';
+
+export const ScrollToTop = () => {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
+	return null;
+};
 
 export const SingleColumnLayout = () => {
 	return (
-		<Grid
-			container
-			direction='column'
-			component='main'
-			sx={{ height: '100vh' }}
-		>
-			{/* Header */}
-			<Grid item>
-				<Header />
-			</Grid>
-
-			{/* Global Navigation */}
-			<Grid item>
-				<nav>{/* Add your global navigation links or components here */}</nav>
-			</Grid>
-
-			{/* Main Content */}
-			<Grid
-				item
-				// xs={12} sm={8} md={5}
-				component={Paper}
-				elevation={6}
-				square
-			>
-				<main>
-					{/* Add your main content here */}
-					<Typography variant='h4'>Welcome to my website!</Typography>
-					<p>This is the main content of the webpage.</p>
+		<div className={Styles.mainWrapper}>
+			<ScrollToTop />
+			<div className={Styles.button}>
+				<Link to={'/'} className={Styles.backButton}>
+					Back
+				</Link>
+			</div>
+			<Header />
+			<Grid item md={8} component={Paper} elevation={0}>
+				<main className={Styles.main}>
+					<Box
+						display='flex'
+						justifyContent='center'
+						alignItems='center'
+						height='100%'
+						minHeight='38rem'
+						padding='0 2rem'
+					>
+						<Typography variant='h2' color='grey' textAlign='center'>
+							Single Column Layout
+						</Typography>
+					</Box>
 				</main>
 			</Grid>
-
-			{/* Local Navigation */}
 			<Grid item>
-				<nav>{/* Add your local navigation links or components here */}</nav>
+				<nav>
+					<Box
+						display='flex'
+						justifyContent='center'
+						alignItems='center'
+						height='100%'
+						minHeight='400px'
+						padding='0 2rem'
+					>
+						<Typography variant='h2' color='grey' textAlign='center'>
+							Navigation
+						</Typography>
+					</Box>
+				</nav>
 			</Grid>
-
-			{/* Footer */}
+			<Divider />
 			<Grid item>
 				<footer>
-					{/* Add your footer content here */}
-					<Typography variant='body2'>
+					<Typography variant='body2' padding='2rem' textAlign='center'>
 						© {new Date().getFullYear()} My App. All rights reserved.
 					</Typography>
 				</footer>
 			</Grid>
-		</Grid>
+		</div>
 	);
 };
