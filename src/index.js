@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { TodoApp } from './components/Project1/index.tsx';
+import { SingleColumnLayout } from './components/Project2/index.tsx';
 
 import './index.css';
 import { Root } from './routes/root.tsx';
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
 	{
 		path: '/project',
 		element: <TodoApp />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: '/project-2',
+		element: <SingleColumnLayout />,
 		errorElement: <ErrorPage />,
 	},
 ]);

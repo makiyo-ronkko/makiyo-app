@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AppStyles from './App.module.css';
-import { MainStyle } from '../Version1/index.tsx';
+import { MainStyle } from '../Main/index.tsx';
 import { SwitchButton } from '../SwitchButton/SwitchButton.tsx';
 import { Design } from '../Version2/index.tsx';
 

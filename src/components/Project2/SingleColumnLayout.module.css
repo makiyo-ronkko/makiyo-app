@@ -1,0 +1,4 @@
+.backgroundColor {
+	background-color: var(--color-default);
+	color: var(--color-mud);
+}
