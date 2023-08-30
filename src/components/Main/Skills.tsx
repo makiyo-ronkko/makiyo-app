@@ -36,7 +36,7 @@ export const Skills = () => {
 					<Link to={'project'} className={Styles.link}>
 						<div className={`${Styles.project}`}>
 							<button className={Styles.projectButton}>
-								<b className={Styles.text}>Project 1</b>
+								<b className={Styles.text}>Single Column Layout</b>
 							</button>
 						</div>
 					</Link>
