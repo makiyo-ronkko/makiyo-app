@@ -38,7 +38,7 @@ export const RandomImage = () => {
 				<img src={imageUrl} alt='random-img-url' />
 			) : (
 				<div className={Styles.loaderWrapper}>
-					<Loader />{' '}
+					<Loader />
 				</div>
 			)}
 		</div>
