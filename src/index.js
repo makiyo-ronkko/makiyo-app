@@ -20,12 +20,12 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/project',
-		element: <TodoApp />,
+		element: <SingleColumnLayout />,
 		errorElement: <ErrorPage />,
 	},
 	{
 		path: '/project-2',
-		element: <SingleColumnLayout />,
+		element: <TodoApp />,
 		errorElement: <ErrorPage />,
 	},
 ]);
