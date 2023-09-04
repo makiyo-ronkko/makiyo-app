@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
+
 import Styles from './SingleColumnLayout.module.css';
 
 const pages = ['Home', 'About us', 'Contact'];
