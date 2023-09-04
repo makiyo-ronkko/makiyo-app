@@ -1,22 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Grid, Typography, Paper, Divider, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+
 import Styles from './SingleColumnLayout.module.css';
 import { Header } from './Header.tsx';
-import { Link, useLocation } from 'react-router-dom';
-
-export const ScrollToTop = () => {
-	const { pathname } = useLocation();
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
-
-	return null;
-};
+import { ScrollToTop } from '../../../helpers/scroll.tsx';
 
 export const SingleColumnLayout = () => {
 	return (
-		<div className={Styles.mainWrapper}>
+		<div>
 			<ScrollToTop />
 			<div className={Styles.button}>
 				<Link to={'/'} className={Styles.backButton}>
@@ -47,7 +39,7 @@ export const SingleColumnLayout = () => {
 						justifyContent='center'
 						alignItems='center'
 						height='100%'
-						minHeight='400px'
+						minHeight='600px'
 						padding='0 2rem'
 					>
 						<Typography variant='h2' color='grey' textAlign='center'>

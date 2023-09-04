@@ -2,8 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { TodoApp } from './components/Project1/index.tsx';
-import { SingleColumnLayout } from './components/Project2/index.tsx';
+// import { TodoApp } from './components/Project1/index.tsx';
+import { SingleColumnLayout } from './components/Projects/SingleColumnLayout';
 
 import './index.css';
 import { Root } from './routes/root.tsx';
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
 		element: <SingleColumnLayout />,
 		errorElement: <ErrorPage />,
 	},
-	{
-		path: '/project-2',
-		element: <TodoApp />,
-		errorElement: <ErrorPage />,
-	},
+	// {
+	// 	path: '/project-2',
+	// 	element: <TodoApp />,
+	// 	errorElement: <ErrorPage />,
+	// },
 ]);
 root.render(<RouterProvider router={router} />);
 

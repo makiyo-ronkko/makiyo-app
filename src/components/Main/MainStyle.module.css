@@ -34,6 +34,31 @@
 	}
 }
 
+.section {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.section2 {
+	width: 100%;
+	height: 100%;
+	padding: 5rem;
+}
+
+.section3 {
+	width: 100%;
+	text-align: center;
+	min-height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .nameContainer {
 	display: flex;
 	flex-direction: column;
@@ -119,13 +144,52 @@
 	}
 }
 
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+}
+
 .description {
+	width: 80vw;
+	min-height: 5rem;
 	border-radius: 1rem;
 	border: var(--color-cloud) 4px double;
 	padding: 2rem;
-	margin: 2rem;
 	text-align: center;
-	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8rem;
+	color: var(--color-mud);
+}
+
+.card:hover {
+	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	transform: translate3d(0, 0, 0);
+	perspective: 1000px;
+}
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-2px, 0, 0);
+	}
+	40%,
+	60% {
+		transform: translate3d(2px, 0, 0);
+	}
 }
 
 .name {
@@ -133,16 +197,6 @@
 	font-size: 3rem;
 	letter-spacing: 1rem;
 	text-transform: uppercase;
-}
-
-.section3 {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	gap: 3rem;
-	padding: 5rem 0;
 }
 
 .text {
@@ -156,13 +210,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.portfolioWrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 3rem;
 }
 
 .container {
@@ -212,7 +259,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
-	padding: 3rem;
+	padding: 0 3rem;
 }
 
 .project {
@@ -242,16 +289,6 @@ button {
 	background-color: transparent;
 	color: var(--color-default);
 	cursor: pointer;
-}
-
-.section {
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
 }
 
 .socialMedia {
@@ -291,13 +328,8 @@ button {
 		width: 100%;
 		padding-bottom: 3rem;
 	}
-}
 
-.section2 {
-	width: 100%;
-	text-align: center;
-	min-height: 10vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	.description {
+		font-size: 1.5rem;
+	}
 }
