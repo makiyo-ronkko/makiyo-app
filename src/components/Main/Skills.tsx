@@ -61,6 +61,34 @@ export const Skills = () => {
 							</button>
 						</div>
 					</Link>
+					<Link to={'project-5'} className={Styles.link}>
+						<div className={`${Styles.project}`}>
+							<button className={Styles.projectButton}>
+								<b className={Styles.text}>Project 5</b>
+							</button>
+						</div>
+					</Link>
+					<Link to={'project-6'} className={Styles.link}>
+						<div className={`${Styles.project}`}>
+							<button className={Styles.projectButton}>
+								<b className={Styles.text}>Project 6</b>
+							</button>
+						</div>
+					</Link>
+					<Link to={'project-7'} className={Styles.link}>
+						<div className={`${Styles.project}`}>
+							<button className={Styles.projectButton}>
+								<b className={Styles.text}>Project 7</b>
+							</button>
+						</div>
+					</Link>
+					<Link to={'project-8'} className={Styles.link}>
+						<div className={`${Styles.project}`}>
+							<button className={Styles.projectButton}>
+								<b className={Styles.text}>Project 8</b>
+							</button>
+						</div>
+					</Link>
 				</div>
 			</div>
 		</>
