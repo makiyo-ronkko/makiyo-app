@@ -1,3 +1,4 @@
+import React from 'react';
 import { useRouteError } from 'react-router-dom';
 import errorStyle from './route.module.css';
 import appStyles from '../components/App/App.module.css';
