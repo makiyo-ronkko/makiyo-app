@@ -11,7 +11,7 @@ export const MainStyle = () => {
 			<div className={`${Styles.gradient1} ${Styles.section}`}>
 				<Header />
 			</div>
-			<div className={Styles.section3}>
+			<div className={Styles.section2}>
 				<Skills />
 			</div>
 			<div
@@ -19,7 +19,7 @@ export const MainStyle = () => {
 			>
 				<Contact />
 			</div>
-			<div className={Styles.section2}>
+			<div className={Styles.section3}>
 				<Footer />
 			</div>
 		</>
