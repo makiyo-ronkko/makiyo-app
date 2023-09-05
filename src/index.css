@@ -1,13 +1,22 @@
 :root {
-	--color-primary: #b3d6ff;
-	--color-tomato: #f78094;
-	--color-nude: #f4d6db;
+	--color-primary: hsl(212, 100%, 85%);
+	--color-primary-dark: hsl(212, 92%, 65%);
+	--color-secondary: hsl(230, 100%, 85%);
+	--color-secondary-dark: hsl(230, 92%, 75%);
+	--color-tomato: hsl(350, 88%, 74%);
+	--color-nude: hsl(350, 58%, 90%);
 	--color-sky: hsl(212, 92%, 75%);
 	--color-forest: hsl(168, 37%, 63%);
 	--color-forest-dark: hsl(168, 20%, 78%);
 	--color-default: #f7f7f7;
 	--color-cloud: hsla(0, 0%, 47%, 0.5);
 	--color-mud: hsla(0, 0%, 20%, 0.7);
+	--color-shadow: hsla(212, 20%, 49%, 0.5);
+	--color-transparent-dark: hsla(0, 0%, 0%, 0.25);
+	--color-transparent-dark-font: hsl(0, 0%, 50%);
+	--color-transparent: transparent;
+	--color-transparent-font: hsl(0, 0%, 50%);
+	--color-backdrop: hsla(0, 0%, 0%, 0.5);
 
 	--content-xxxl: 22rem;
 	--content-xxl: 20rem;
