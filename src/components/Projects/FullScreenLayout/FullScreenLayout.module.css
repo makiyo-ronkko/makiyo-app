@@ -1,0 +1,68 @@
+.header {
+	position: fixed;
+	width: 100%;
+}
+
+.wrapper {
+	height: 500vh;
+	width: 100%;
+}
+
+.staticContent {
+	position: fixed;
+	z-index: 999;
+	height: 600px;
+	width: 600px;
+	background-color: var(--color-default);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.text {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	color: var(--color-mud);
+}
+
+.section {
+	transition: background-color 0.3s ease;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.button {
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+
+.backButton {
+	height: 3rem;
+	width: 5rem;
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--color-default);
+	margin: 0.5rem 1rem;
+	border: 2px var(--color-default) solid;
+}
+
+@media screen and (max-width: 800px) {
+	.staticContent {
+		height: 50vh;
+		width: 80vw;
+	}
+}
