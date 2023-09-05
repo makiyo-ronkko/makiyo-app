@@ -4,7 +4,7 @@ import Styles from './MainStyle.module.css';
 
 const PROJECTS = [
 	{ link: 'project', name: 'Single Column Layout' },
-	{ link: 'project-2', name: 'Project 2' },
+	{ link: 'project-2', name: 'Full Screen Layout' },
 	{ link: 'project-3', name: 'Project 3' },
 	{ link: 'project-4', name: 'Project 4' },
 	{ link: 'project-5', name: 'Project 5' },
@@ -17,11 +17,6 @@ export const Skills = () => {
 	return (
 		<div className={Styles.wrapper}>
 			<>
-				<p className={`${Styles.description} ${Styles.fontStyle}`}>
-					"I'm a web developer in frontend. My aim is to build applications that
-					carry DRY code, good usability, modern design and meaningful for
-					users."
-				</p>
 				<div className={Styles.cardContainer}>
 					<div className={Styles.card}>
 						<p className={Styles.text}>
@@ -42,6 +37,11 @@ export const Skills = () => {
 						<p>Figma Github Gitlab Torello</p>
 					</div>
 				</div>
+				<p className={`${Styles.description} ${Styles.fontStyle}`}>
+					"I'm a web developer in frontend. My aim is to build applications that
+					carry DRY code, good usability, modern design and meaningful for
+					users."
+				</p>
 			</>
 			<div className={Styles.projectWrapper}>
 				<p className={`${Styles.description} ${Styles.subTitle}`}>
