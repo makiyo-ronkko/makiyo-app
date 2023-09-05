@@ -1,3 +1,9 @@
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
 .backgroundColor {
 	background-color: var(--color-default);
 	color: var(--color-mud);
@@ -9,11 +15,11 @@
 
 .main {
 	background-color: var(--color-forest-dark);
-	height: calc(100vh - 64px);
+	height: 100vh;
 }
 
 .button {
-	position: absolute;
+	position: fixed;
 	right: 0;
 	top: 0;
 	z-index: 10;
@@ -23,12 +29,12 @@
 	height: 3rem;
 	width: 5rem;
 	border-radius: 0.5rem;
-	background-color: var(--color-forest-dark);
+	background-color: var(--color-default);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
 	color: var(--color-mud);
 	margin: 0.5rem 1rem;
-	box-shadow: 6px 6px 0px 0px var(--color-cloud);
+	border: 2px var(--color-forest-dark) solid;
 }
