@@ -21,13 +21,13 @@
 .button {
 	position: fixed;
 	right: 0;
-	top: 0;
+	top: 0.25rem;
 	z-index: 10;
 }
 
 .backButton {
-	height: 3rem;
-	width: 5rem;
+	height: var(--element-xs);
+	width: var(--element-xl);
 	border-radius: 0.5rem;
 	background-color: var(--color-default);
 	display: flex;
@@ -35,6 +35,6 @@
 	justify-content: center;
 	text-decoration: none;
 	color: var(--color-mud);
-	margin: 0.5rem 1rem;
+	margin: var(--margin-xs) var(--margin-sm);
 	border: 2px var(--color-forest-dark) solid;
 }
