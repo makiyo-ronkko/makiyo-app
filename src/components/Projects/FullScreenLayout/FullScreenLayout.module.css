@@ -1,6 +1,7 @@
 .header {
 	position: fixed;
 	width: 100%;
+	z-index: 30;
 }
 
 .wrapper {
@@ -10,7 +11,7 @@
 
 .staticContent {
 	position: fixed;
-	z-index: 999;
+	z-index: 20;
 	height: 600px;
 	width: 600px;
 	background-color: var(--color-default);
@@ -28,6 +29,7 @@
 	justify-content: center;
 	text-transform: uppercase;
 	color: var(--color-mud);
+	font-size: var(--font-size-h4);
 }
 
 .section {
@@ -44,25 +46,35 @@
 	position: fixed;
 	right: 0;
 	top: 0;
-	z-index: 10;
+	z-index: 40;
 }
 
 .backButton {
-	height: 3rem;
-	width: 5rem;
+	height: var(--element-xs);
+	width: var(--element-xl);
 	border-radius: 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
 	color: var(--color-default);
-	margin: 0.5rem 1rem;
+	margin: var(--margin-xs) var(--margin-sm);
 	border: 2px var(--color-default) solid;
+}
+
+@media screen and (max-height: 790px) {
+	.staticContent {
+		height: 400px;
+		width: 400px;
+	}
+	.text {
+		font-size: var(--font-size-h5);
+	}
 }
 
 @media screen and (max-width: 800px) {
 	.staticContent {
-		height: 50vh;
-		width: 80vw;
+		max-height: 50vh;
+		max-width: 80vw;
 	}
 }
