@@ -55,9 +55,7 @@ export const FullScreenLayout = () => {
 				<Header />
 				<div className={Styles.wrapper}>
 					<div className={Styles.staticContent}>
-						<Typography variant='h4' className={Styles.text}>
-							{text}
-						</Typography>
+						<Typography className={Styles.text}>{text}</Typography>
 					</div>
 					<div
 						className={Styles.section}
