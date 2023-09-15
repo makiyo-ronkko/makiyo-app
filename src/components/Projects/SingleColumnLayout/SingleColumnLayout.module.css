@@ -7,6 +7,7 @@
 .backgroundColor {
 	background-color: var(--color-default);
 	color: var(--color-mud);
+	width: 100%;
 }
 
 .menuItem {
@@ -21,7 +22,6 @@
 .button {
 	position: fixed;
 	right: 0;
-	top: 0.25rem;
 	z-index: 10;
 }
 

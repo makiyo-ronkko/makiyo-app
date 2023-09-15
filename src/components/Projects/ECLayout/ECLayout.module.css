@@ -1,0 +1,33 @@
+.smallHeight {
+	min-height: 1rem;
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+.nav {
+	overflow-x: scroll;
+}
+
+.nav::-webkit-scrollbar {
+	display: none;
+}
+
+.nav {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.imageList {
+	overflow-x: scroll;
+}
+
+.imageList::-webkit-scrollbar {
+	display: none;
+}
+
+.imageList {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}

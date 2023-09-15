@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
 import Styles from './SingleColumnLayout.module.css';
@@ -22,6 +23,11 @@ export const Header = () => {
 							<Typography textAlign='center'>{page}</Typography>
 						</MenuItem>
 					))}
+					<div className={Styles.button}>
+						<Link to={'/'} className={Styles.backButton}>
+							Back
+						</Link>
+					</div>
 				</Toolbar>
 			</AppBar>
 		</Grid>

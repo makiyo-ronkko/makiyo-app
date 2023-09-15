@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Styles from './FullScreenLayout.module.css';
 import { ScrollToTop } from '../../../helpers/scroll';
-import { Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Header } from './Header';
 
@@ -40,7 +40,7 @@ export const FullScreenLayout = () => {
 	}, []);
 
 	return (
-		<div>
+		<Grid item>
 			<ScrollToTop />
 			<div className={Styles.button}>
 				<Link
@@ -53,16 +53,16 @@ export const FullScreenLayout = () => {
 			</div>
 			<>
 				<Header />
-				<div className={Styles.wrapper}>
-					<div className={Styles.staticContent}>
+				<main className={Styles.wrapper}>
+					<Box className={Styles.staticContent}>
 						<Typography className={Styles.text}>{text}</Typography>
-					</div>
+					</Box>
 					<div
 						className={Styles.section}
 						style={{ backgroundColor: bgColor }}
 					></div>
-				</div>
+				</main>
 			</>
-		</div>
+		</Grid>
 	);
 };
