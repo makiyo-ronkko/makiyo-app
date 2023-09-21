@@ -1,15 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
 	Box,
+	Button,
 	Card,
 	CircularProgress,
 	Container,
 	Grid,
+	IconButton,
 	ImageList,
 	ImageListItem,
 	ImageListItemBar,
 	Paper,
 } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 import Styles from './ECLayout.module.css';
 import { Header } from './Header';
 import { ScrollToTop } from '../../../helpers/scroll';
@@ -51,7 +56,7 @@ export const ECLayout = () => {
 	const [images, setImages] =
 		useState<{ id: string; img: string; label: string; price: string }[]>();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
-	const containerRef = useRef<HTMLDivElement>(null);
+	const containerRef = useRef<HTMLUListElement>(null);
 
 	const handleHorizontalScroll = (e: { deltaY: number }) => {
 		if (!containerRef.current) return;
@@ -60,8 +65,18 @@ export const ECLayout = () => {
 		containerRef.current.scrollLeft += scrollAmount;
 	};
 
+	const handleLeftScroll = () => {
+		if (!containerRef.current) return;
+		containerRef.current.scrollLeft -= 300;
+	};
+
+	const handleRightScroll = () => {
+		if (!containerRef.current) return;
+		containerRef.current.scrollLeft += 300;
+	};
+
 	useEffect(() => {
-		async function loadImages() {
+		const loadImages = async () => {
 			const loadedImages = [];
 			for (const imageObj of productList) {
 				try {
@@ -75,11 +90,58 @@ export const ECLayout = () => {
 				}
 			}
 			setImages(loadedImages);
-		}
+		};
 		loadImages();
 	}, []);
 
-	console.log({ isLoading });
+	const getImages = useMemo(() => {
+		return (
+			<>
+				{images?.map((product) => (
+					<ImageListItem
+						key={product.id}
+						sx={{
+							height: '100%',
+							justifyContent: 'center',
+							paddingBottom: 0,
+						}}
+						className={Styles.imageListItem}
+					>
+						<Card>
+							{isLoading ? (
+								<div
+									style={{
+										height: '400px',
+										width: '300px',
+										backgroundColor: 'pink',
+										display: 'flex',
+										alignItems: 'center',
+										justifyContent: 'center',
+									}}
+								>
+									<CircularProgress />
+								</div>
+							) : (
+								<>
+									<img
+										src={product.img}
+										alt={product.id}
+										style={{ height: '400px' }}
+									/>
+									<ImageListItemBar
+										title={product.label}
+										subtitle={<span>{product.price} €</span>}
+										position='below'
+									/>
+								</>
+							)}
+						</Card>
+					</ImageListItem>
+				))}
+			</>
+		);
+	}, [images, isLoading]);
+
 	return (
 		<div>
 			<ScrollToTop />
@@ -88,23 +150,41 @@ export const ECLayout = () => {
 				<main>
 					<Grid>
 						<Box
-							style={{
+							sx={{
 								backgroundColor: 'light-blue',
 								overflowY: 'hidden',
+								backgroundImage: `url('/assets/e-commerce/lauren-richmond-490uCO8h7ZA-unsplash.jpg')`,
+								width: '100%',
+								height: 'calc(var(--content-xxl)*2)',
+								backgroundSize: 'cover',
+								backgroundRepeat: 'no-repeat',
+								backgroundPosition: 'center',
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
 							}}
 						>
-							<img
-								src='/assets/e-commerce/lauren-richmond-490uCO8h7ZA-unsplash.jpg'
-								alt='lauren-richmond-490uCO8h7ZA-unsplash.jpg'
-								style={{
-									width: '100%',
-									objectFit: 'contain',
+							<Button
+								variant='outlined'
+								color='inherit'
+								sx={{
+									width: 'var(--content-xxl)',
+									height: 'var(--element-xs)',
+									backgroundColor: 'var(--color-default)',
+									color: 'gray',
 								}}
-							/>
+								disableFocusRipple
+							>
+								Dicover New Arrival
+							</Button>
 						</Box>
 					</Grid>
 					<Box
-						style={{ height: '500px', backgroundColor: 'var(--color-default)' }}
+						style={{
+							height: '100%',
+							backgroundColor: 'var(--color-default)',
+							position: 'relative',
+						}}
 					>
 						<Grid columns={4} container={true} direction='row' spacing={1}>
 							<ImageList
@@ -112,36 +192,40 @@ export const ECLayout = () => {
 								rowHeight={500}
 								sx={{
 									width: '100%',
-									height: 500,
 									display: 'flex',
 									overflowY: 'hidden',
-									padding: ' 0 2rem',
+									padding: '0 2rem',
 									alignItems: 'center',
+									justifyContent: isLoading ? 'center' : 'flex-start',
+									scrollBehavior: 'smooth',
+									margin: '0 var(--margin-xs)',
 								}}
 								className={Styles.imageList}
 								ref={containerRef}
 								onWheel={handleHorizontalScroll}
 							>
-								{images?.map((product) => (
-									<ImageListItem
-										key={product.id}
-										sx={{ height: '100%', justifyContent: 'center' }}
-									>
-										<Card>
-											<img
-												src={product.img}
-												alt={product.id}
-												style={{ height: '400px' }}
-											/>
-											<ImageListItemBar
-												title={product.label}
-												subtitle={<span>{product.price} €</span>}
-												position='below'
-											/>
-										</Card>
-									</ImageListItem>
-								))}
+								{getImages}
 							</ImageList>
+							<div className={Styles.buttonWrapper}>
+								<IconButton
+									type='button'
+									sx={{ p: '10px', width: '2rem', height: '2rem' }}
+									size='small'
+									aria-label='left-arrow'
+									onClick={handleLeftScroll}
+								>
+									<FontAwesomeIcon icon={faArrowLeft} />
+								</IconButton>
+								<IconButton
+									type='button'
+									sx={{ p: '10px', width: '2rem', height: '2rem' }}
+									size='small'
+									aria-label='right-arrow'
+									onClick={handleRightScroll}
+								>
+									<FontAwesomeIcon icon={faArrowRight} />
+								</IconButton>
+							</div>
 						</Grid>
 					</Box>
 					<Paper style={{ height: '600px', backgroundColor: 'orange' }}>

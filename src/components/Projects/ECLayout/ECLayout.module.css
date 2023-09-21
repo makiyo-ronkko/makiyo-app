@@ -4,6 +4,7 @@
 
 .fullWidth {
 	width: 100%;
+	justify-content: space-between;
 }
 
 .nav {
@@ -28,6 +29,23 @@
 }
 
 .imageList {
+	position: relative;
+	top: 0px;
+	left: 0px;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+}
+
+.buttonWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 var(--margin-xs) var(--margin-xs) var(--margin-xs);
+}
+
+.imageListItem {
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
