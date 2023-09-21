@@ -24,14 +24,7 @@ import { faFontAwesomeAlt } from '@fortawesome/free-brands-svg-icons';
 
 const gender = ['WOMEN', 'MEN', 'KIDS', 'HOME', 'ART'];
 
-const categories = [
-	'NEW ARRIVAL',
-	'CLOTHING',
-	'SHOES',
-	'BAGS',
-	'ACCESSORIES',
-	'SALE',
-];
+const categories = ['NEW', 'CLOTHING', 'SHOES', 'BAGS', 'ACCESSORIES', 'SALE'];
 
 export const Header = () => {
 	const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
@@ -148,7 +141,12 @@ export const Header = () => {
 								justifyContent: 'center',
 							}}
 						>
-							<IconButton type='button' size='small' aria-label='main logo'>
+							<IconButton
+								type='button'
+								size='small'
+								aria-label='main logo'
+								disableRipple
+							>
 								<FontAwesomeIcon icon={faFontAwesomeAlt} size='3x' />
 							</IconButton>
 						</Box>
