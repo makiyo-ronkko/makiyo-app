@@ -9,6 +9,7 @@ import { ErrorPage } from './routes/error.tsx';
 // import { TodoApp } from './components/Project1/index.tsx';
 import { SingleColumnLayout } from './components/Projects/SingleColumnLayout';
 import { FullScreenLayout } from './components/Projects/FullScreenLayout';
+import { ECLayout } from './components/Projects/ECLayout';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
 	{
 		path: '/project-2',
 		element: <FullScreenLayout />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: '/project-3',
+		element: <ECLayout />,
 		errorElement: <ErrorPage />,
 	},
 	// {
