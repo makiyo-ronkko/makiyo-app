@@ -64,7 +64,7 @@ export const Header = () => {
 								variant='text'
 								size='small'
 								aria-label='go to a customer care page'
-								sx={{ color: 'var(--color-mud)' }}
+								sx={{ color: 'var(--color-dark)' }}
 							>
 								Customer Care
 							</Button>
@@ -106,50 +106,60 @@ export const Header = () => {
 
 				<Box display='flex' gap={2}>
 					<Toolbar className={Styles.fullWidth}>
-						<Box sx={{ flexBasis: '40%', display: { xs: 'none', md: 'flex' } }}>
-							<Paper
-								component='div'
+						<Grid container gap={1}>
+							<Box
 								sx={{
-									p: '2px 4px',
 									display: 'flex',
-									alignItems: 'center',
-									width: '100%',
+									flexBasis: '20%',
+									justifyContent: 'center',
 								}}
-								elevation={0}
 							>
-								{gender.map((g) => (
-									<Button
-										variant='text'
-										size='small'
-										key={g}
-										sx={{ color: 'var(--color-mud)', width: '2rem' }}
-									>
-										{g}
-									</Button>
-								))}
-							</Paper>
-						</Box>
-						<Box sx={{ flexBasis: '20%', display: { xs: 'flex', md: 'none' } }}>
-							<IconButton type='button' size='small' aria-label='bar menu'>
-								<FontAwesomeIcon icon={faBars} />
-							</IconButton>
-						</Box>
-						<Box
-							sx={{
-								display: 'flex',
-								flexBasis: '20%',
-								justifyContent: 'center',
-							}}
-						>
-							<IconButton
-								type='button'
-								size='small'
-								aria-label='main logo'
-								disableRipple
+								<IconButton
+									type='button'
+									size='small'
+									aria-label='main logo'
+									disableRipple
+								>
+									<FontAwesomeIcon icon={faFontAwesomeAlt} size='3x' />
+								</IconButton>
+							</Box>
+							<Box
+								sx={{ flexBasis: '40%', display: { xs: 'none', md: 'flex' } }}
 							>
-								<FontAwesomeIcon icon={faFontAwesomeAlt} size='3x' />
-							</IconButton>
-						</Box>
+								<Paper
+									component='div'
+									sx={{
+										p: '2px 4px',
+										display: 'flex',
+										alignItems: 'center',
+										width: '100%',
+									}}
+									elevation={0}
+								>
+									{gender.map((g) => (
+										<Button
+											variant='text'
+											size='small'
+											key={g}
+											sx={{
+												color: 'var(--color-dark)',
+												width: 'var(--element-xxxs)',
+											}}
+										>
+											{g}
+										</Button>
+									))}
+								</Paper>
+							</Box>
+
+							<Box
+								sx={{ flexBasis: '20%', display: { xs: 'flex', md: 'none' } }}
+							>
+								<IconButton type='button' size='small' aria-label='bar menu'>
+									<FontAwesomeIcon icon={faBars} />
+								</IconButton>
+							</Box>
+						</Grid>
 						<Box sx={{ display: 'flex', flexBasis: '40%' }}>
 							<Paper
 								component='div'
@@ -167,7 +177,7 @@ export const Header = () => {
 									variant='text'
 									size='small'
 									sx={{
-										color: 'var(--color-mud)',
+										color: 'var(--color-dark)',
 										width: '2rem',
 										display: { xs: 'none', md: 'flex' },
 									}}
@@ -215,7 +225,7 @@ export const Header = () => {
 								variant='text'
 								size='small'
 								key={category}
-								sx={{ color: 'var(--color-mud)' }}
+								sx={{ color: 'var(--color-dark)' }}
 							>
 								{category}
 							</Button>
