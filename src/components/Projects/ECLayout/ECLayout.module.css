@@ -37,6 +37,8 @@
 }
 
 .buttonWrapper {
+	position: absolute;
+	top: 45%;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -48,4 +50,17 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
+}
+
+.loaderWrapper {
+	height: 400px;
+	width: 300px;
+	background-color: var(--color-cloud);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.productImg {
+	height: 400px;
 }
