@@ -94,7 +94,11 @@ export const Header = () => {
 						/>
 						<IconButton
 							type='button'
-							sx={{ p: '10px', width: '2rem', height: '2rem' }}
+							sx={{
+								p: '10px',
+								width: 'var(--element-xxxs)',
+								height: 'var(--element-xxxs)',
+							}}
 							size='small'
 							aria-label='search'
 							onClick={handleSearchClick}
@@ -169,7 +173,7 @@ export const Header = () => {
 									alignItems: 'center',
 									width: '100%',
 									justifyContent: 'flex-end',
-									gap: '2rem',
+									gap: 'var(--element-xxxs)',
 								}}
 								elevation={0}
 							>
@@ -178,7 +182,7 @@ export const Header = () => {
 									size='small'
 									sx={{
 										color: 'var(--color-dark)',
-										width: '2rem',
+										width: 'var(--element-xxxs)',
 										display: { xs: 'none', md: 'flex' },
 									}}
 								>
@@ -188,7 +192,10 @@ export const Header = () => {
 									aria-label='change a location'
 									size='small'
 									color='default'
-									sx={{ width: '2rem', display: { xs: 'flex', md: 'none' } }}
+									sx={{
+										width: 'var(--element-xxxs)',
+										display: { xs: 'flex', md: 'none' },
+									}}
 								>
 									<FontAwesomeIcon icon={faUser} />
 								</IconButton>
@@ -196,7 +203,7 @@ export const Header = () => {
 									aria-label='change a location'
 									size='small'
 									color='default'
-									sx={{ width: '2rem' }}
+									sx={{ width: 'var(--element-xxxs)' }}
 								>
 									<FontAwesomeIcon icon={faHeart} />
 								</IconButton>
@@ -204,7 +211,7 @@ export const Header = () => {
 									aria-label='change a location'
 									size='small'
 									color='default'
-									sx={{ width: '2rem' }}
+									sx={{ width: 'var(--element-xxxs)' }}
 								>
 									<FontAwesomeIcon icon={faShoppingBag} />
 								</IconButton>
