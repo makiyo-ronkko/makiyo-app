@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Styles from './MainStyle.module.css';
 
@@ -14,6 +14,37 @@ const PROJECTS = [
 ];
 
 export const Skills = () => {
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const mouseDown = useRef(false);
+	const startX = useRef<number | null>(null);
+	const scrollLeft = useRef<number | null>(null);
+
+	const startDragging = (e: React.MouseEvent) => {
+		mouseDown.current = true;
+		if (!sliderRef.current) return;
+		startX.current = e.pageX - sliderRef.current.offsetLeft;
+		scrollLeft.current = sliderRef.current.scrollLeft;
+	};
+
+	const stopDragging = () => {
+		mouseDown.current = false;
+	};
+
+	const handleMouseMove = (e: React.MouseEvent) => {
+		e.preventDefault();
+		if (
+			!mouseDown.current ||
+			sliderRef.current === null ||
+			startX.current === null ||
+			scrollLeft.current === null
+		) {
+			return;
+		}
+
+		const x = e.pageX - sliderRef.current.offsetLeft;
+		const scroll = x - startX.current;
+		sliderRef.current.scrollLeft = scrollLeft.current - scroll;
+	};
 	return (
 		<div className={Styles.wrapper}>
 			<>
@@ -28,7 +59,7 @@ export const Skills = () => {
 						<p className={Styles.text}>
 							<b>Backend</b>
 						</p>
-						<p>Node.js Express REST API</p>
+						<p>Node.js REST API</p>
 					</div>
 					<div className={Styles.card}>
 						<p className={Styles.text}>
@@ -45,9 +76,16 @@ export const Skills = () => {
 			</>
 			<div className={Styles.projectWrapper}>
 				<p className={`${Styles.description} ${Styles.subTitle}`}>
-					Various Responsive Web Designs
+					Responsive Web Designs
 				</p>
-				<div className={Styles.projectContainer}>
+				<div
+					className={Styles.projectContainer}
+					ref={sliderRef}
+					onMouseDown={startDragging}
+					onMouseUp={stopDragging}
+					onMouseLeave={stopDragging}
+					onMouseMove={handleMouseMove}
+				>
 					{PROJECTS.map((project) => {
 						return (
 							<Link

@@ -127,7 +127,7 @@ export const Main = () => {
 						}}
 						className={Styles.imageListItem}
 					>
-						<Card>
+						<Card sx={{ cursor: 'pointer' }}>
 							{isLoading ? (
 								<div className={Styles.loaderWrapper}>
 									<CircularProgress />

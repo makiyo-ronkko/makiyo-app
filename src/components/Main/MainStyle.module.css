@@ -178,9 +178,9 @@
 }
 
 .subTitle {
-	padding-left: 0;
-	justify-content: flex-start;
-	font-size: var(--font-size-h5);
+	padding: 0 0 var(--padding-sm) 0;
+	font-size: var(--font-size-h4);
+	font-weight: bold;
 	color: var(--color-mud);
 }
 
@@ -315,7 +315,7 @@
 
 .project {
 	height: var(--content-md);
-	width: var(--content-md);
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -330,6 +330,7 @@
 }
 
 .link {
+	min-width: var(--content-lg);
 	text-decoration: none;
 }
 
@@ -382,5 +383,9 @@ button {
 
 	.description {
 		font-size: var(--font-size-h5);
+	}
+
+	.link {
+		width: 100%;
 	}
 }
