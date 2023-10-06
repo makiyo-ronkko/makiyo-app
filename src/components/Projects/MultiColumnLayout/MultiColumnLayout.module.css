@@ -1,0 +1,58 @@
+.backgroundColor {
+	background-color: var(--color-default);
+	color: var(--color-mud);
+	width: 100%;
+}
+
+.modalWrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 80vh;
+	border: 2px solid #000;
+	background-color: var(--color-default);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.modalImage {
+	max-height: 80%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.button {
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 40;
+}
+
+.backButton {
+	height: var(--element-xs);
+	width: var(--element-xl);
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--color-default);
+	background-color: var(--color-cloud);
+	margin: var(--margin-xs) var(--margin-sm);
+	border: 2px var(--color-default) solid;
+}
+
+@media screen and (max-width: 860px) {
+	.modalWrapper {
+		width: 90vw;
+	}
+
+	.modalImage {
+		width: 100%;
+	}
+}
