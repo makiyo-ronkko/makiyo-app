@@ -10,6 +10,7 @@ import { ErrorPage } from './routes/error.tsx';
 import { SingleColumnLayout } from './components/Projects/SingleColumnLayout';
 import { FullScreenLayout } from './components/Projects/FullScreenLayout';
 import { ECLayout } from './components/Projects/ECLayout';
+import { MultiColumnLayout } from './components/Projects/MultiColumnLayout';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
 	{
 		path: '/project-3',
 		element: <ECLayout />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: '/project-4',
+		element: <MultiColumnLayout />,
 		errorElement: <ErrorPage />,
 	},
 	// {
