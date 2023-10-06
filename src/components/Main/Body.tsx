@@ -7,7 +7,7 @@ const PROJECTS = [
 	{ link: 'project', name: 'Single Column Layout' },
 	{ link: 'project-2', name: 'Full Screen Layout' },
 	{ link: 'project-3', name: 'E-Commerce Layout' },
-	{ link: 'project-4', name: 'Project 4' },
+	{ link: 'project-4', name: 'Multi-Column Layout' },
 	{ link: 'project-5', name: 'Project 5' },
 	{ link: 'project-6', name: 'Project 6' },
 	{ link: 'project-7', name: 'Project 7' },
