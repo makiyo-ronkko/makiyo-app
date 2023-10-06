@@ -1,9 +1,9 @@
 import React from 'react';
 import Styles from './MainStyle.module.css';
 import { Header } from './Header.tsx';
-import { Skills } from './Skills.tsx';
 import { Contact } from './Contact.tsx';
 import { Footer } from './Footer.tsx';
+import { Body } from './Body.tsx';
 
 export const MainStyle = () => {
 	return (
@@ -12,7 +12,7 @@ export const MainStyle = () => {
 				<Header />
 			</div>
 			<div className={Styles.section2}>
-				<Skills />
+				<Body />
 			</div>
 			<div
 				className={`${Styles.gradient2} ${Styles.section} ${Styles.container} ${Styles.padding}`}
