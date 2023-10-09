@@ -13,66 +13,67 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Styles from './ECLayout.module.css';
+import { generateRandomText } from '../../../helpers/textGenerator';
 
 const productList = [
 	{
 		id: '1',
-		img: '/assets/e-commerce/ahmed-carter-tiWcNvpQF4E-unsplash.jpg',
-		label: 'Wide pants',
+		img: 'https://source.unsplash.com/random?fashion',
+		label: generateRandomText(1, false, true),
 		price: '250',
 	},
 	{
 		id: '2',
-		img: '/assets/e-commerce/dom-hill-nimElTcTNyY-unsplash.jpg',
-		label: 'Jogger set',
+		img: 'https://source.unsplash.com/random?woman',
+		label: generateRandomText(1, false, true),
 		price: '350',
 	},
 	{
 		id: '3',
-		img: '/assets/e-commerce/marcus-santos-xw5cQNbky5A-unsplash.jpg',
-		label: 'Puffy dress',
+		img: 'https://source.unsplash.com/random?dress',
+		label: generateRandomText(1, false, true),
 		price: '290',
 	},
 	{
 		id: '4',
-		img: '/assets/e-commerce/hong-nguyen-FO-zQd7Wqio-unsplash.jpg',
-		label: 'Flower dress',
+		img: 'https://source.unsplash.com/random?jacket',
+		label: generateRandomText(1, false, true),
 		price: '235',
 	},
 	{
 		id: '5',
-		img: '/assets/e-commerce/tamara-bellis-pONwcn4IcVU-unsplash.jpg',
-		label: 'Wool shorts',
+		img: 'https://source.unsplash.com/random?bag',
+		label: generateRandomText(1, false, true),
 		price: '180',
 	},
 	{
 		id: '6',
-		img: '/assets/e-commerce/ahmed-carter-tiWcNvpQF4E-unsplash.jpg',
-		label: 'Wide pants',
+		img: 'https://source.unsplash.com/random?accessories',
+		label: generateRandomText(1, false, true),
 		price: '250',
 	},
 	{
 		id: '7',
-		img: '/assets/e-commerce/dom-hill-nimElTcTNyY-unsplash.jpg',
-		label: 'Jogger set',
+		img: 'https://source.unsplash.com/random?fashion',
+		label: generateRandomText(1, false, true),
 		price: '350',
 	},
 	{
 		id: '8',
-		img: '/assets/e-commerce/marcus-santos-xw5cQNbky5A-unsplash.jpg',
-		label: 'Puffy dress',
+		img: 'https://source.unsplash.com/random?women',
+		label: generateRandomText(1, false, true),
 		price: '290',
 	},
 	{
 		id: '9',
-		img: '/assets/e-commerce/hong-nguyen-FO-zQd7Wqio-unsplash.jpg',
-		label: 'Flower dress',
+		img: 'https://source.unsplash.com/random?fashion',
+		label: generateRandomText(1, false, true),
 		price: '235',
 	},
 	{
 		id: '10',
-		img: '/assets/e-commerce/tamara-bellis-pONwcn4IcVU-unsplash.jpg',
-		label: 'Wool shorts',
+		img: 'https://source.unsplash.com/random?cosmetics',
+		label: generateRandomText(1, false, true),
 		price: '180',
 	},
 ];
@@ -81,18 +82,20 @@ export const Main = () => {
 	const [images, setImages] =
 		useState<{ id: string; img: string; label: string; price: string }[]>();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
+
 	const containerRef = useRef<HTMLUListElement>(null);
-	//TODO: calculate scroll width
 	const cardRef = useRef<any>(null);
 
 	const handleLeftScroll = () => {
 		if (!containerRef.current) return;
-		containerRef.current.scrollLeft -= 500;
+		if (!cardRef.current && !isLoading) return;
+		containerRef.current.scrollLeft -= cardRef.current.width + 13;
 	};
 
 	const handleRightScroll = () => {
 		if (!containerRef.current) return;
-		containerRef.current.scrollLeft += 500;
+		if (!cardRef.current && !isLoading) return;
+		containerRef.current.scrollLeft += cardRef.current.width + 13;
 	};
 
 	useEffect(() => {
@@ -104,53 +107,64 @@ export const Main = () => {
 					img.src = imageObj.img;
 					await img.decode(); // Wait for the image to be fully loaded
 					loadedImages.push({ ...imageObj });
-					setIsLoading(false);
 				} catch (error) {
 					console.error('Error loading image:', imageObj.img);
 				}
 			}
 			setImages(loadedImages);
+			setIsLoading(false);
 		};
 		loadImages();
 	}, []);
 
 	const getImages = useMemo(() => {
 		return (
-			<>
-				{images?.map((product) => (
-					<ImageListItem
-						key={product.id}
-						sx={{
-							height: '100%',
-							justifyContent: 'center',
-							paddingBottom: 0,
-						}}
-						className={Styles.imageListItem}
-					>
-						<Card sx={{ cursor: 'pointer' }}>
-							{isLoading ? (
-								<div className={Styles.loaderWrapper}>
-									<CircularProgress />
-								</div>
-							) : (
+			<div className={Styles.productImgWrapper}>
+				{isLoading ? (
+					<CircularProgress sx={{ color: 'var(--color-cloud)' }} />
+				) : (
+					images?.map((product) => (
+						<ImageListItem
+							key={product.id}
+							sx={{
+								height: '500px',
+								justifyContent: 'center',
+								paddingBottom: 0,
+							}}
+							className={Styles.imageListItem}
+						>
+							<Card
+								sx={{
+									cursor: 'pointer',
+									height: '100%',
+									width: '300px',
+									padding: '10px',
+									overflow: 'hidden',
+								}}
+							>
 								<>
-									<img
-										src={product.img}
-										alt={product.id}
-										className={Styles.productImg}
-									/>
+									<div className={Styles.productImgContainer}>
+										<img
+											src={product.img}
+											alt={product.id}
+											className={Styles.productImg}
+											ref={cardRef}
+										/>
+									</div>
 									<ImageListItemBar
 										title={product.label}
-										subtitle={<span>{product.price} €</span>}
+										subtitle={
+											<span className={Styles.fontSize}>{product.price} €</span>
+										}
 										position='below'
-										sx={{ padding: '0 var(--padding-xxs)' }}
+										sx={{ padding: 'var(--padding-xxs)' }}
 									/>
 								</>
-							)}
-						</Card>
-					</ImageListItem>
-				))}
-			</>
+							</Card>
+						</ImageListItem>
+					))
+				)}
+			</div>
 		);
 	}, [images, isLoading]);
 
@@ -208,7 +222,7 @@ export const Main = () => {
 							alignItems: 'center',
 							justifyContent: isLoading ? 'center' : 'flex-start',
 							scrollBehavior: 'smooth',
-							margin: '0 var(--margin-xs)',
+							margin: 'var(--margin-sm) var(--margin-xs)',
 						}}
 						className={Styles.imageList}
 						ref={containerRef}
