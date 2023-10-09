@@ -1,4 +1,8 @@
-export const generateRandomText = (numSentences: number) => {
+export const generateRandomText = (
+	numSentences: number,
+	isPeriod = true,
+	isShort = false
+) => {
 	const sentences = [];
 	const words = [
 		'Lorem',
@@ -73,13 +77,17 @@ export const generateRandomText = (numSentences: number) => {
 	];
 
 	for (let i = 0; i < numSentences; i++) {
-		const numWordsInSentence = Math.floor(Math.random() * 6) + 5; // Randomly select 5 to 10 words per sentence
+		const numWordsInSentence = isShort
+			? Math.floor(Math.random() * 6) + 2
+			: Math.floor(Math.random() * 6) + 5; // Randomly select 5 to 10 words per sentence
 		const sentenceWords = [];
 		for (let j = 0; j < numWordsInSentence; j++) {
 			const randomWordIndex = Math.floor(Math.random() * words.length);
 			sentenceWords.push(words[randomWordIndex]);
 		}
-		let sentence = sentenceWords.join(' ') + '.';
+		let sentence = isPeriod
+			? sentenceWords.join(' ') + '.'
+			: sentenceWords.join(' ');
 		sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
 		sentences.push(sentence);
 	}

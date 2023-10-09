@@ -21,7 +21,7 @@ export const Nav = () => {
 		<nav>
 			<Toolbar sx={{ height: '400px' }}>
 				{subNavigation.map((category) => (
-					<Grid gap={2} container>
+					<Grid gap={2} container key={category.title}>
 						<Grid
 							container
 							height={50}
@@ -37,6 +37,7 @@ export const Nav = () => {
 						<Grid key={category.title} height={150} container>
 							{category.subTitle.map((t) => (
 								<Button
+									key={t}
 									variant='text'
 									sx={{
 										color: 'var(--color-mud)',
