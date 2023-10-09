@@ -52,17 +52,29 @@
 	left: 0px;
 }
 
-.loaderWrapper {
-	height: 400px;
-	width: 300px;
-	background-color: var(--color-cloud);
+.productImgWrapper {
+	height: 500px;
 	display: flex;
+	gap: 0.5rem;
 	align-items: center;
 	justify-content: center;
 }
 
+.productImgContainer {
+	height: 90%;
+	width: 100%;
+	display: flex;
+	align-items: cemter;
+	justify-content: center;
+}
+
 .productImg {
-	height: 400px;
+	height: 100%;
+	object-fit: fill;
+}
+
+.productPrice {
+	font-size: var(--font-size-button-text);
 }
 
 .button {
