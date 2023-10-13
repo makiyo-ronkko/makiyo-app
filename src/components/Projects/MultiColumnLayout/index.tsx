@@ -150,7 +150,7 @@ export const MultiColumnLayout = () => {
 				<Header />
 				<Grid>
 					<main>
-						<Container sx={{ py: 8 }} maxWidth='lg'>
+						<Container sx={{ py: 12 }} maxWidth='lg'>
 							<Grid container spacing={4}>
 								{cards.map((card) => (
 									<GridCard card={card} key={card.id} />

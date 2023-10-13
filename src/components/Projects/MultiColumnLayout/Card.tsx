@@ -11,6 +11,7 @@ import {
 	Card,
 	Modal,
 	Box,
+	CardActionArea,
 } from '@mui/material';
 import Styles from './MultiColumnLayout.module.css';
 
@@ -76,6 +77,7 @@ export const GridCard = ({ card }: GridCardProp) => {
 					display: 'flex',
 					flexDirection: 'column',
 				}}
+				variant='outlined'
 			>
 				<CardContent sx={{ flexGrow: 1 }}>
 					<Typography gutterBottom variant='h5' component='h2'>
@@ -83,15 +85,17 @@ export const GridCard = ({ card }: GridCardProp) => {
 					</Typography>
 					<Typography>{card.content}</Typography>
 				</CardContent>
-				<CardMedia
-					component='div'
-					sx={{
-						pt: '56.25%',
-						cursor: 'pointer',
-					}}
-					image={card.image}
-					onClick={handleOpen}
-				/>
+				<CardActionArea>
+					<CardMedia
+						component='div'
+						sx={{
+							pt: '56.25%',
+							cursor: 'pointer',
+						}}
+						image={card.image}
+						onClick={handleOpen}
+					/>
+				</CardActionArea>
 				<CardActions
 					sx={{
 						width: '100%',

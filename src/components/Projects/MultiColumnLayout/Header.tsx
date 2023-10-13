@@ -9,7 +9,7 @@ const pages = ['Home', 'About us', 'Contact'];
 export const Header = () => {
 	return (
 		<Grid item>
-			<AppBar position='relative'>
+			<AppBar position='fixed'>
 				<Toolbar className={Styles.backgroundColor}>
 					<Typography variant='h6' paddingRight='2rem'>
 						LOGO
