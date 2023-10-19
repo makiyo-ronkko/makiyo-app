@@ -1,0 +1,17 @@
+.colorPalette {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+}
+
+.colorButton {
+	width: 30px;
+	height: 30px;
+	margin: 0 5px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+/* You can add more styles to highlight the selected color, such as changing the border color when selected. */
