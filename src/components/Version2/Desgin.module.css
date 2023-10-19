@@ -1,13 +1,23 @@
 .wrapper {
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 3rem;
 }
 
-.h2 {
-	font-size: 2rem;
+.textWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	padding-top: var(--padding-md);
+}
+
+@media screen and (max-width: 860px) {
+	.wrapper {
+		gap: 2rem;
+	}
 }
