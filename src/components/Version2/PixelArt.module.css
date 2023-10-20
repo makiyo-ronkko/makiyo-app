@@ -9,9 +9,7 @@
 
 .button {
 	width: var(--content-md);
-	background-color: var(--color-primary-dark);
-	color: var(--color-default);
-	margin-bottom: var(--margin-lgß);
+	margin-bottom: var(--margin-lg);
 }
 
 @media screen and (max-width: 860px) {
