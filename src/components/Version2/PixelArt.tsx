@@ -24,7 +24,10 @@ const PixelArtApp = () => {
 
 	return (
 		<div className={Styles.wrapper}>
-			<ColorPalette onSelectColor={setSelectedColor} />
+			<ColorPalette
+				onSelectColor={setSelectedColor}
+				selectedColor={selectedColor}
+			/>
 			<PixelArtCanvas id={ID} selectedColor={selectedColor} />
 			<Button variant='outlined' className={Styles.button} onClick={saveAsPNG}>
 				Save as PNG
