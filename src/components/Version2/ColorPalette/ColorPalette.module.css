@@ -14,4 +14,6 @@
 	cursor: pointer;
 }
 
-/* You can add more styles to highlight the selected color, such as changing the border color when selected. */
+.selectedColor {
+	border: dashed #ccc 5px;
+}
