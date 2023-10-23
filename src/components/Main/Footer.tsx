@@ -4,7 +4,7 @@ import Styles from './MainStyle.module.css';
 export const Footer = () => {
 	return (
 		<p className={Styles.copyright}>
-			Copyright &copy; {new Date().getFullYear()} Makiyo Rönkkö
+			COPYRIGHT &copy; {new Date().getFullYear()} MAKIYO RÖNKKÖ
 		</p>
 	);
 };

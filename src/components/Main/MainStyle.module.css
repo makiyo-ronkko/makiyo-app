@@ -466,4 +466,14 @@ button {
 	.link {
 		width: 100%;
 	}
+
+	.copyright {
+		font-size: var(--font-size-body);
+	}
+}
+
+@media screen and (max-width: 732px) {
+	.copyright {
+		font-size: var(--font-caption-text);
+	}
 }

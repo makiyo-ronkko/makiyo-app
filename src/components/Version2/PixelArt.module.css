@@ -1,0 +1,19 @@
+.wrapper {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 3rem;
+	flex-wrap: wrap;
+}
+
+.button {
+	width: var(--content-md);
+	margin-bottom: var(--margin-lg);
+}
+
+@media screen and (max-width: 860px) {
+	.wrapper {
+		gap: 1rem;
+	}
+}
