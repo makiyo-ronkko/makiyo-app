@@ -10,6 +10,29 @@
 	--color-forest-dark: hsl(168, 20%, 78%);
 	--color-sunflower: hsl(48, 74%, 74%);
 	--color-sunflower-dark: hsl(48, 88%, 60%);
+
+	--color-mint: hsl(97, 100%, 90%);
+	--color-turquoise: hsl(204, 25%, 52%);
+	--color-fire: hsl(12, 63%, 44%);
+	--color-salmon: hsl(20, 100%, 85%);
+	--color-olive: hsl(200, 36%, 39%);
+	--color-navy: hsl(215, 56%, 17%);
+	--color-cobalt: hsl(202, 100%, 27%);
+	--color-night: hsl(0, 0%, 15%);
+	--color-lavender: hsl(278, 83%, 79%);
+	--color-fairy: hsl(296, 70%, 82%);
+	--color-ivory: hsl(43, 32%, 91%);
+	--color-soil: hsl(34, 30%, 82%);
+	--color-autumn: hsl(32, 30%, 69%);
+	--color-natural: hsl(27, 100%, 92%);
+	--color-mustard: hsl(40, 62%, 61%);
+	--color-squrrel: hsl(27, 85%, 36%);
+	--color-persimmon: hsl(30, 73%, 53%);
+	--color-bear: hsl(0, 28%, 27%);
+	--color-chestnut: hsl(0, 75%, 19%);
+	--color-custard: hsl(54, 100%, 88%);
+	--color-wheat: hsl(32, 86%, 89%);
+
 	--color-default: hsl(0, 0%, 97%);
 	--color-dark: hsl(0, 0%, 24%);
 	--color-cloud: hsla(0, 0%, 47%, 0.5);
