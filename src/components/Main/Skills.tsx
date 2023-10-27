@@ -7,9 +7,8 @@ export const Skills = () => {
 			<div className={Styles.titleWrapper}>
 				<p className={`${Styles.description} ${Styles.subTitle}`}>About me</p>
 				<p className={`${Styles.summary} ${Styles.fontStyle}`}>
-					"I'm a web developer in frontend. My aim is to build applications that
-					carry DRY code, good usability, modern design and meaningful for
-					users."
+					"Frontend Developer Focused on Creating Modern Applications: Enhancing
+					User Experience, Embracing Contemporary Design, and Delivering Value."
 				</p>
 			</div>
 			<div className={Styles.cardContainer}>
