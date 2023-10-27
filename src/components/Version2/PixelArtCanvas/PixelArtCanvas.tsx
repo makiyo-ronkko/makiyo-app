@@ -7,7 +7,7 @@ interface PixelArtCanvasProps {
 }
 
 export const PixelArtCanvas = ({ selectedColor, id }: PixelArtCanvasProps) => {
-	const [pixels, setPixels] = useState(Array(144).fill('#ffffff')); // 8x8 grid with initial white pixels
+	const [pixels, setPixels] = useState(Array(256).fill('#ffffff')); // 16x16 grid with initial white pixels
 	const [isDrawing, setIsDrawing] = useState<boolean>(false);
 
 	const handlePixelClick = (index: number) => {
