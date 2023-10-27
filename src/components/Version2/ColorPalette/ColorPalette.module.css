@@ -1,7 +1,7 @@
 .colorPalette {
-	width: 80%;
+	max-width: 480px;
 	display: flex;
-	justify-content: center;
+	align-items: center;
 	flex-wrap: wrap;
 	gap: 0.25rem;
 }
@@ -16,4 +16,10 @@
 
 .selectedColor {
 	border: dashed #ccc 5px;
+}
+
+@media screen and (max-width: 860px) {
+	.colorPalette {
+		width: 80vw;
+	}
 }

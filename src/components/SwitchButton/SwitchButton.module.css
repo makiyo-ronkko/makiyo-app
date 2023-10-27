@@ -1,6 +1,6 @@
 .button {
-	width: 4rem;
-	height: 4rem;
+	width: var(--element-md);
+	height: var(--element-md);
 	border-radius: 1rem;
 	box-shadow: 0.5rem 0.5rem var(--color-sky);
 	background: var(--color-nude);
@@ -15,8 +15,8 @@
 }
 
 .circle {
-	width: 2rem;
-	height: 2rem;
+	width: var(--element-xxxs);
+	height: var(--element-xxxs);
 	border-radius: 50%;
 	border: 0.4rem solid var(--color-tomato);
 }
