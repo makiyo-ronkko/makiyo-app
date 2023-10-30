@@ -51,6 +51,21 @@ export const PixelArtCanvas = ({
 		setIsDrawing(false);
 	};
 
+	const handleTouchStart = (index: number) => {
+		setIsDrawing(true);
+		handlePixelDrag(index);
+	};
+
+	const handleTouchMove = (index: number) => {
+		if (isDrawing) {
+			handlePixelDrag(index);
+		}
+	};
+
+	const handleTouchEnd = () => {
+		setIsDrawing(false);
+	};
+
 	return (
 		<div className={Styles.pixelCanvas} id={id}>
 			{pixels.map((color, index) => (
@@ -62,6 +77,9 @@ export const PixelArtCanvas = ({
 					onMouseDown={() => handleMouseDown(index)}
 					onMouseEnter={() => handlePixelDrag(index)}
 					onMouseUp={handleMouseUp}
+					onTouchStart={() => handleTouchStart(index)}
+					onTouchMove={() => handleTouchMove(index)}
+					onTouchEnd={handleTouchEnd}
 				></div>
 			))}
 		</div>
