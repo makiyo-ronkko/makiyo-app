@@ -73,7 +73,10 @@ const PixelArtApp = () => {
 				pixelHistory={pixelHistory}
 				setPixelHistory={setPixelHistory}
 			/>
-			<Grid container sx={{ justifyContent: 'center', gap: '1rem' }}>
+			<Grid
+				container
+				sx={{ justifyContent: 'center', gap: '1rem', maxWidth: '80vw' }}
+			>
 				<Grid
 					container
 					sx={{
