@@ -4,16 +4,33 @@ import Styles from './PixelArtCanvas.module.css';
 interface PixelArtCanvasProps {
 	selectedColor: string | undefined;
 	id: string;
+	setPixels: (value: string[]) => void;
+	pixels: string[];
+	pixelHistory: string[][];
+	setPixelHistory: (value: string[][]) => void;
 }
 
-export const PixelArtCanvas = ({ selectedColor, id }: PixelArtCanvasProps) => {
-	const [pixels, setPixels] = useState(Array(256).fill('#ffffff')); // 16x16 grid with initial white pixels
+export const PixelArtCanvas = ({
+	selectedColor,
+	id,
+	setPixels,
+	pixels,
+	pixelHistory,
+	setPixelHistory,
+}: PixelArtCanvasProps) => {
 	const [isDrawing, setIsDrawing] = useState<boolean>(false);
+
+	const addToHistory = (newPixels: string[]) => {
+		const newHistory = [...pixelHistory];
+		newHistory.push(newPixels);
+		setPixelHistory(newHistory);
+	};
 
 	const handlePixelClick = (index: number) => {
 		const newPixels = [...pixels];
 		newPixels[index] = selectedColor;
 		setPixels(newPixels);
+		addToHistory(newPixels);
 	};
 
 	const handlePixelDrag = (index: number) => {
@@ -21,6 +38,7 @@ export const PixelArtCanvas = ({ selectedColor, id }: PixelArtCanvasProps) => {
 			const newPixels = [...pixels];
 			newPixels[index] = selectedColor;
 			setPixels(newPixels);
+			addToHistory(newPixels);
 		}
 	};
 
