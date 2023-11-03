@@ -16,7 +16,10 @@ export const Skills = () => {
 					<p className={`${Styles.text} ${Styles.textLetterSpace}`}>
 						<b>Frontend</b>
 					</p>
-					<p>Javascript Typescript React Redux HTML5 CSS3 MUI</p>
+					<p>
+						Javascript Typescript React Redux HTML5 CSS3 CSS Frameworks (MUI,
+						Bootstrap)
+					</p>
 				</div>
 				<div className={Styles.card}>
 					<p className={`${Styles.text} ${Styles.textLetterSpace}`}>
@@ -28,7 +31,7 @@ export const Skills = () => {
 					<p className={`${Styles.text} ${Styles.textLetterSpace}`}>
 						<b>Others</b>
 					</p>
-					<p>Figma Github Gitlab Torello</p>
+					<p>Figma Github Gitlab Responsive Design</p>
 				</div>
 			</div>
 		</div>
