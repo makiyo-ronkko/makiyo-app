@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import Styles from './PixelArtDesign.module.css';
 import { Typography } from '@mui/material';
 import PixelArtApp from './PixelArt/PixelArt';
+import { ScrollToTop } from '../../../helpers/scroll';
 
 export const PixelArt = () => {
 	return (
 		<div className={Styles.wrapper}>
+			<ScrollToTop />
 			<div className={Styles.buttonWrapper}>
 				<Link to={'/'} className={Styles.backButton}>
 					BACK
