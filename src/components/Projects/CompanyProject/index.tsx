@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Styles from './CompanyProject.module.css';
 import { Link } from 'react-router-dom';
+import Styles from './CompanyProject.module.css';
 import { CircularProgress } from '@mui/material';
+import { ScrollToTop } from '../../../helpers/scroll';
 
 export const CompanyProject = () => {
 	const [imageLoaded, setImageLoaded] = useState<boolean>(false);
@@ -18,6 +19,7 @@ export const CompanyProject = () => {
 
 	return (
 		<div className={Styles.wrapper}>
+			<ScrollToTop />
 			<div className={Styles.button}>
 				<Link to={'/'} className={Styles.backButton}>
 					Back
