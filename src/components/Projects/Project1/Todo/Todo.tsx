@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Styles from './Todo.module.css';
-import { classNames } from '../../../utils/classNames.ts';
+import { classNames } from '../../../../utils/classNames';
 
 interface TodoProps {
 	id: string;

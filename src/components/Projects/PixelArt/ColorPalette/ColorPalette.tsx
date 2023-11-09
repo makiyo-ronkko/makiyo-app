@@ -1,6 +1,6 @@
 import React from 'react';
 import Styles from './ColorPalette.module.css';
-import { classNames } from '../../../utils/classNames';
+import { classNames } from '../../../../utils/classNames';
 
 interface ColorPaletteProp {
 	onSelectColor: (val: string) => void;

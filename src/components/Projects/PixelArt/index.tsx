@@ -1,11 +1,17 @@
 import React from 'react';
-import Styles from './Desgin.module.css';
+import { Link } from 'react-router-dom';
+import Styles from './PixelArtDesign.module.css';
 import { Typography } from '@mui/material';
-import PixelArtApp from './PixelArt';
+import PixelArtApp from './PixelArt/PixelArt';
 
-export const Design = () => {
+export const PixelArt = () => {
 	return (
 		<div className={Styles.wrapper}>
+			<div className={Styles.buttonWrapper}>
+				<Link to={'/'} className={Styles.backButton}>
+					BACK
+				</Link>
+			</div>
 			<div className={Styles.textWrapper}>
 				<Typography
 					variant='h2'

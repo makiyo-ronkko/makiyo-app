@@ -3,17 +3,18 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	padding: var(--padding-sm);
+	padding: 10rem;
 }
 
 .button {
-	height: 100%;
-	width: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .backButton {
-	height: 3rem;
-	width: 5rem;
+	height: var(--element-xs);
+	width: var(--element-xl);
 	border-radius: 0.5rem;
 	background-color: var(--color-sky);
 	display: flex;
@@ -23,4 +24,10 @@
 	color: var(--color-default);
 	margin: 1rem;
 	box-shadow: 6px 6px 0px 0px var(--color-cloud);
+}
+
+@media screen and (max-width: 860px) {
+	.wrapper {
+		padding: var(--padding-lg) var(--padding-sm);
+	}
 }

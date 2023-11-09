@@ -4,9 +4,9 @@ import { saveAs } from 'file-saver';
 
 import Styles from './PixelArt.module.css';
 import { Button, Grid, IconButton } from '@mui/material';
-import { PixelArtCanvas } from './PixelArtCanvas/PixelArtCanvas';
-import { ColorPalette } from './ColorPalette/ColorPalette';
-import ConfirmationModal from './ConfirmationModal/ConfirmationModal';
+import { PixelArtCanvas } from '../PixelArtCanvas/PixelArtCanvas';
+import { ColorPalette } from '../ColorPalette/ColorPalette';
+import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
@@ -80,7 +80,7 @@ const PixelArtApp = () => {
 				<Grid
 					container
 					sx={{
-						gap: '0.5rem',
+						gap: '2rem',
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}
@@ -90,7 +90,7 @@ const PixelArtApp = () => {
 						size='small'
 						color='default'
 						onClick={handleUndo}
-						sx={{ width: 'var(--content-xxxs)' }}
+						sx={{ width: 'var(--element-xxs)', height: 'var(--element-xxs)' }}
 					>
 						<FontAwesomeIcon
 							icon={faArrowRotateLeft}
@@ -102,7 +102,7 @@ const PixelArtApp = () => {
 						size='small'
 						color='default'
 						onClick={handleClear}
-						sx={{ width: 'var(--content-xxxs)' }}
+						sx={{ width: 'var(--element-xxs)', height: 'var(--element-xxs)' }}
 					>
 						<FontAwesomeIcon icon={faTrashCan} color='var(--color-mud)' />
 					</IconButton>
