@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Styles from './Project.module.css';
+import Styles from './Todo.module.css';
 import { TodoList } from './TodoList/TodoList.tsx';
 
 export const TodoApp = () => {
