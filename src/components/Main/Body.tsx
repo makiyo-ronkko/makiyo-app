@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Styles from './MainStyle.module.css';
 import { Skills } from './Skills';
+import { CompanyProject } from './CompanyProject';
 
 const PROJECTS = [
 	{ link: 'project', name: 'Single Column Layout' },
@@ -10,7 +11,7 @@ const PROJECTS = [
 	{ link: 'project-4', name: 'Multi-Column Layout' },
 	{ link: 'project-5', name: 'Pixel Art' },
 	{ link: 'project-6', name: 'TODO App' },
-	{ link: 'project-7', name: 'Project 7' },
+	{ link: 'project-7', name: 'Could me more...' },
 ];
 
 export const Body = () => {
@@ -47,7 +48,7 @@ export const Body = () => {
 	};
 
 	return (
-		<div>
+		<>
 			<Skills />
 			<div className={Styles.projectWrapper}>
 				<p className={`${Styles.description} ${Styles.subTitle}`}>
@@ -78,6 +79,7 @@ export const Body = () => {
 					})}
 				</div>
 			</div>
-		</div>
+			<CompanyProject />
+		</>
 	);
 };
