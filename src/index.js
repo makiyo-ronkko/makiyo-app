@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { Root } from './routes/root.tsx';
 import { ErrorPage } from './routes/error.tsx';
-// import { TodoApp } from './components/Project1/index.tsx';
+import { TodoApp } from './components/Projects/Project1/index.tsx';
+import { PixelArt } from './components/Projects/PixelArt/index.tsx';
 import { SingleColumnLayout } from './components/Projects/SingleColumnLayout';
 import { FullScreenLayout } from './components/Projects/FullScreenLayout';
 import { ECLayout } from './components/Projects/ECLayout';
@@ -41,11 +42,16 @@ const router = createBrowserRouter([
 		element: <MultiColumnLayout />,
 		errorElement: <ErrorPage />,
 	},
-	// {
-	// 	path: '/project-2',
-	// 	element: <TodoApp />,
-	// 	errorElement: <ErrorPage />,
-	// },
+	{
+		path: '/project-5',
+		element: <PixelArt />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: '/project-6',
+		element: <TodoApp />,
+		errorElement: <ErrorPage />,
+	},
 ]);
 root.render(<RouterProvider router={router} />);
 
