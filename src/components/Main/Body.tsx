@@ -11,7 +11,7 @@ const PROJECTS = [
 	{ link: 'project-4', name: 'Multi-Column Layout' },
 	{ link: 'project-5', name: 'Pixel Art' },
 	{ link: 'project-6', name: 'TODO App' },
-	{ link: 'project-7', name: 'Could me more...' },
+	{ link: 'project-7', name: 'Could be more...' },
 ];
 
 export const Body = () => {
