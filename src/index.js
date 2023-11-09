@@ -12,6 +12,7 @@ import { SingleColumnLayout } from './components/Projects/SingleColumnLayout';
 import { FullScreenLayout } from './components/Projects/FullScreenLayout';
 import { ECLayout } from './components/Projects/ECLayout';
 import { MultiColumnLayout } from './components/Projects/MultiColumnLayout';
+import { CompanyProject } from './components/Projects/CompanyProject/index.tsx';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
 	{
 		path: '/project-6',
 		element: <TodoApp />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: '/company-project',
+		element: <CompanyProject />,
 		errorElement: <ErrorPage />,
 	},
 ]);
