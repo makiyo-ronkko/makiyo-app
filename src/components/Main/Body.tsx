@@ -8,10 +8,9 @@ const PROJECTS = [
 	{ link: 'project-2', name: 'Full Screen Layout' },
 	{ link: 'project-3', name: 'E-Commerce Layout' },
 	{ link: 'project-4', name: 'Multi-Column Layout' },
-	{ link: 'project-5', name: 'Project 5' },
-	{ link: 'project-6', name: 'Project 6' },
+	{ link: 'project-5', name: 'Pixel Art' },
+	{ link: 'project-6', name: 'TODO App' },
 	{ link: 'project-7', name: 'Project 7' },
-	{ link: 'project-8', name: 'Project 8' },
 ];
 
 export const Body = () => {
