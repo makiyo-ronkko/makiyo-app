@@ -1,0 +1,116 @@
+.wrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	padding: var(--padding-lg);
+}
+
+.header:hover {
+	transform: scale(1.1);
+}
+
+.aTag {
+	text-decoration: none;
+	letter-spacing: 1rem;
+	font-size: var(--font-size-h4);
+	font-weight: bold;
+	color: var(--color-default);
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: var(--color-mud);
+	text-transform: uppercase;
+}
+
+.screenshot {
+	max-width: 80vw;
+	box-shadow: 5px 5px 10px var(--color-shadow);
+	border: 2px solid var(--color-shadow);
+}
+
+.notepadWrapper {
+	max-width: 80vw;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	color: var(--color-dark);
+	flex-wrap: wrap;
+}
+
+.text {
+	font-size: var(--font-size-h6);
+	width: 100%;
+}
+
+.hrefColor {
+	color: var(--color-fire);
+}
+
+.timeline {
+	display: flex;
+	flex-direction: column;
+}
+
+.indentation {
+	padding-left: 1rem;
+}
+
+.letterSpacing {
+	letter-spacing: 2px;
+}
+
+.subHeader {
+	text-transform: uppercase;
+	font-size: var(--font-size-h6);
+}
+
+.notepad {
+	width: calc(var(--content-xl) * 2);
+	box-shadow: 10px 10px 40px rgba(black, 0.15);
+	border-radius: 0 0 10px 10px;
+	overflow: hidden;
+}
+
+.top {
+	width: 100%;
+	height: 50px;
+	background: var(--color-bear);
+	border-radius: 5px 5px 0 0;
+}
+
+.paper {
+	width: 100%;
+	height: 100%;
+	padding: 35px 20px;
+	background: repeating-linear-gradient(
+		var(--color-custard),
+		var(--color-custard) 31px,
+		var(--color-tomato) 31px,
+		var(--color-tomato) 32px
+	);
+	line-height: 32px;
+	outline: 0;
+	font-size: 22px;
+}
+
+.button {
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+.backButton {
+	height: var(--element-xs);
+	width: var(--element-xl);
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--color-default);
+	margin: var(--margin-xs) var(--margin-sm);
+	border: 2px var(--color-mud) solid;
+	color: var(--color-mud);
+}
