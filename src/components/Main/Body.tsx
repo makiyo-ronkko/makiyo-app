@@ -50,6 +50,7 @@ export const Body = () => {
 	return (
 		<>
 			<Skills />
+			<CompanyProject />
 			<div className={Styles.projectWrapper}>
 				<p className={`${Styles.description} ${Styles.subTitle}`}>
 					Responsive Web Designs
@@ -79,7 +80,6 @@ export const Body = () => {
 					})}
 				</div>
 			</div>
-			<CompanyProject />
 		</>
 	);
 };
