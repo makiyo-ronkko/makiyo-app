@@ -4,7 +4,7 @@ import Styles from './MainStyle.module.css';
 export const Skills = () => {
 	return (
 		<div className={Styles.skillWrapper}>
-			<div className={Styles.titleWrapper}>
+			<div>
 				<p className={`${Styles.description} ${Styles.subTitle}`}>About me</p>
 				<p className={`${Styles.summary} ${Styles.fontStyle}`}>
 					"Frontend Developer Focused on Creating Modern Applications: Enhancing
