@@ -18,7 +18,7 @@ export const CompanyProject = () => {
 	}, []);
 
 	return (
-		<div className={Styles.wrapper}>
+		<div className={Styles.companyProjectWrapper}>
 			<ScrollToTop />
 			<div className={Styles.button}>
 				<Link to={'/'} className={Styles.backButton}>
