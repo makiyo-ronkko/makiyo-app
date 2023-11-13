@@ -97,6 +97,12 @@ export const CompanyProject = () => {
 									office.empathicbuilding.com
 								</a>
 							</p>
+							<p className={Styles.subHeader}>
+								<b>Technologies:</b>
+							</p>
+							<p className={Styles.indentation}>
+								Javascript, Typescript, HTML5, CSS3, React, MUI
+							</p>
 						</div>
 					</div>
 				</div>
