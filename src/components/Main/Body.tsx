@@ -51,7 +51,7 @@ export const Body = () => {
 		<>
 			<Skills />
 			<CompanyProject />
-			<div className={Styles.projectWrapper}>
+			<div className={`${Styles.projectWrapper} ${Styles.paddingBottom}`}>
 				<p className={`${Styles.description} ${Styles.subTitle}`}>
 					Responsive Web Designs
 				</p>
