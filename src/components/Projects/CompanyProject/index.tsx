@@ -18,7 +18,7 @@ export const CompanyProject = () => {
 	}, []);
 
 	return (
-		<div className={Styles.wrapper}>
+		<div className={Styles.companyProjectWrapper}>
 			<ScrollToTop />
 			<div className={Styles.button}>
 				<Link to={'/'} className={Styles.backButton}>
@@ -96,6 +96,12 @@ export const CompanyProject = () => {
 								>
 									office.empathicbuilding.com
 								</a>
+							</p>
+							<p className={Styles.subHeader}>
+								<b>Technologies:</b>
+							</p>
+							<p className={Styles.indentation}>
+								Javascript, Typescript, HTML5, CSS3, React, MUI
 							</p>
 						</div>
 					</div>
