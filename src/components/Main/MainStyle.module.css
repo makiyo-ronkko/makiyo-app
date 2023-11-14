@@ -48,7 +48,7 @@
 	width: 100%;
 	height: 100%;
 	background-color: var(--color-default);
-	padding: 0 3rem;
+	padding: 0 var(--padding-xxl);
 }
 
 .section3 {
@@ -68,7 +68,7 @@
 }
 
 .padding {
-	padding: 3rem;
+	padding: var(--padding-xxl);
 }
 
 .nameContainer {
@@ -157,18 +157,13 @@
 }
 
 .skillWrapper {
-	min-height: calc(var(--content-xl) * 2);
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: var(--padding-xl);
+	padding: var(--padding-xl) 0;
 	gap: 3rem;
-}
-
-.titleWrapper {
-	height: 100%;
 }
 
 .summary {
@@ -176,8 +171,7 @@
 	font-weight: bold;
 	letter-spacing: 2px;
 	color: var(--color-forest);
-	padding: var(--padding-lg);
-	border-radius: 0.5rem;
+	padding: var(--padding-lg) var(--padding-lg) 0 var(--padding-lg);
 }
 
 .cardContainer {
@@ -186,6 +180,7 @@
 	grid-template-columns: repeat(auto-fit, minmax(var(--content-lg), auto));
 	grid-template-rows: auto;
 	gap: 1.5rem;
+	padding-bottom: var(--padding-md);
 }
 
 .card {
@@ -256,17 +251,10 @@
 	}
 }
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 5rem;
-}
-
 .description {
 	width: 100%;
 	min-height: var(--element-xl);
-	padding: 0 3rem;
+	padding: 0 var(--padding-xxl);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -283,7 +271,7 @@
 	display: flex;
 	letter-spacing: 1rem;
 	justify-content: flex-start;
-	padding: 0 0 var(--padding-sm) 0;
+	padding: 0 0 var(--padding-md) 0;
 	font-size: var(--font-size-h4);
 	font-weight: bold;
 	color: var(--color-default);
@@ -322,6 +310,10 @@
 	height: 100%;
 	width: 100%;
 	padding-bottom: var(--padding-xl);
+}
+
+.paddingBottom {
+	padding-bottom: calc(var(--padding-xl) + var(--padding-xs));
 }
 
 .projectContainer {
@@ -455,12 +447,11 @@ button {
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		padding-bottom: var(--padding-lg);
+		padding-bottom: var(--padding-xxl);
 	}
 
 	.description {
 		font-size: var(--font-size-h5);
-		padding-bottom: 0;
 	}
 
 	.link {
@@ -468,7 +459,12 @@ button {
 	}
 
 	.copyright {
+		font-size: var(--font-size-body);
+	}
+}
+
+@media screen and (max-width: 732px) {
+	.copyright {
 		font-size: var(--font-caption-text);
-		letter-spacing: 0.25rem;
 	}
 }
