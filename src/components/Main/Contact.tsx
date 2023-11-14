@@ -7,7 +7,7 @@ export const Contact = () => {
 			<h3 className={Styles.contact}>Contact</h3>
 			<div className={Styles.socialMedia}>
 				<a
-					href='//linkedin.com/in/makiyoronkko '
+					href='//linkedin.com/in/makiyo-ronkko '
 					target='_blank'
 					rel='noopener noreferrer'
 				>
