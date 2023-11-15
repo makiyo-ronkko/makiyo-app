@@ -437,6 +437,7 @@ button {
 	.cardContainer {
 		flex-wrap: wrap;
 		display: flex;
+		justify-content: center;
 	}
 
 	.height {
@@ -454,8 +455,9 @@ button {
 		font-size: var(--font-size-h5);
 	}
 
+	.card,
 	.link {
-		width: 100%;
+		width: var(--content-xxxl);
 	}
 
 	.copyright {
