@@ -20,6 +20,7 @@ export const CompanyProject = () => {
 					href='https://makiyo-storybook.vercel.app/'
 					className={Styles.link}
 					target='_blank'
+					rel='noreferrer'
 				>
 					<div className={`${Styles.project}`}>
 						<button className={Styles.projectButton}>
