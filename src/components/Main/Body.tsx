@@ -52,9 +52,7 @@ export const Body = () => {
 			<Skills />
 			<CompanyProject />
 			<div className={`${Styles.projectWrapper} ${Styles.paddingBottom}`}>
-				<p className={`${Styles.description} ${Styles.subTitle}`}>
-					Responsive Web Designs
-				</p>
+				<p className={Styles.subTitle}>Mini Projects</p>
 				<div
 					className={Styles.projectContainer}
 					ref={sliderRef}
@@ -72,7 +70,7 @@ export const Body = () => {
 							>
 								<div className={`${Styles.project}`}>
 									<button className={Styles.projectButton}>
-										<b className={Styles.text}>{project.name}</b>
+										<b className={Styles.projectTitle}>{project.name}</b>
 									</button>
 								</div>
 							</Link>

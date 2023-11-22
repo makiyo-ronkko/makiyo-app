@@ -5,15 +5,15 @@ export const Skills = () => {
 	return (
 		<div className={Styles.skillWrapper}>
 			<div>
-				<p className={`${Styles.description} ${Styles.subTitle}`}>About me</p>
-				<p className={`${Styles.summary} ${Styles.fontStyle}`}>
+				<p className={Styles.subTitle}>About me</p>
+				<p className={`${Styles.summary} ${Styles.fontStyleItalic}`}>
 					"Frontend Developer Focused on Creating Modern Applications: Enhancing
 					User Experience, Embracing Contemporary Design, and Delivering Value."
 				</p>
 			</div>
 			<div className={Styles.cardContainer}>
 				<div className={Styles.card}>
-					<p className={`${Styles.text} ${Styles.textLetterSpace}`}>
+					<p className={`${Styles.projectTitle} ${Styles.textLetterSpace}`}>
 						<b>Frontend</b>
 					</p>
 					<p>
@@ -22,13 +22,13 @@ export const Skills = () => {
 					</p>
 				</div>
 				<div className={Styles.card}>
-					<p className={`${Styles.text} ${Styles.textLetterSpace}`}>
+					<p className={`${Styles.projectTitle} ${Styles.textLetterSpace}`}>
 						<b>Backend</b>
 					</p>
 					<p>Node.js REST API</p>
 				</div>
 				<div className={Styles.card}>
-					<p className={`${Styles.text} ${Styles.textLetterSpace}`}>
+					<p className={`${Styles.projectTitle} ${Styles.textLetterSpace}`}>
 						<b>Others</b>
 					</p>
 					<p>Figma Github Gitlab Responsive Design</p>
