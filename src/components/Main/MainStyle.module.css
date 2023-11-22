@@ -53,8 +53,8 @@
 
 .section3 {
 	width: 100%;
-	text-align: center;
 	min-height: 10vh;
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -67,7 +67,7 @@
 	gap: 2rem;
 }
 
-.padding {
+.paddingXXL {
 	padding: var(--padding-xxl);
 }
 
@@ -82,7 +82,7 @@
 	width: var(--content-sm);
 	height: var(--content-sm);
 	cursor: pointer;
-	margin: 1rem;
+	margin: var(--margin-sm);
 }
 
 .image:hover {
@@ -252,33 +252,24 @@
 	}
 }
 
-.description {
-	width: 100%;
-	min-height: var(--element-xl);
-	padding: 0 var(--padding-xxl);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--color-mud);
-}
-
-.fontStyle {
-	font-size: 1.8rem;
-	font-style: italic;
-}
-
 .subTitle {
 	width: 100%;
+	min-height: var(--element-xl);
 	display: flex;
+	align-items: center;
 	letter-spacing: 1rem;
-	justify-content: flex-start;
-	padding: 0 0 var(--padding-md) 0;
 	font-size: var(--font-size-h4);
 	font-weight: bold;
 	color: var(--color-default);
 	-webkit-text-stroke-width: 2px;
 	-webkit-text-stroke-color: var(--color-forest);
 	text-transform: uppercase;
+	padding: 0 0 var(--padding-md) 0;
+}
+
+.fontStyleItalic {
+	font-size: 1.8rem;
+	font-style: italic;
 }
 
 .name {
@@ -288,23 +279,15 @@
 	text-transform: uppercase;
 }
 
-.text {
+.projectTitle {
+	width: 100%;
 	text-align: center;
 	font-size: var(--font-size-h5);
-	width: 100%;
-	padding: 0 var(--padding-sm);
 	text-transform: uppercase;
 }
 
 .textLetterSpace {
 	letter-spacing: 0.25rem;
-}
-
-.height {
-	height: var(--content-xs);
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .projectWrapper {
@@ -319,61 +302,18 @@
 
 .projectContainer {
 	width: 100%;
-	display: flex;
-	gap: 2rem;
 	padding-bottom: var(--padding-md);
-	overflow-x: auto;
-	/* for Firefox */
-	/* scrollbar-color: var(--color-cloud) var(--color-sky);
-	scrollbar-width: thin; */
-	-ms-overflow-style: none; /* Internet Explorer 10+ */
-	scrollbar-width: none; /* Firefox */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, var(--content-lg));
+	gap: 1.5rem;
 }
 
-.projectContainer::-webkit-scrollbar {
-	display: none; /* Safari and Chrome */
+.link {
+	text-decoration: none;
 }
-
-/* .projectContainer::-webkit-scrollbar {
-	width: 0.4rem;
-	height: 0.4rem;
-}
-
-.projectContainer::-webkit-scrollbar-button {
-	width: 0px;
-	height: 0px;
-}
-
-.projectContainer::-webkit-scrollbar-thumb {
-	background: var(--color-cloud);
-}
-
-.projectContainer::-webkit-scrollbar-thumb:hover {
-	background: var(--color-cloud);
-}
-
-.projectContainer::-webkit-scrollbar-thumb:active {
-	background: var(--color-cloud);
-}
-
-.projectContainer::-webkit-scrollbar-track {
-	background: var(--color-sky);
-}
-
-.projectContainer::-webkit-scrollbar-track:hover {
-	background: var(--color-sky);
-}
-
-.projectContainer::-webkit-scrollbar-track:active {
-	background: var(--color-sky);
-}
-
-.projectContainer::-webkit-scrollbar-corner {
-	background: transparent;
-} */
 
 .project {
-	height: var(--content-md);
+	height: var(--content-xs);
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -387,11 +327,6 @@
 .project:hover {
 	background-color: var(--color-forest-dark);
 	box-shadow: 0.5rem 0.5rem var(--color-forest);
-}
-
-.link {
-	min-width: var(--content-lg);
-	text-decoration: none;
 }
 
 .projectButton,
@@ -417,7 +352,6 @@ button {
 
 .copyright {
 	color: var(--color-mud);
-	font-size: var(--font-size-h6);
 	letter-spacing: 0.5rem;
 }
 
@@ -441,33 +375,19 @@ button {
 		justify-content: center;
 	}
 
-	.height {
-		padding: var(--padding-lg) var(--padding-lg) 0 var(--padding-lg);
-	}
-
 	.projectContainer {
-		align-items: center;
-		width: 100%;
 		padding-bottom: var(--padding-xxl);
-	}
-
-	.description {
-		font-size: var(--font-size-h5);
-	}
-
-	.card,
-	.link {
-		width: var(--content-xxxl);
-	}
-
-	.copyright {
-		font-size: var(--font-size-body);
 	}
 }
 
 @media screen and (max-width: 732px) {
 	.projectContainer {
-		flex-direction: column;
+		grid-template-columns: repeat(auto-fit, var(--content-xxxl));
+		justify-content: center;
+	}
+
+	.subTitle {
+		font-size: var(--font-size-h5);
 	}
 
 	.copyright {

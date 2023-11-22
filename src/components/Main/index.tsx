@@ -15,7 +15,7 @@ export const MainStyle = () => {
 				<Body />
 			</div>
 			<div
-				className={`${Styles.gradient2} ${Styles.section} ${Styles.container} ${Styles.padding}`}
+				className={`${Styles.gradient2} ${Styles.section} ${Styles.container} ${Styles.paddingXXL}`}
 			>
 				<Contact />
 			</div>
