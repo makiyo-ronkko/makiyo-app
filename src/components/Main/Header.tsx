@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import Styles from './MainStyle.module.css';
 
-export const Header = () => {
+interface HeaderProp {
+	isDarkMode: boolean;
+}
+
+export const Header = ({ isDarkMode }: HeaderProp) => {
 	const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
 	const handleMouseEnter = () => {
@@ -14,7 +18,13 @@ export const Header = () => {
 
 	return (
 		<div className={Styles.nameContainer}>
-			<p className={Styles.bubbleSpeech}>
+			<p
+				className={`${Styles.bubbleSpeech} ${
+					isDarkMode
+						? Styles.darkModeBubbleSpeech
+						: Styles.defaultModeBubbleSpeech
+				}`}
+			>
 				{isMouseOver ? 'Please scroll down！' : 'Hello! Moi! こんにちは！'}
 			</p>
 			<img
