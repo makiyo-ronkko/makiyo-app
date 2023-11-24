@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Styles from './MainStyle.module.css';
 import { Skills } from './Skills';
@@ -15,52 +15,13 @@ const PROJECTS = [
 ];
 
 export const Body = () => {
-	const sliderRef = useRef<HTMLDivElement | null>(null);
-	const mouseDown = useRef(false);
-	const startX = useRef<number | null>(null);
-	const scrollLeft = useRef<number | null>(null);
-
-	const startDragging = (e: React.MouseEvent) => {
-		mouseDown.current = true;
-		if (!sliderRef.current) return;
-		startX.current = e.pageX - sliderRef.current.offsetLeft;
-		scrollLeft.current = sliderRef.current.scrollLeft;
-	};
-
-	const stopDragging = () => {
-		mouseDown.current = false;
-	};
-
-	const handleMouseMove = (e: React.MouseEvent) => {
-		e.preventDefault();
-		if (
-			!mouseDown.current ||
-			sliderRef.current === null ||
-			startX.current === null ||
-			scrollLeft.current === null
-		) {
-			return;
-		}
-
-		const x = e.pageX - sliderRef.current.offsetLeft;
-		const scroll = x - startX.current;
-		sliderRef.current.scrollLeft = scrollLeft.current - scroll;
-	};
-
 	return (
 		<>
 			<Skills />
 			<CompanyProject />
 			<div className={`${Styles.projectWrapper} ${Styles.paddingBottom}`}>
 				<p className={Styles.subTitle}>Mini Projects</p>
-				<div
-					className={Styles.projectContainer}
-					ref={sliderRef}
-					onMouseDown={startDragging}
-					onMouseUp={stopDragging}
-					onMouseLeave={stopDragging}
-					onMouseMove={handleMouseMove}
-				>
+				<div className={Styles.projectContainer}>
 					{PROJECTS.map((project) => {
 						return (
 							<Link
