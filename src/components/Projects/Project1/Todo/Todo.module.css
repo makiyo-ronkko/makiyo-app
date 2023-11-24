@@ -1,17 +1,17 @@
 .todo {
-	height: 5rem;
+	height: var(--element-xl);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 -3rem 4px;
-	padding: 0.5rem 2rem;
+	padding: var(--padding-xs) var(--padding-lg);
 	background: rgba(255, 255, 255, 0.2);
 	overflow: hidden;
 	transition: opacity 500ms ease-in-out;
 }
 
 .todoTask {
-	font-size: 1rem;
+	font-size: var(--font-size-body);
 	transition: opacity 0.4s linear;
 	cursor: crosshair;
 }
@@ -23,8 +23,8 @@
 
 .todoButtons button {
 	border: none;
-	font-size: 1em;
-	margin: 0.4em;
+	font-size: var(--font-size-body);
+	margin: 0.4rem;
 	background: none;
 	cursor: pointer;
 	color: var(--color-default);
@@ -42,8 +42,8 @@
 	flex-grow: 1;
 	border: none;
 	background: var(--color-default);
-	padding: 0 1.5em;
-	font-size: 1rem;
+	padding: 0 var(--padding-md);
+	font-size: var(-font-size-body);
 	border-radius: 5px;
 }
 
@@ -68,5 +68,5 @@
 
 .todoEditForm input,
 .todoEditForm button {
-	height: 3rem;
+	height: var(--element-xs);
 }
