@@ -68,8 +68,10 @@ export const TodoList = () => {
 				TODO LIST APP
 				<span>Create Your Todo List</span>
 			</h1>
-			<ul>{renderTodos()}</ul>
-			<NewTodoForm createTodo={create} />
+			<div className={Styles.listContainer}>
+				<ul>{renderTodos()}</ul>
+				<NewTodoForm createTodo={create} />
+			</div>
 		</div>
 	);
 };
