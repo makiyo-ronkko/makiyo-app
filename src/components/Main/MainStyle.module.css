@@ -10,6 +10,18 @@
 	animation: gradient 5000ms ease 10;
 }
 
+.darkGradient {
+	background: linear-gradient(
+		-45deg,
+		var(--color-cobalt),
+		var(--color-turquoise),
+		var(--color-navy),
+		var(--color-night)
+	);
+	background-size: 400% 400%;
+	animation: gradient 5000ms ease 10;
+}
+
 .gradient2 {
 	background: linear-gradient(
 		45deg,
@@ -34,6 +46,22 @@
 	}
 }
 
+.darkModeBackground {
+	background-color: var(--color-navy);
+}
+
+.defaultModeBackground {
+	background-color: var(--color-default);
+}
+
+.darkModeColor {
+	color: var(--color-default);
+}
+
+.defaultModeColor {
+	color: var(--color-mud);
+}
+
 .section {
 	width: 100%;
 	min-height: 100vh;
@@ -47,7 +75,6 @@
 .section2 {
 	width: 100%;
 	height: 100%;
-	background-color: var(--color-default);
 	padding: 0 var(--padding-xxl);
 }
 
@@ -61,7 +88,6 @@
 }
 
 .container {
-	color: var(--color-mud);
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -95,7 +121,6 @@
 	position: relative;
 	transform: translatey(0px);
 	animation: float 5s ease-in-out 5;
-	mix-blend-mode: multiply;
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: 2px;
@@ -105,6 +130,14 @@
 	padding: var(--padding-lg);
 	border-radius: 1rem;
 	box-shadow: 2rem 0.8rem var(--color-sky);
+}
+
+.darkModeBubbleSpeech {
+	mix-blend-mode: difference;
+}
+
+.defaultModeBubbleSpeech {
+	mix-blend-mode: multiply;
 }
 
 .bubbleSpeech::after {
@@ -192,7 +225,6 @@
 	align-items: center;
 	justify-content: center;
 	border-radius: 0.5rem;
-	mix-blend-mode: multiply;
 	letter-spacing: 2px;
 	font-size: var(--font-size-h6);
 	color: var(--color-mud);
@@ -344,19 +376,18 @@ button {
 }
 
 .contact {
-	color: var(--color-cloud);
 	font-size: var(--font-size-h3);
 	letter-spacing: 1rem;
 	text-transform: uppercase;
+	color: var(--color-default);
 }
 
 .copyright {
-	color: var(--color-mud);
 	letter-spacing: 0.5rem;
 }
 
 .fontawesome {
-	color: var(--color-cloud);
+	color: var(--color-default);
 }
 
 @media screen and (max-width: 860px) {

@@ -1,10 +1,20 @@
 import React from 'react';
 import Styles from './MainStyle.module.css';
 
-export const Contact = () => {
+interface ContactProp {
+	isDarkMode: boolean;
+}
+
+export const Contact = ({ isDarkMode }: ContactProp) => {
 	return (
 		<>
-			<h3 className={Styles.contact}>Contact</h3>
+			<h3
+				className={`${Styles.contact} ${
+					isDarkMode ? Styles.darkModeColor : Styles.contactDefaultModeColor
+				}`}
+			>
+				Contact
+			</h3>
 			<div className={Styles.socialMedia}>
 				<a
 					href='//linkedin.com/in/makiyo-ronkko '

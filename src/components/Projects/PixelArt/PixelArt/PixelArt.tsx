@@ -11,14 +11,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
+interface PixelArtAppProp {
+	isDarkMode: boolean;
+}
+
 const ID = 'pixel-canvas';
 
-const PixelArtApp = () => {
+const PixelArtApp = ({ isDarkMode }: PixelArtAppProp) => {
 	const [pixels, setPixels] = useState<string[]>(Array(256).fill('#ffffff')); // 16x16 grid with initial white pixels
 	const [pixelHistory, setPixelHistory] = useState<string[][]>([pixels]);
 	const [selectedColor, setSelectedColor] = useState<string>();
-	const [confirmationModalOpen, setConfirmationModalOpen] =
-		useState<boolean>(false);
+	const [confirmationModalOpen, setConfirmationModalOpen] = useState<boolean>(
+		false
+	);
 
 	const handleModal = () => {
 		setConfirmationModalOpen(true);
@@ -94,7 +99,9 @@ const PixelArtApp = () => {
 					>
 						<FontAwesomeIcon
 							icon={faArrowRotateLeft}
-							color='var(--color-mud)'
+							color={`${
+								isDarkMode ? 'var(--color-default)' : 'var(--color-mud)'
+							}`}
 						/>
 					</IconButton>
 					<IconButton
@@ -104,7 +111,12 @@ const PixelArtApp = () => {
 						onClick={handleClear}
 						sx={{ width: 'var(--element-xxs)', height: 'var(--element-xxs)' }}
 					>
-						<FontAwesomeIcon icon={faTrashCan} color='var(--color-mud)' />
+						<FontAwesomeIcon
+							icon={faTrashCan}
+							color={`${
+								isDarkMode ? 'var(--color-default)' : 'var(--color-mud)'
+							}`}
+						/>
 					</IconButton>
 				</Grid>
 				<Button
