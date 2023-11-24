@@ -4,13 +4,23 @@ import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
 import Styles from './SingleColumnLayout.module.css';
 
+interface HeaderProp {
+	isDarkMode: boolean;
+}
+
 const pages = ['Home', 'About us', 'Contact'];
 
-export const Header = () => {
+export const Header = ({ isDarkMode }: HeaderProp) => {
 	return (
 		<Grid item className={Styles.header}>
 			<AppBar position='static'>
-				<Toolbar className={Styles.backgroundColor}>
+				<Toolbar
+					className={`${Styles.backgroundColor} ${
+						isDarkMode
+							? Styles.darkModeBackground
+							: Styles.defaultModeBackground
+					}`}
+				>
 					<Typography variant='h6' paddingRight='2rem'>
 						LOGO
 					</Typography>
@@ -24,7 +34,14 @@ export const Header = () => {
 						</MenuItem>
 					))}
 					<div className={Styles.button}>
-						<Link to={'/'} className={Styles.backButton}>
+						<Link
+							to={'/'}
+							className={`${Styles.backButton} ${
+								isDarkMode
+									? Styles.darkModeBackground
+									: Styles.defaultModeBackground
+							}`}
+						>
 							Back
 						</Link>
 					</div>

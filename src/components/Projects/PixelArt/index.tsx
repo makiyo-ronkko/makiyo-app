@@ -4,10 +4,17 @@ import Styles from './PixelArtDesign.module.css';
 import { Typography } from '@mui/material';
 import PixelArtApp from './PixelArt/PixelArt';
 import { ScrollToTop } from '../../../helpers/scroll';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const PixelArt = () => {
+	const { isDarkMode } = useTheme();
+
 	return (
-		<div className={Styles.wrapper}>
+		<div
+			className={`${Styles.wrapper} ${
+				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+			}`}
+		>
 			<ScrollToTop />
 			<div className={Styles.buttonWrapper}>
 				<Link to={'/'} className={Styles.backButton}>
@@ -19,7 +26,6 @@ export const PixelArt = () => {
 					variant='h2'
 					sx={{
 						textTransform: 'uppercase',
-						color: 'var(--color-mud)',
 						fontWeight: 'bold',
 						textAlign: 'center',
 					}}
@@ -27,25 +33,11 @@ export const PixelArt = () => {
 					Create a pixel art
 				</Typography>
 				<div>
-					<Typography
-						variant='h6'
-						sx={{
-							color: 'var(--color-mud)',
-						}}
-					>
-						1. Pick a color
-					</Typography>
-					<Typography
-						variant='h6'
-						sx={{
-							color: 'var(--color-mud)',
-						}}
-					>
-						2. Click or drag on the canvas
-					</Typography>
+					<Typography variant='h6'>1. Pick a color</Typography>
+					<Typography variant='h6'>2. Click or drag on the canvas</Typography>
 				</div>
 			</div>
-			<PixelArtApp />
+			<PixelArtApp isDarkMode={isDarkMode} />
 		</div>
 	);
 };

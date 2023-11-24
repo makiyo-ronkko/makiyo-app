@@ -5,12 +5,15 @@ import { Box, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Header } from './Header';
 import { FloatingButton } from '../../FloatButton/FloatingButton';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const FullScreenLayout = () => {
 	const [bgColor, setBgColor] = useState<string>('var(--color-sky)');
 	const [text, setText] = useState<string>('Go ahead and scroll!');
 	const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
 	const contentRef: React.Ref<HTMLDivElement> = useRef(null);
+
+	const { isDarkMode } = useTheme();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -65,7 +68,13 @@ export const FullScreenLayout = () => {
 							isButtonVisible={isButtonVisible}
 							setIsButtonVisible={setIsButtonVisible}
 						/>
-						<Box className={Styles.staticContent}>
+						<Box
+							className={`${Styles.staticContent} ${
+								isDarkMode
+									? Styles.darkModeBackground
+									: Styles.defaultModeBackground
+							}`}
+						>
 							<Typography className={Styles.text}>{text}</Typography>
 						</Box>
 						<div

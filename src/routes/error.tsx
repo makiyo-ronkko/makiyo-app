@@ -1,13 +1,19 @@
 import React from 'react';
 import { useRouteError } from 'react-router-dom';
-import errorStyle from './route.module.css';
-import appStyles from '../components/App/App.module.css';
+import Styles from './route.module.css';
+import { useTheme } from '../components/hooks/ThemeContext';
 
 export const ErrorPage = () => {
+	const { isDarkMode } = useTheme();
+
 	const error: any = useRouteError();
 	return (
-		<div className={`${errorStyle.errorWrapper} ${appStyles.gradient1}`}>
-			<h2 className={errorStyle.h2}>This page is under maintenance</h2>
+		<div
+			className={`${Styles.errorWrapper} ${
+				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+			}`}
+		>
+			<h2 className={Styles.h2}>This page is under maintenance</h2>
 			<p>
 				<i>{error.statusText || error.message}</i>
 			</p>

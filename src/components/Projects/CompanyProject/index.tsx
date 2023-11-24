@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Styles from './CompanyProject.module.css';
+import ModeStyles from '../../Main/MainStyle.module.css';
 import { CircularProgress } from '@mui/material';
 import { ScrollToTop } from '../../../helpers/scroll';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const CompanyProject = () => {
 	const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+	const { isDarkMode } = useTheme();
 
 	const handleImageLoad = () => {
 		setImageLoaded(true);
@@ -18,10 +21,21 @@ export const CompanyProject = () => {
 	}, []);
 
 	return (
-		<div className={Styles.companyProjectWrapper}>
+		<div
+			className={`${Styles.companyProjectWrapper} ${
+				isDarkMode
+					? ModeStyles.darkModeBackground
+					: ModeStyles.defaultModeBackground
+			}`}
+		>
 			<ScrollToTop />
 			<div className={Styles.button}>
-				<Link to={'/'} className={Styles.backButton}>
+				<Link
+					to={'/'}
+					className={`${Styles.backButton} ${
+						isDarkMode ? Styles.darkModeButton : Styles.defaultModeButton
+					}`}
+				>
 					Back
 				</Link>
 			</div>

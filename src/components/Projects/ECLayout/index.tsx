@@ -8,8 +8,11 @@ import { Main } from './Main';
 import { Nav } from './Nav';
 import { Footer } from './Footer';
 import { Banner } from './Banner';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const ECLayout = () => {
+	const { isDarkMode } = useTheme();
+
 	return (
 		<div>
 			<div className={Styles.button}>
@@ -18,8 +21,12 @@ export const ECLayout = () => {
 				</Link>
 			</div>
 			<ScrollToTop />
-			<Container>
-				<Header />
+			<Container
+				className={`${
+					isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				}`}
+			>
+				<Header isDarkMode={isDarkMode} />
 				<Main />
 				<Banner />
 				<Nav />

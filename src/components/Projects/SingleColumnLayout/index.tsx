@@ -4,12 +4,15 @@ import { Grid, Typography, Paper, Divider, Box } from '@mui/material';
 import Styles from './SingleColumnLayout.module.css';
 import { Header } from './Header.tsx';
 import { ScrollToTop } from '../../../helpers/scroll.tsx';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const SingleColumnLayout = () => {
+	const { isDarkMode } = useTheme();
+
 	return (
 		<div>
 			<ScrollToTop />
-			<Header />
+			<Header isDarkMode={isDarkMode} />
 			<Grid item md={8} component={Paper} elevation={0}>
 				<main className={Styles.main}>
 					<Box
@@ -20,14 +23,24 @@ export const SingleColumnLayout = () => {
 						minHeight='38rem'
 						padding='0 2rem'
 					>
-						<Typography variant='h2' color='grey' textAlign='center'>
+						<Typography
+							variant='h2'
+							color='var(--color-mud)'
+							textAlign='center'
+						>
 							Single Column Layout
 						</Typography>
 					</Box>
 				</main>
 			</Grid>
 			<Grid item>
-				<nav>
+				<nav
+					className={`${
+						isDarkMode
+							? Styles.darkModeBackground
+							: Styles.defaultModeBackground
+					}`}
+				>
 					<Box
 						display='flex'
 						justifyContent='center'
@@ -36,7 +49,7 @@ export const SingleColumnLayout = () => {
 						minHeight='600px'
 						padding='0 2rem'
 					>
-						<Typography variant='h2' color='grey' textAlign='center'>
+						<Typography variant='h2' textAlign='center'>
 							Navigation
 						</Typography>
 					</Box>
@@ -44,7 +57,13 @@ export const SingleColumnLayout = () => {
 			</Grid>
 			<Divider />
 			<Grid item>
-				<footer>
+				<footer
+					className={`${
+						isDarkMode
+							? Styles.darkModeBackground
+							: Styles.defaultModeBackground
+					}`}
+				>
 					<Typography variant='body2' padding='2rem' textAlign='center'>
 						© {new Date().getFullYear()} My App. All rights reserved.
 					</Typography>
