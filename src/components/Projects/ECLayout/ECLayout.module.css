@@ -1,3 +1,13 @@
+.darkModeBackground {
+	background-color: var(--color-night);
+	color: var(--color-default);
+}
+
+.defaultModeBackground {
+	background-color: #ffffff;
+	color: var(--color-mud);
+}
+
 .smallHeight {
 	min-height: 1rem;
 }
@@ -92,8 +102,16 @@
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
-	color: var(--color-default);
 	margin: var(--margin-xs) var(--margin-sm);
 	border: 2px var(--color-mud) solid;
+}
+
+.defaultModeButton {
 	color: var(--color-mud);
+	border-color: var(--color-mud);
+}
+
+.darkModeButton {
+	color: var(--color-default);
+	border-color: var(--color-default);
 }
