@@ -19,8 +19,8 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-	const initialTheme = localStorage.getItem('isDarkMode') === 'false';
-	const [isDarkMode, setIsDarkMode] = useState<boolean>(initialTheme);
+	const isDefaultMode = localStorage.getItem('isDarkMode') === 'false';
+	const [isDarkMode, setIsDarkMode] = useState<boolean>(!isDefaultMode);
 
 	const handleToggleTheme = () => {
 		setIsDarkMode((prev) => {
