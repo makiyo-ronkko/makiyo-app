@@ -7,6 +7,7 @@ import { ScrollToTop } from '../../../helpers/scroll';
 import { Header } from './Header';
 import { GridCard } from './Card';
 import { generateRandomText } from '../../../helpers/textGenerator';
+import { useTheme } from '../../hooks/ThemeContext';
 
 const cards = [
 	{
@@ -138,8 +139,14 @@ const cards = [
 ];
 
 export const MultiColumnLayout = () => {
+	const { isDarkMode } = useTheme();
+
 	return (
-		<div>
+		<div
+			className={
+				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+			}
+		>
 			<Grid item>
 				<ScrollToTop />
 				<div className={Styles.button}>
@@ -147,13 +154,13 @@ export const MultiColumnLayout = () => {
 						Back
 					</Link>
 				</div>
-				<Header />
+				<Header isDarkMode={isDarkMode} />
 				<Grid>
 					<main>
 						<Container sx={{ py: 12 }} maxWidth='lg'>
 							<Grid container spacing={4}>
 								{cards.map((card) => (
-									<GridCard card={card} key={card.id} />
+									<GridCard card={card} key={card.id} isDarkMode={isDarkMode} />
 								))}
 							</Grid>
 						</Container>

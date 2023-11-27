@@ -12,11 +12,13 @@ import {
 	Modal,
 	Box,
 	CardActionArea,
+	CircularProgress,
 } from '@mui/material';
 import Styles from './MultiColumnLayout.module.css';
 
-interface GridCardProp {
+interface GridCardProps {
 	card: { id: number; title: string; content: string; image: string };
+	isDarkMode: boolean;
 }
 
 const styles = {
@@ -24,18 +26,29 @@ const styles = {
 	p: 4,
 };
 
-export const GridCard = ({ card }: GridCardProp) => {
+export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 	const [liked, setLiked] = useState<{
 		id: number | undefined;
 		liked: boolean;
 	}>({ id: undefined, liked: false });
 	const [open, setOpen] = React.useState(false);
+	const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+
+	const handleImageLoad = () => {
+		setImageLoaded(true);
+	};
+
+	const handleImageError = () => {
+		setImageLoaded(false);
+	};
+
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
 	const handleLike = (id: number) => {
 		setLiked({ id: id, liked: !liked.liked });
 	};
+
 	return (
 		<Grid item key={card.id} xs={12} sm={6} md={4}>
 			<Modal
@@ -44,28 +57,39 @@ export const GridCard = ({ card }: GridCardProp) => {
 				aria-labelledby='modal-modal-title'
 				aria-describedby='modal-modal-description'
 			>
-				<Box sx={styles} className={Styles.modalWrapper}>
-					<img
-						src={card.image}
-						alt={card.image}
-						className={Styles.modalImage}
-					/>
+				<Box
+					sx={styles}
+					className={`${Styles.modalWrapper} ${
+						isDarkMode
+							? Styles.darkModeBackground
+							: Styles.defaultModeBackground
+					}`}
+				>
+					{imageLoaded ? (
+						<img
+							src={card.image}
+							alt={card.image}
+							className={Styles.modalImage}
+						/>
+					) : (
+						<div className={Styles.loader}>
+							<CircularProgress
+								sx={{
+									color: isDarkMode
+										? 'var(--color-default)'
+										: 'var(--color-cloud)',
+								}}
+							/>
+						</div>
+					)}
 					<Grid
 						container
 						sx={{ flexDirection: 'column', paddingLeft: 'var(--padding-sm)' }}
 					>
-						<Typography
-							variant='h6'
-							component='h2'
-							sx={{ color: 'var(--color-mud)' }}
-						>
+						<Typography variant='h6' component='h2'>
 							{card.title}
 						</Typography>
-						<Typography
-							variant='button'
-							component='h2'
-							sx={{ color: 'var(--color-mud)' }}
-						>
+						<Typography variant='button' component='h2'>
 							{card.content}
 						</Typography>
 					</Grid>
@@ -76,6 +100,13 @@ export const GridCard = ({ card }: GridCardProp) => {
 					height: '100%',
 					display: 'flex',
 					flexDirection: 'column',
+					backgroundColor: isDarkMode
+						? 'var(--color-night)'
+						: 'var(--color-default)',
+					color: isDarkMode ? 'var(--color-default)' : 'var(--color-mud)',
+					borderColor: isDarkMode
+						? 'var(--color-shadow)'
+						: 'var(--color-cloud)',
 				}}
 				variant='outlined'
 			>
@@ -94,7 +125,15 @@ export const GridCard = ({ card }: GridCardProp) => {
 						}}
 						image={card.image}
 						onClick={handleOpen}
-					/>
+					>
+						<img
+							src={card.image}
+							alt={card.image}
+							style={{ display: 'none' }}
+							onLoad={handleImageLoad}
+							onError={handleImageError}
+						/>
+					</CardMedia>
 				</CardActionArea>
 				<CardActions
 					sx={{
@@ -114,6 +153,11 @@ export const GridCard = ({ card }: GridCardProp) => {
 						<FontAwesomeIcon
 							icon={faEye}
 							style={{ height: 'var(--element-xxxxs)' }}
+							className={
+								isDarkMode
+									? Styles.darkModeBackground
+									: Styles.defaultModeBackground
+							}
 						/>
 					</IconButton>
 					<IconButton
@@ -127,6 +171,11 @@ export const GridCard = ({ card }: GridCardProp) => {
 						<FontAwesomeIcon
 							icon={faHeart}
 							style={{ height: 'var(--element-xxxxs)' }}
+							className={
+								isDarkMode
+									? Styles.darkModeBackground
+									: Styles.defaultModeBackground
+							}
 						/>
 					</IconButton>
 				</CardActions>
