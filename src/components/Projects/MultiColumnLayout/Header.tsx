@@ -4,13 +4,23 @@ import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
 import Styles from './MultiColumnLayout.module.css';
 
+interface HeaderProp {
+	isDarkMode: boolean;
+}
+
 const pages = ['Home', 'About us', 'Contact'];
 
-export const Header = () => {
+export const Header = ({ isDarkMode }: HeaderProp) => {
 	return (
 		<Grid item>
 			<AppBar position='fixed'>
-				<Toolbar className={Styles.backgroundColor}>
+				<Toolbar
+					className={`${
+						isDarkMode
+							? Styles.darkModeBackground
+							: Styles.defaultModeBackground
+					} ${Styles.backgroundColor}`}
+				>
 					<Typography variant='h6' paddingRight='2rem'>
 						LOGO
 					</Typography>
