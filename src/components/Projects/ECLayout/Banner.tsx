@@ -1,12 +1,16 @@
 import React from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 
-export const Banner = () => {
+interface BannerProp {
+	isDarkMode: boolean;
+}
+
+export const Banner = ({ isDarkMode }: BannerProp) => {
 	return (
 		<Grid>
 			<Box
 				sx={{
-					backgroundColor: 'light-blue',
+					backgroundColor: isDarkMode ? 'var(--color-night)' : '#ffffff',
 					overflowY: 'hidden',
 					backgroundImage: `url('/assets/e-commerce/ehimetalor-akhere-unuabona-okTqiC9Xqho-unsplash.jpg')`,
 					width: '100%',
@@ -25,13 +29,19 @@ export const Banner = () => {
 						flexDirection: 'column',
 						alignItems: 'center',
 						justifyContent: 'center',
-						backgroundColor: 'var(--color-default)',
+						backgroundColor: isDarkMode ? 'var(--color-navy)' : '#ffffff',
 						height: 'var(--content-xxs)',
 						width: '50%',
 						opacity: '0.9',
 					}}
 				>
-					<Typography padding={1} variant='overline' color='var(--color-dark)'>
+					<Typography
+						padding={1}
+						variant='overline'
+						color={`${
+							isDarkMode ? 'var(--color-default)' : 'var(--color-mud)'
+						}`}
+					>
 						Yellow Collection
 					</Typography>
 					<Button
@@ -39,13 +49,13 @@ export const Banner = () => {
 						sx={{
 							width: 'var(--content-md)',
 							height: 'var(--element-xs)',
-							backgroundColor: 'var(--color-default)',
+							backgroundColor: isDarkMode ? 'var(--color-navy)' : '#ffffff',
 							textDecoration: 'underline',
 							fontSize: 'var(--font-size-h6)',
-							color: 'var(color-dark)',
+							color: isDarkMode ? 'var(--color-default)' : 'var(color-mud)',
 							fontWeight: 'lighter',
 						}}
-						disableFocusRipple
+						disableRipple
 					>
 						Find out more
 					</Button>

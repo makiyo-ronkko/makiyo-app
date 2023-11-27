@@ -78,9 +78,14 @@ const productList = [
 	},
 ];
 
-export const Main = () => {
-	const [images, setImages] =
-		useState<{ id: string; img: string; label: string; price: string }[]>();
+interface MainProp {
+	isDarkMode: boolean;
+}
+
+export const Main = ({ isDarkMode }: MainProp) => {
+	const [images, setImages] = useState<
+		{ id: string; img: string; label: string; price: string }[]
+	>();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	const containerRef = useRef<HTMLUListElement>(null);
@@ -121,7 +126,11 @@ export const Main = () => {
 		return (
 			<div className={Styles.productImgWrapper}>
 				{isLoading ? (
-					<CircularProgress sx={{ color: 'var(--color-cloud)' }} />
+					<CircularProgress
+						sx={{
+							color: isDarkMode ? 'var(--color-default)' : 'var(--color-cloud)',
+						}}
+					/>
 				) : (
 					images?.map((product) => (
 						<ImageListItem
@@ -140,6 +149,10 @@ export const Main = () => {
 									width: '300px',
 									padding: '10px',
 									overflow: 'hidden',
+									backgroundColor: isDarkMode ? 'var(--color-navy)' : '#ffffff',
+									color: isDarkMode
+										? 'var(--color-default)'
+										: 'var(--color-mud)',
 								}}
 							>
 								<>
@@ -169,7 +182,11 @@ export const Main = () => {
 	}, [images, isLoading]);
 
 	return (
-		<main>
+		<main
+			className={
+				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+			}
+		>
 			<Grid>
 				<Box
 					sx={{
@@ -192,8 +209,10 @@ export const Main = () => {
 						sx={{
 							width: 'var(--content-xxl)',
 							height: 'var(--element-xs)',
-							backgroundColor: 'var(--color-default)',
-							color: 'var(--color-dark)',
+							backgroundColor: isDarkMode
+								? 'var(--color-navy)'
+								: 'var(--color-default)',
+							color: isDarkMode ? 'var(--color-default)' : 'var(--color-mud)',
 							fontSize: 'var(--font-size-subtitle)',
 							fontWeight: 'lighter',
 						}}
@@ -206,7 +225,9 @@ export const Main = () => {
 			<Box
 				style={{
 					height: '100%',
-					backgroundColor: 'var(--color-default)',
+					backgroundColor: isDarkMode
+						? 'var(--color-night)'
+						: 'var(--color-default)',
 					position: 'relative',
 				}}
 			>

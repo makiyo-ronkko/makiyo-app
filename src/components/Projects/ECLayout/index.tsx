@@ -14,23 +14,28 @@ export const ECLayout = () => {
 	const { isDarkMode } = useTheme();
 
 	return (
-		<div>
+		<div
+			className={
+				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+			}
+		>
 			<div className={Styles.button}>
-				<Link to={'/'} className={Styles.backButton}>
+				<Link
+					to={'/'}
+					className={`${Styles.backButton} ${
+						isDarkMode ? Styles.darkModeButton : Styles.defaultModeButton
+					}`}
+				>
 					Back
 				</Link>
 			</div>
 			<ScrollToTop />
-			<Container
-				className={`${
-					isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
-				}`}
-			>
+			<Container>
 				<Header isDarkMode={isDarkMode} />
-				<Main />
-				<Banner />
-				<Nav />
-				<Footer />
+				<Main isDarkMode={isDarkMode} />
+				<Banner isDarkMode={isDarkMode} />
+				<Nav isDarkMode={isDarkMode} />
+				<Footer isDarkMode={isDarkMode} />
 			</Container>
 		</div>
 	);

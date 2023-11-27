@@ -26,7 +26,22 @@ const gender = ['WOMEN', 'MEN', 'KIDS', 'HOME', 'ART'];
 
 const categories = ['NEW', 'CLOTHING', 'SHOES', 'BAGS', 'ACCESSORIES', 'SALE'];
 
-export const Header = () => {
+interface HeaderProp {
+	isDarkMode: boolean;
+}
+
+const getThemeStyles = (isDarkMode: boolean) => {
+	const style: React.CSSProperties = {};
+	if (!isDarkMode) {
+		style.color = 'var(--color-mud)';
+		return style;
+	}
+
+	style.color = 'var(--color-default)';
+	return style;
+};
+
+export const Header = ({ isDarkMode }: HeaderProp) => {
 	const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -45,18 +60,20 @@ export const Header = () => {
 		e.preventDefault();
 	};
 
+	const themeStyles = getThemeStyles(isDarkMode);
+
 	return (
-		<header>
+		<header
+			className={
+				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+			}
+		>
 			<AppBar position='static' color='transparent'>
 				<Toolbar className={Styles.smallHeight}>
 					<Grid container gap={1}>
 						<Grid>
-							<IconButton
-								aria-label='change a location'
-								size='small'
-								color='default'
-							>
-								<FontAwesomeIcon icon={faGlobe} />
+							<IconButton aria-label='change a location' size='small'>
+								<FontAwesomeIcon icon={faGlobe} style={themeStyles} />
 							</IconButton>
 						</Grid>
 						<Grid>
@@ -64,7 +81,8 @@ export const Header = () => {
 								variant='text'
 								size='small'
 								aria-label='go to a customer care page'
-								sx={{ color: 'var(--color-dark)' }}
+								style={themeStyles}
+								disableRipple
 							>
 								Customer Care
 							</Button>
@@ -107,7 +125,6 @@ export const Header = () => {
 						</IconButton>
 					</Paper>
 				</Toolbar>
-
 				<Box display='flex' gap={2}>
 					<Toolbar className={Styles.fullWidth}>
 						<Grid container gap={1}>
@@ -124,7 +141,11 @@ export const Header = () => {
 									aria-label='main logo'
 									disableRipple
 								>
-									<FontAwesomeIcon icon={faFontAwesomeAlt} size='3x' />
+									<FontAwesomeIcon
+										icon={faFontAwesomeAlt}
+										size='3x'
+										style={themeStyles}
+									/>
 								</IconButton>
 							</Box>
 							<Box
@@ -137,6 +158,9 @@ export const Header = () => {
 										display: 'flex',
 										alignItems: 'center',
 										width: '100%',
+										backgroundColor: isDarkMode
+											? 'var(--color-night)'
+											: '#ffffff',
 									}}
 									elevation={0}
 								>
@@ -146,9 +170,12 @@ export const Header = () => {
 											size='small'
 											key={g}
 											sx={{
-												color: 'var(--color-dark)',
 												width: 'var(--element-xxxs)',
+												color: isDarkMode
+													? 'var(--color-default)'
+													: 'var(--color-mud)',
 											}}
+											disableRipple
 										>
 											{g}
 										</Button>
@@ -174,6 +201,9 @@ export const Header = () => {
 									width: '100%',
 									justifyContent: 'flex-end',
 									gap: 'var(--element-xxxs)',
+									backgroundColor: isDarkMode
+										? 'var(--color-night)'
+										: '#ffffff',
 								}}
 								elevation={0}
 							>
@@ -181,10 +211,13 @@ export const Header = () => {
 									variant='text'
 									size='small'
 									sx={{
-										color: 'var(--color-dark)',
+										color: isDarkMode
+											? 'var(--color-default)'
+											: 'var(--color-mud)',
 										width: 'var(--element-xxxs)',
 										display: { xs: 'none', md: 'flex' },
 									}}
+									disableRipple
 								>
 									Acoount
 								</Button>
@@ -197,7 +230,7 @@ export const Header = () => {
 										display: { xs: 'flex', md: 'none' },
 									}}
 								>
-									<FontAwesomeIcon icon={faUser} />
+									<FontAwesomeIcon icon={faUser} style={themeStyles} />
 								</IconButton>
 								<IconButton
 									aria-label='change a location'
@@ -205,7 +238,7 @@ export const Header = () => {
 									color='default'
 									sx={{ width: 'var(--element-xxxs)' }}
 								>
-									<FontAwesomeIcon icon={faHeart} />
+									<FontAwesomeIcon icon={faHeart} style={themeStyles} />
 								</IconButton>
 								<IconButton
 									aria-label='change a location'
@@ -213,7 +246,7 @@ export const Header = () => {
 									color='default'
 									sx={{ width: 'var(--element-xxxs)' }}
 								>
-									<FontAwesomeIcon icon={faShoppingBag} />
+									<FontAwesomeIcon icon={faShoppingBag} style={themeStyles} />
 								</IconButton>
 							</Paper>
 						</Box>
@@ -232,7 +265,8 @@ export const Header = () => {
 								variant='text'
 								size='small'
 								key={category}
-								sx={{ color: 'var(--color-dark)' }}
+								style={themeStyles}
+								disableRipple
 							>
 								{category}
 							</Button>
