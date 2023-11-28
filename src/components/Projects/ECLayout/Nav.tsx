@@ -28,9 +28,9 @@ export const Nav = ({ isDarkMode }: NavProp) => {
 				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
 			}
 		>
-			<Toolbar sx={{ height: '400px' }}>
+			<Toolbar sx={{ height: '400px', justifyContent: 'center' }}>
 				{subNavigation.map((category) => (
-					<Grid gap={2} container key={category.title}>
+					<Grid gap={2} container key={category.title} item xs={4} md={2}>
 						<Grid
 							container
 							height={50}
