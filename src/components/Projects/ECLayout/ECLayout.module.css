@@ -115,3 +115,9 @@
 	color: var(--color-default);
 	border-color: var(--color-default);
 }
+
+@media screen and (max-width: 860px) {
+	.button {
+		right: 1%;
+	}
+}
