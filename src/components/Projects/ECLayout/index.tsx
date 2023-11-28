@@ -19,6 +19,7 @@ export const ECLayout = () => {
 				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
 			}
 		>
+			<ScrollToTop />
 			<div className={Styles.button}>
 				<Link
 					to={'/'}
@@ -29,7 +30,6 @@ export const ECLayout = () => {
 					Back
 				</Link>
 			</div>
-			<ScrollToTop />
 			<Container>
 				<Header isDarkMode={isDarkMode} />
 				<Main isDarkMode={isDarkMode} />
