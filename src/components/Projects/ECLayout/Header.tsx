@@ -187,7 +187,7 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 								sx={{ flexBasis: '20%', display: { xs: 'flex', md: 'none' } }}
 							>
 								<IconButton type='button' size='small' aria-label='bar menu'>
-									<FontAwesomeIcon icon={faBars} />
+									<FontAwesomeIcon icon={faBars} style={themeStyles} />
 								</IconButton>
 							</Box>
 						</Grid>
@@ -252,7 +252,6 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 						</Box>
 					</Toolbar>
 				</Box>
-
 				<nav>
 					<Toolbar
 						className={`${Styles.smallHeight} ${Styles.nav}`}
