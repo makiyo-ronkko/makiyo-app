@@ -179,7 +179,7 @@ export const Main = ({ isDarkMode }: MainProp) => {
 				)}
 			</div>
 		);
-	}, [images, isLoading]);
+	}, [images, isLoading, isDarkMode]);
 
 	return (
 		<main
