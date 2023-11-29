@@ -2,8 +2,8 @@ import React from 'react';
 import { Grid, Typography, Paper, Divider, Box } from '@mui/material';
 
 import Styles from './SingleColumnLayout.module.css';
-import { Header } from './Header.tsx';
-import { ScrollToTop } from '../../../helpers/scroll.tsx';
+import { Header } from './Header';
+import { ScrollToTop } from '../../../helpers/scroll';
 import { useTheme } from '../../hooks/ThemeContext';
 
 export const SingleColumnLayout = () => {

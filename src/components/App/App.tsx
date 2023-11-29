@@ -1,7 +1,7 @@
 import React from 'react';
 import AppStyles from './App.module.css';
-import { MainStyle } from '../Main/index.tsx';
-import { ScrollToTop } from '../../helpers/scroll.tsx';
+import { MainStyle } from '../Main/index';
+import { ScrollToTop } from '../../helpers/scroll';
 
 export const App = () => {
 	return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Styles from './TodoList.module.css';
-import { NewTodoForm } from '../NewTodoForm/NewTodoForm.tsx';
-import { Todo } from '../Todo/Todo.tsx';
+import { NewTodoForm } from '../NewTodoForm/NewTodoForm';
+import { Todo } from '../Todo/Todo';
 
 export type Todo = {
 	task: string;

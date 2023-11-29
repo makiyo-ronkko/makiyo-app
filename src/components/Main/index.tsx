@@ -1,9 +1,9 @@
 import React from 'react';
 import Styles from './MainStyle.module.css';
-import { Header } from './Header.tsx';
-import { Contact } from './Contact.tsx';
-import { Footer } from './Footer.tsx';
-import { Body } from './Body.tsx';
+import { Header } from './Header';
+import { Contact } from './Contact';
+import { Footer } from './Footer';
+import { Body } from './Body';
 import { useTheme } from '../hooks/ThemeContext';
 import { SwitchButton } from '../SwitchButton/SwitchButton';
 
