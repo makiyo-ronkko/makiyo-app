@@ -5,15 +5,16 @@ import reportWebVitals from './reportWebVitals';
 
 import './index.css';
 import { ThemeProvider } from './components/hooks/ThemeContext';
-import { Root } from './routes/root.tsx';
-import { ErrorPage } from './routes/error.tsx';
-import { TodoApp } from './components/Projects/Project1/index.tsx';
-import { PixelArt } from './components/Projects/PixelArt/index.tsx';
+import { Root } from './routes/root';
+import { ErrorPage } from './routes/error';
+import { TodoApp } from './components/Projects/Project1';
+import { PixelArt } from './components/Projects/PixelArt';
 import { SingleColumnLayout } from './components/Projects/SingleColumnLayout';
 import { FullScreenLayout } from './components/Projects/FullScreenLayout';
 import { ECLayout } from './components/Projects/ECLayout';
 import { MultiColumnLayout } from './components/Projects/MultiColumnLayout';
-import { CompanyProject } from './components/Projects/CompanyProject/index.tsx';
+import { CompanyProject } from './components/Projects/CompanyProject';
+import { LoginPage } from './components/Projects/LoginPage';
 
 const AppWrapper = () => {
 	const router = createBrowserRouter([
@@ -23,38 +24,43 @@ const AppWrapper = () => {
 			errorElement: <ErrorPage />,
 		},
 		{
-			path: '/project',
+			path: '/single-column-layout',
 			element: <SingleColumnLayout />,
 			errorElement: <ErrorPage />,
 		},
 		{
-			path: '/project-2',
+			path: '/full-screen-layout',
 			element: <FullScreenLayout />,
 			errorElement: <ErrorPage />,
 		},
 		{
-			path: '/project-3',
+			path: '/ec-layout',
 			element: <ECLayout />,
 			errorElement: <ErrorPage />,
 		},
 		{
-			path: '/project-4',
+			path: '/multi-column-layout',
 			element: <MultiColumnLayout />,
 			errorElement: <ErrorPage />,
 		},
 		{
-			path: '/project-5',
+			path: '/pixel-art',
 			element: <PixelArt />,
 			errorElement: <ErrorPage />,
 		},
 		{
-			path: '/project-6',
+			path: '/todo-app',
 			element: <TodoApp />,
 			errorElement: <ErrorPage />,
 		},
 		{
 			path: '/company-project',
 			element: <CompanyProject />,
+			errorElement: <ErrorPage />,
+		},
+		{
+			path: '/login-page',
+			element: <LoginPage />,
 			errorElement: <ErrorPage />,
 		},
 	]);
