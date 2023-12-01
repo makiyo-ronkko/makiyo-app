@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Styles from './Login.module.css';
 import {
 	Button,
-	AlertProps,
-	Alert,
 	FormControl,
 	InputLabel,
 	OutlinedInput,
 	InputAdornment,
 	IconButton,
-	Input,
 	Typography,
 } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -25,7 +22,6 @@ export const Login = () => {
 		username: '',
 		password: '',
 	});
-	const [showAlert, setShowAlert] = useState<boolean>(false);
 	const [showPassword, setShowPassword] = useState<boolean>(false);
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -36,7 +32,7 @@ export const Login = () => {
 		event.preventDefault();
 	};
 
-	const { setProgress, setNotification, notification } = useAppContext();
+	const { setProgress, setNotification, setShowAlert } = useAppContext();
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -45,93 +41,98 @@ export const Login = () => {
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		setProgress((prev: number) => prev + 1);
-		setNotification('Login successful!');
-		setShowAlert(true);
-	};
 
-	useEffect(() => {
+		setProgress('loading');
+
 		const timeoutId = setTimeout(() => {
-			setShowAlert(false);
-		}, 10000);
+			setProgress('loginSuccess');
+			setNotification('Login successful!');
+			setShowAlert(true);
+		}, 1000);
 
 		return () => clearTimeout(timeoutId);
-	}, [showAlert]);
+	};
 
-	const alertProps: AlertProps = {
-		severity: 'success',
-		onClose: () => setShowAlert(false),
+	const handleSingupPage = () => {
+		setProgress('signup');
 	};
 
 	return (
-		<>
-			{showAlert && (
-				<Alert {...alertProps} className={Styles.alert}>
-					{notification}
-				</Alert>
-			)}
-			<form onSubmit={handleSubmit} className={Styles.form}>
-				<div className={Styles.wrapper}>
-					<div className={Styles.graphic}>
-						<Typography padding={4} variant='h3' className={Styles.header}>
-							LOGIN
+		<form onSubmit={handleSubmit} className={Styles.form}>
+			<div className={Styles.wrapper}>
+				<div className={Styles.graphic}>
+					<Typography padding={4} variant='h3' className={Styles.header}>
+						LOG IN
+					</Typography>
+				</div>
+				<div className={Styles.inputField}>
+					<FormControl className={Styles.textField} variant='outlined'>
+						<InputLabel required htmlFor='input-with-icon-adornment'>
+							Username
+						</InputLabel>
+						<OutlinedInput
+							id='input-with-icon-adornment'
+							startAdornment={
+								<InputAdornment position='start'>
+									<AccountCircle />
+								</InputAdornment>
+							}
+							label='username'
+							name='username'
+							value={formData.username}
+							onChange={handleInputChange}
+						/>
+					</FormControl>
+					<FormControl className={Styles.textField} variant='outlined'>
+						<InputLabel required htmlFor='outlined-adornment-password'>
+							Password
+						</InputLabel>
+						<OutlinedInput
+							id='outlined-adornment-password'
+							type={showPassword ? 'text' : 'password'}
+							startAdornment={
+								<InputAdornment position='start'>
+									<IconButton
+										aria-label='toggle password visibility'
+										onClick={handleClickShowPassword}
+										onMouseDown={handleMouseDownPassword}
+										edge='end'
+									>
+										{showPassword ? <VisibilityOff /> : <Visibility />}
+									</IconButton>
+								</InputAdornment>
+							}
+							label='password'
+							name='password'
+							value={formData.password}
+							onChange={handleInputChange}
+							autoComplete='on'
+						/>
+					</FormControl>
+					<Button
+						type='submit'
+						variant='contained'
+						className={Styles.button}
+						disableRipple
+						sx={{ backgroundColor: 'var(--color-sky)' }}
+					>
+						Log in
+					</Button>
+					<div>
+						<Typography variant='button'>
+							Don't have an account yet?
+							<Button
+								variant='text'
+								disableRipple
+								className={Styles.signupButton}
+								onClick={handleSingupPage}
+							>
+								Sign up
+							</Button>
 						</Typography>
 					</div>
-					<div className={Styles.inputField}>
-						<FormControl className={Styles.textField} variant='outlined'>
-							<InputLabel required htmlFor='input-with-icon-adornment'>
-								Username
-							</InputLabel>
-							<OutlinedInput
-								id='input-with-icon-adornment'
-								startAdornment={
-									<InputAdornment position='start'>
-										<AccountCircle />
-									</InputAdornment>
-								}
-								label='username'
-								name='username'
-								value={formData.username}
-								onChange={handleInputChange}
-							/>
-						</FormControl>
-						<FormControl className={Styles.textField} variant='outlined'>
-							<InputLabel required htmlFor='outlined-adornment-password'>
-								Password
-							</InputLabel>
-							<OutlinedInput
-								id='outlined-adornment-password'
-								type={showPassword ? 'text' : 'password'}
-								startAdornment={
-									<InputAdornment position='start'>
-										<IconButton
-											aria-label='toggle password visibility'
-											onClick={handleClickShowPassword}
-											onMouseDown={handleMouseDownPassword}
-											edge='end'
-										>
-											{showPassword ? <VisibilityOff /> : <Visibility />}
-										</IconButton>
-									</InputAdornment>
-								}
-								label='password'
-								name='password'
-								value={formData.password}
-								onChange={handleInputChange}
-							/>
-						</FormControl>
-						<Button
-							type='submit'
-							variant='contained'
-							className={Styles.button}
-							disableRipple
-							sx={{ backgroundColor: 'var(--color-sky)' }}
-						>
-							Login
-						</Button>
-					</div>
 				</div>
-			</form>
-		</>
+			</div>
+		</form>
 	);
 };
