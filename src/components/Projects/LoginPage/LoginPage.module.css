@@ -3,6 +3,14 @@
 	height: 100vh;
 }
 
+.darkModeBackground {
+	background-color: var(--color-navy);
+}
+
+.defaultModeBackground {
+	background-color: var(--color-default);
+}
+
 .button {
 	position: fixed;
 	right: 0;
