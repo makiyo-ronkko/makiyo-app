@@ -5,13 +5,13 @@ import { Skills } from './Skills';
 import { CompanyProject } from './CompanyProject';
 
 const PROJECTS = [
-	{ link: 'project', name: 'Single Column Layout' },
-	{ link: 'project-2', name: 'Full Screen Layout' },
-	{ link: 'project-3', name: 'E-Commerce Layout' },
-	{ link: 'project-4', name: 'Multi-Column Layout' },
-	{ link: 'project-5', name: 'Pixel Art' },
-	{ link: 'project-6', name: 'TODO App' },
-	{ link: 'project-7', name: 'Could be more...' },
+	{ link: 'login-page', name: 'Login Page' },
+	{ link: 'single-column-layout', name: 'Single Column Layout' },
+	{ link: 'full-screen-layout', name: 'Full Screen Layout' },
+	{ link: 'ec-layout', name: 'E-Commerce Layout' },
+	{ link: 'multi-column-layout', name: 'Multi-Column Layout' },
+	{ link: 'pixel-art', name: 'Pixel Art' },
+	{ link: 'todo-app', name: 'TODO App' },
 ];
 
 export const Body = () => {

@@ -1,0 +1,41 @@
+.wrapper {
+	height: 100%;
+	width: 100%;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.block {
+	height: calc(var(--content-xxxl) * 2);
+	flex-basis: 30%;
+	box-shadow: 5px 5px 10px var(--color-shadow);
+}
+
+.graphic {
+	background-color: var(--color-sky);
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+}
+
+.form {
+	background-color: var(--color-default);
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+
+@media screen and (max-width: 860px) {
+	.graphic {
+		display: none;
+	}
+
+	.form {
+		flex-basis: 80%;
+		border-radius: 1rem;
+	}
+}
