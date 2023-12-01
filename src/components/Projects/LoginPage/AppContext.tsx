@@ -1,10 +1,19 @@
 import React, { createContext, useState, useContext } from 'react';
 
+type PageType =
+	| 'login'
+	| 'signup'
+	| 'loginSuccess'
+	| 'signupSuccess'
+	| 'loading';
+
 interface AppContextProps {
-	progress: number;
-	setProgress: (val: number) => void;
+	progress: PageType;
+	setProgress: (val: PageType) => void;
 	notification: string;
 	setNotification: (val: string) => void;
+	showAlert: boolean;
+	setShowAlert: (val: boolean) => void;
 }
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);
@@ -21,14 +30,17 @@ interface AppProviderProps {
 }
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-	const [progress, setProgress] = useState(0);
-	const [notification, setNotification] = useState('');
+	const [progress, setProgress] = useState<PageType>('login');
+	const [notification, setNotification] = useState<string>('');
+	const [showAlert, setShowAlert] = useState<boolean>(false);
 
 	const contextValue = {
 		progress,
 		setProgress,
 		notification,
 		setNotification,
+		showAlert,
+		setShowAlert,
 	};
 
 	return (
