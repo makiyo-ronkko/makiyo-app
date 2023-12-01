@@ -2,3 +2,23 @@
 	width: 100vw;
 	height: 100vh;
 }
+
+.button {
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 40;
+}
+
+.backButton {
+	height: var(--element-xs);
+	width: var(--element-xl);
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	margin: var(--margin-xs) var(--margin-sm);
+	border: 2px var(--color-sky) solid;
+	color: var(--color-sky);
+}
