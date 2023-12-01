@@ -49,7 +49,11 @@
 	background-color: var(--color-primary-dark);
 }
 
-.alert {
-	position: absolute;
-	width: 30%;
+.signupButton {
+	width: var(--content-xxxs);
+	color: var(--color-primary-dark);
+}
+
+.signupButton:hover {
+	background-color: transparent;
 }
