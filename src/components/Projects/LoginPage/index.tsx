@@ -1,17 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Styles from './LoginPage.module.css';
-import { Box } from './Box/Box';
-import { Signup } from './Signup/Signup';
-import { Login } from './Login/Login';
 import { AppProvider } from './AppContext';
+import { LandingPage } from './MainPage';
 
 export const LoginPage = () => {
 	return (
 		<AppProvider>
 			<div className={Styles.wrapper}>
-				<Box>
-					<Login />
-				</Box>
+				<div className={Styles.button}>
+					<Link to={'/'} className={Styles.backButton}>
+						Back
+					</Link>
+				</div>
+				<LandingPage />
 			</div>
 		</AppProvider>
 	);
