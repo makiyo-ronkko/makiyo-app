@@ -12,6 +12,7 @@
 		"@fortawesome/free-regular-svg-icons": "^6.4.2",
 		"@fortawesome/free-solid-svg-icons": "^6.4.2",
 		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@mui/icons-material": "^5.14.19",
 		"@mui/material": "^5.14.3",
 		"@testing-library/jest-dom": "^5.16.4",
 		"@testing-library/react": "^12.1.4",
@@ -57,6 +58,7 @@
 		]
 	},
 	"devDependencies": {
-		"@types/file-saver": "^2.0.6"
+		"@types/file-saver": "^2.0.6",
+		"ts-jest": "^29.1.1"
 	}
 }
