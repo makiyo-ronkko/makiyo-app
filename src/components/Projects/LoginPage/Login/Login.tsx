@@ -58,7 +58,7 @@ export const Login = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className={Styles.form}>
+		<form onSubmit={handleSubmit} className={Styles.form} id='login-form'>
 			<div className={Styles.wrapper}>
 				<div className={Styles.graphic}>
 					<Typography padding={4} variant='h3' className={Styles.header}>
@@ -67,11 +67,11 @@ export const Login = () => {
 				</div>
 				<div className={Styles.inputField}>
 					<FormControl className={Styles.textField} variant='outlined'>
-						<InputLabel required htmlFor='input-with-icon-adornment'>
+						<InputLabel required htmlFor='username'>
 							Username
 						</InputLabel>
 						<OutlinedInput
-							id='input-with-icon-adornment'
+							id='username'
 							startAdornment={
 								<InputAdornment position='start'>
 									<AccountCircle />
@@ -84,11 +84,11 @@ export const Login = () => {
 						/>
 					</FormControl>
 					<FormControl className={Styles.textField} variant='outlined'>
-						<InputLabel required htmlFor='outlined-adornment-password'>
+						<InputLabel required htmlFor='password'>
 							Password
 						</InputLabel>
 						<OutlinedInput
-							id='outlined-adornment-password'
+							id='password'
 							type={showPassword ? 'text' : 'password'}
 							startAdornment={
 								<InputAdornment position='start'>
