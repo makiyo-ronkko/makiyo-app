@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { AlertProps, Alert } from '@mui/material';
-import Styles from './MainPage.module.css';
+import style from './MainPage.module.css';
 import { Box } from '../Box/Box';
 import { Login } from '../Login/Login';
 import { LoginSuccessPage } from './LoginSuccessPage';
@@ -51,7 +51,7 @@ export const LandingPage = () => {
 	return (
 		<>
 			{showAlert && (
-				<Alert {...alertProps} className={Styles.alert}>
+				<Alert {...alertProps} className={style.alert}>
 					{notification}
 				</Alert>
 			)}

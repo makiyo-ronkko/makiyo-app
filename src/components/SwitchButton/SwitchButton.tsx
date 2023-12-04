@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './SwitchButton.module.css';
+import styles from './SwitchButton.module.css';
 import { classNames } from '../../utils/classNames';
 
 interface SwitchButtonProps {
@@ -9,16 +9,16 @@ interface SwitchButtonProps {
 
 export const SwitchButton = ({ handleClick, active }: SwitchButtonProps) => {
 	return (
-		<div className={Styles.container}>
+		<div className={styles.container}>
 			<button
-				className={`${Styles.button} ${classNames({
-					[Styles.active]: active,
+				className={`${styles.button} ${classNames({
+					[styles.active]: active,
 				})}`}
 				onClick={handleClick}
 			>
 				<div
-					className={`${Styles.circle} ${classNames({
-						[Styles.circleActive]: active,
+					className={`${styles.circle} ${classNames({
+						[styles.circleActive]: active,
 					})}`}
 				></div>
 			</button>

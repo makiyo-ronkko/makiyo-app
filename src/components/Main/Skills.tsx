@@ -1,19 +1,19 @@
 import React from 'react';
-import Styles from './MainStyle.module.css';
+import styles from './MainStyle.module.css';
 
 export const Skills = () => {
 	return (
-		<div className={Styles.skillWrapper}>
+		<div className={styles.skillWrapper}>
 			<div>
-				<p className={Styles.subTitle}>About me</p>
-				<p className={`${Styles.summary} ${Styles.fontStyleItalic}`}>
+				<p className={styles.subTitle}>About me</p>
+				<p className={`${styles.summary} ${styles.fontStyleItalic}`}>
 					"Frontend Developer Focused on Creating Modern Applications: Enhancing
 					User Experience, Embracing Contemporary Design, and Delivering Value."
 				</p>
 			</div>
-			<div className={Styles.cardContainer}>
-				<div className={Styles.card}>
-					<p className={`${Styles.projectTitle} ${Styles.textLetterSpace}`}>
+			<div className={styles.cardContainer}>
+				<div className={styles.card}>
+					<p className={`${styles.projectTitle} ${styles.textLetterSpace}`}>
 						<b>Frontend</b>
 					</p>
 					<p>
@@ -21,14 +21,14 @@ export const Skills = () => {
 						Bootstrap)
 					</p>
 				</div>
-				<div className={Styles.card}>
-					<p className={`${Styles.projectTitle} ${Styles.textLetterSpace}`}>
+				<div className={styles.card}>
+					<p className={`${styles.projectTitle} ${styles.textLetterSpace}`}>
 						<b>Backend</b>
 					</p>
 					<p>Node.js REST API</p>
 				</div>
-				<div className={Styles.card}>
-					<p className={`${Styles.projectTitle} ${Styles.textLetterSpace}`}>
+				<div className={styles.card}>
+					<p className={`${styles.projectTitle} ${styles.textLetterSpace}`}>
 						<b>Others</b>
 					</p>
 					<p>Figma Github Gitlab Responsive Design</p>

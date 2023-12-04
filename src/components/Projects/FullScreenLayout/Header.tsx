@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
-import Styles from './FullScreenLayout.module.css';
+import styles from './FullScreenLayout.module.css';
 
 const pages = ['Home', 'About us', 'Contact'];
 
 export const Header = () => {
 	return (
-		<Grid item className={Styles.header}>
+		<Grid item className={styles.header}>
 			<AppBar position='static' style={{ backgroundColor: 'transparent' }}>
 				<Toolbar>
 					<Typography variant='h6' paddingRight='2rem'>
@@ -17,7 +17,7 @@ export const Header = () => {
 						<MenuItem
 							onClick={() => console.log()}
 							key={page}
-							className={Styles.menuItem}
+							className={styles.menuItem}
 						>
 							<Typography textAlign='center'>{page}</Typography>
 						</MenuItem>

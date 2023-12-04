@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Styles from './Todo.module.css';
+import styles from './Todo.module.css';
 import { classNames } from '../../../../utils/classNames';
 
 interface TodoProps {
@@ -48,15 +48,15 @@ export const Todo = ({
 
 	if (isEditing) {
 		result = (
-			<div className={Styles.todo}>
-				<form onSubmit={handleUpdate} className={Styles.todoEditForm}>
+			<div className={styles.todo}>
+				<form onSubmit={handleUpdate} className={styles.todoEditForm}>
 					<input
 						type='text'
 						value={todo.task}
 						name='task'
 						onChange={handleChange}
 					/>
-					<div className={Styles.todoButtons}>
+					<div className={styles.todoButtons}>
 						<button>Save</button>
 					</div>
 				</form>
@@ -64,16 +64,16 @@ export const Todo = ({
 		);
 	} else {
 		result = (
-			<div className={Styles.todo}>
+			<div className={styles.todo}>
 				<li
-					className={`${classNames({ [Styles.isCompleted]: isCompleted })} ${
-						Styles.todoTask
+					className={`${classNames({ [styles.isCompleted]: isCompleted })} ${
+						styles.todoTask
 					}`}
 					onClick={handleToggle}
 				>
 					{todo.task}
 				</li>
-				<div className={Styles.todoButtons}>
+				<div className={styles.todoButtons}>
 					<button onClick={toggleForm}>
 						<i className='fas fa-pen' />
 					</button>

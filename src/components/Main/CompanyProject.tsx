@@ -1,16 +1,16 @@
 import React from 'react';
-import Styles from './MainStyle.module.css';
+import styles from './MainStyle.module.css';
 import { Link } from 'react-router-dom';
 
 export const CompanyProject = () => {
 	return (
-		<div className={Styles.projectWrapper}>
-			<p className={Styles.subTitle}>Company project</p>
-			<div className={Styles.projectContainer}>
-				<Link to='company-project' className={Styles.link}>
-					<div className={Styles.project}>
-						<button className={Styles.projectButton}>
-							<b className={Styles.projectTitle}>
+		<div className={styles.projectWrapper}>
+			<p className={styles.subTitle}>Company project</p>
+			<div className={styles.projectContainer}>
+				<Link to='company-project' className={styles.link}>
+					<div className={styles.project}>
+						<button className={styles.projectButton}>
+							<b className={styles.projectTitle}>
 								Digital Twin for Smart Office
 							</b>
 						</button>
@@ -18,13 +18,13 @@ export const CompanyProject = () => {
 				</Link>
 				<a
 					href='https://makiyo-storybook.vercel.app/'
-					className={Styles.link}
+					className={styles.link}
 					target='_blank'
 					rel='noreferrer'
 				>
-					<div className={Styles.project}>
-						<button className={Styles.projectButton}>
-							<b className={Styles.projectTitle}>Storybook Example</b>
+					<div className={styles.project}>
+						<button className={styles.projectButton}>
+							<b className={styles.projectTitle}>Storybook Example</b>
 						</button>
 					</div>
 				</a>

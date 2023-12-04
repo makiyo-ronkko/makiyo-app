@@ -14,14 +14,14 @@ import {
 	CardActionArea,
 	CircularProgress,
 } from '@mui/material';
-import Styles from './MultiColumnLayout.module.css';
+import styles from './MultiColumnLayout.module.css';
 
 interface GridCardProps {
 	card: { id: number; title: string; content: string; image: string };
 	isDarkMode: boolean;
 }
 
-const styles = {
+const cardStyles = {
 	boxShadow: 24,
 	p: 4,
 };
@@ -58,21 +58,21 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 				aria-describedby='modal-modal-description'
 			>
 				<Box
-					sx={styles}
-					className={`${Styles.modalWrapper} ${
+					sx={cardStyles}
+					className={`${styles.modalWrapper} ${
 						isDarkMode
-							? Styles.darkModeBackground
-							: Styles.defaultModeBackground
+							? styles.darkModeBackground
+							: styles.defaultModeBackground
 					}`}
 				>
 					{imageLoaded ? (
 						<img
 							src={card.image}
 							alt={card.image}
-							className={Styles.modalImage}
+							className={styles.modalImage}
 						/>
 					) : (
-						<div className={Styles.loader}>
+						<div className={styles.loader}>
 							<CircularProgress
 								sx={{
 									color: isDarkMode
@@ -155,8 +155,8 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 							style={{ height: 'var(--element-xxxxs)' }}
 							className={
 								isDarkMode
-									? Styles.darkModeBackground
-									: Styles.defaultModeBackground
+									? styles.darkModeBackground
+									: styles.defaultModeBackground
 							}
 						/>
 					</IconButton>
@@ -173,8 +173,8 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 							style={{ height: 'var(--element-xxxxs)' }}
 							className={
 								isDarkMode
-									? Styles.darkModeBackground
-									: Styles.defaultModeBackground
+									? styles.darkModeBackground
+									: styles.defaultModeBackground
 							}
 						/>
 					</IconButton>

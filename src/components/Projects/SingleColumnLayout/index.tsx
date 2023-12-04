@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Typography, Paper, Divider, Box } from '@mui/material';
 
-import Styles from './SingleColumnLayout.module.css';
+import styles from './SingleColumnLayout.module.css';
 import { Header } from './Header';
 import { ScrollToTop } from '../../../helpers/scroll';
 import { useTheme } from '../../hooks/ThemeContext';
@@ -14,7 +14,7 @@ export const SingleColumnLayout = () => {
 			<ScrollToTop />
 			<Header isDarkMode={isDarkMode} />
 			<Grid item md={8} component={Paper} elevation={0}>
-				<main className={Styles.main}>
+				<main className={styles.main}>
 					<Box
 						display='flex'
 						justifyContent='center'
@@ -37,8 +37,8 @@ export const SingleColumnLayout = () => {
 				<nav
 					className={`${
 						isDarkMode
-							? Styles.darkModeBackground
-							: Styles.defaultModeBackground
+							? styles.darkModeBackground
+							: styles.defaultModeBackground
 					}`}
 				>
 					<Box
@@ -60,8 +60,8 @@ export const SingleColumnLayout = () => {
 				<footer
 					className={`${
 						isDarkMode
-							? Styles.darkModeBackground
-							: Styles.defaultModeBackground
+							? styles.darkModeBackground
+							: styles.defaultModeBackground
 					}`}
 				>
 					<Typography variant='body2' padding='2rem' textAlign='center'>

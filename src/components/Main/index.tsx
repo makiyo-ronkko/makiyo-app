@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './MainStyle.module.css';
+import styles from './MainStyle.module.css';
 import { Header } from './Header';
 import { Contact } from './Contact';
 import { Footer } from './Footer';
@@ -13,29 +13,29 @@ export const MainStyle = () => {
 	return (
 		<>
 			<div
-				className={`${isDarkMode ? Styles.darkGradient : Styles.gradient1} ${
-					Styles.section
+				className={`${isDarkMode ? styles.darkGradient : styles.gradient1} ${
+					styles.section
 				}`}
 			>
 				<Header isDarkMode={isDarkMode} />
 			</div>
 			<div
-				className={`${Styles.section2} ${
-					isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				className={`${styles.section2} ${
+					isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 				}`}
 			>
 				<Body />
 			</div>
 			<div
-				className={`${isDarkMode ? Styles.darkGradient : Styles.gradient2} ${
-					Styles.section
-				} ${Styles.container} ${Styles.paddingXXL}`}
+				className={`${isDarkMode ? styles.darkGradient : styles.gradient2} ${
+					styles.section
+				} ${styles.container} ${styles.paddingXXL}`}
 			>
 				<Contact isDarkMode={isDarkMode} />
 			</div>
 			<div
-				className={`${Styles.section3} ${
-					isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				className={`${styles.section3} ${
+					isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 				}`}
 			>
 				<Footer isDarkMode={isDarkMode} />

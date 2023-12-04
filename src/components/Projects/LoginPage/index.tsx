@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Styles from './LoginPage.module.css';
+import styles from './LoginPage.module.css';
 import { AppProvider } from './AppContext';
 import { LandingPage } from './MainPage';
 import { useTheme } from '../../hooks/ThemeContext';
@@ -11,12 +11,12 @@ export const LoginPage = () => {
 	return (
 		<AppProvider>
 			<div
-				className={`${Styles.wrapper} ${
-					isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				className={`${styles.wrapper} ${
+					isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 				}`}
 			>
-				<div className={Styles.button}>
-					<Link to={'/'} className={Styles.backButton}>
+				<div className={styles.button}>
+					<Link to={'/'} className={styles.backButton}>
 						Back
 					</Link>
 				</div>

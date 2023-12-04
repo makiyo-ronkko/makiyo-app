@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Styles from './Signup.module.css';
+import styles from './Signup.module.css';
 import {
 	Button,
 	FormControl,
@@ -61,15 +61,15 @@ export const Signup = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className={Styles.form}>
-			<div className={Styles.wrapper}>
-				<div className={Styles.graphic}>
-					<Typography padding={4} variant='h3' className={Styles.header}>
+		<form onSubmit={handleSubmit} className={styles.form}>
+			<div className={styles.wrapper}>
+				<div className={styles.graphic}>
+					<Typography padding={4} variant='h3' className={styles.header}>
 						Sign up
 					</Typography>
 				</div>
-				<div className={Styles.inputField}>
-					<FormControl className={Styles.textField} variant='outlined'>
+				<div className={styles.inputField}>
+					<FormControl className={styles.textField} variant='outlined'>
 						<InputLabel required htmlFor='input-with-icon-username'>
 							Username
 						</InputLabel>
@@ -86,7 +86,7 @@ export const Signup = () => {
 							onChange={handleInputChange}
 						/>
 					</FormControl>
-					<FormControl className={Styles.textField} variant='outlined'>
+					<FormControl className={styles.textField} variant='outlined'>
 						<InputLabel required htmlFor='input-with-icon-email'>
 							Email
 						</InputLabel>
@@ -103,7 +103,7 @@ export const Signup = () => {
 							onChange={handleInputChange}
 						/>
 					</FormControl>
-					<FormControl className={Styles.textField} variant='outlined'>
+					<FormControl className={styles.textField} variant='outlined'>
 						<InputLabel required htmlFor='outlined-adornment-password'>
 							Password
 						</InputLabel>
@@ -132,7 +132,7 @@ export const Signup = () => {
 					<Button
 						type='submit'
 						variant='contained'
-						className={Styles.button}
+						className={styles.button}
 						disableRipple
 						sx={{ backgroundColor: 'var(--color-sky)' }}
 					>
@@ -144,7 +144,7 @@ export const Signup = () => {
 							<Button
 								variant='text'
 								disableRipple
-								className={Styles.signupButton}
+								className={styles.signupButton}
 								onClick={handleLoginPage}
 							>
 								Log in

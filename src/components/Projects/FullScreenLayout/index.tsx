@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Styles from './FullScreenLayout.module.css';
+import styles from './FullScreenLayout.module.css';
 import { ScrollToTop } from '../../../helpers/scroll';
 import { Box, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -51,10 +51,10 @@ export const FullScreenLayout = () => {
 		<div>
 			<Grid item>
 				<ScrollToTop />
-				<div className={Styles.button}>
+				<div className={styles.button}>
 					<Link
 						to={'/'}
-						className={Styles.backButton}
+						className={styles.backButton}
 						style={{ backgroundColor: bgColor }}
 					>
 						Back
@@ -62,23 +62,23 @@ export const FullScreenLayout = () => {
 				</div>
 				<>
 					<Header />
-					<main className={Styles.wrapper} ref={contentRef}>
+					<main className={styles.wrapper} ref={contentRef}>
 						<FloatingButton
 							contentRef={contentRef}
 							isButtonVisible={isButtonVisible}
 							setIsButtonVisible={setIsButtonVisible}
 						/>
 						<Box
-							className={`${Styles.staticContent} ${
+							className={`${styles.staticContent} ${
 								isDarkMode
-									? Styles.darkModeBackground
-									: Styles.defaultModeBackground
+									? styles.darkModeBackground
+									: styles.defaultModeBackground
 							}`}
 						>
-							<Typography className={Styles.text}>{text}</Typography>
+							<Typography className={styles.text}>{text}</Typography>
 						</Box>
 						<div
-							className={Styles.section}
+							className={styles.section}
 							style={{ backgroundColor: bgColor }}
 						></div>
 					</main>

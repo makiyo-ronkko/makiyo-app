@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from '@mui/material';
-import Styles from './ECLayout.module.css';
+import styles from './ECLayout.module.css';
 import { Header } from './Header';
 import { ScrollToTop } from '../../../helpers/scroll';
 import { Main } from './Main';
@@ -16,15 +16,15 @@ export const ECLayout = () => {
 	return (
 		<div
 			className={
-				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 			}
 		>
 			<ScrollToTop />
-			<div className={Styles.button}>
+			<div className={styles.button}>
 				<Link
 					to={'/'}
-					className={`${Styles.backButton} ${
-						isDarkMode ? Styles.darkModeButton : Styles.defaultModeButton
+					className={`${styles.backButton} ${
+						isDarkMode ? styles.darkModeButton : styles.defaultModeButton
 					}`}
 				>
 					Back

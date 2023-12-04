@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Styles from './Login.module.css';
+import styles from './Login.module.css';
 import {
 	Button,
 	FormControl,
@@ -58,15 +58,15 @@ export const Login = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className={Styles.form} id='login-form'>
-			<div className={Styles.wrapper}>
-				<div className={Styles.graphic}>
-					<Typography padding={4} variant='h3' className={Styles.header}>
+		<form onSubmit={handleSubmit} className={styles.form} id='login-form'>
+			<div className={styles.wrapper}>
+				<div className={styles.graphic}>
+					<Typography padding={4} variant='h3' className={styles.header}>
 						LOG IN
 					</Typography>
 				</div>
-				<div className={Styles.inputField}>
-					<FormControl className={Styles.textField} variant='outlined'>
+				<div className={styles.inputField}>
+					<FormControl className={styles.textField} variant='outlined'>
 						<InputLabel required htmlFor='username'>
 							Username
 						</InputLabel>
@@ -83,7 +83,7 @@ export const Login = () => {
 							onChange={handleInputChange}
 						/>
 					</FormControl>
-					<FormControl className={Styles.textField} variant='outlined'>
+					<FormControl className={styles.textField} variant='outlined'>
 						<InputLabel required htmlFor='password'>
 							Password
 						</InputLabel>
@@ -112,7 +112,7 @@ export const Login = () => {
 					<Button
 						type='submit'
 						variant='contained'
-						className={Styles.button}
+						className={styles.button}
 						disableRipple
 						sx={{ backgroundColor: 'var(--color-sky)' }}
 					>
@@ -124,7 +124,7 @@ export const Login = () => {
 							<Button
 								variant='text'
 								disableRipple
-								className={Styles.signupButton}
+								className={styles.signupButton}
 								onClick={handleSingupPage}
 							>
 								Sign up

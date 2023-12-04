@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import html2canvas from 'html2canvas';
 import { saveAs } from 'file-saver';
 
-import Styles from './PixelArt.module.css';
+import styles from './PixelArt.module.css';
 import { Button, Grid, IconButton } from '@mui/material';
 import { PixelArtCanvas } from '../PixelArtCanvas/PixelArtCanvas';
 import { ColorPalette } from '../ColorPalette/ColorPalette';
@@ -65,7 +65,7 @@ const PixelArtApp = ({ isDarkMode }: PixelArtAppProp) => {
 	};
 
 	return (
-		<div className={Styles.wrapper}>
+		<div className={styles.wrapper}>
 			<ColorPalette
 				onSelectColor={setSelectedColor}
 				selectedColor={selectedColor}
@@ -121,7 +121,7 @@ const PixelArtApp = ({ isDarkMode }: PixelArtAppProp) => {
 				</Grid>
 				<Button
 					variant='contained'
-					className={Styles.button}
+					className={styles.button}
 					onClick={handleModal}
 					sx={{
 						color: 'var(--color-default)',

@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './ECLayout.module.css';
+import styles from './ECLayout.module.css';
 import { Button, Grid, Toolbar, Typography } from '@mui/material';
 
 const subNavigation = [
@@ -25,7 +25,7 @@ export const Nav = ({ isDarkMode }: NavProp) => {
 	return (
 		<nav
 			className={
-				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 			}
 		>
 			<Toolbar sx={{ height: '400px', justifyContent: 'center' }}>

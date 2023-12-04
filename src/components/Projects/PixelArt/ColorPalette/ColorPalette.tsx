@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './ColorPalette.module.css';
+import styles from './ColorPalette.module.css';
 import { classNames } from '../../../../utils/classNames';
 
 interface ColorPaletteProp {
@@ -53,12 +53,12 @@ export const ColorPalette = ({
 	};
 
 	return (
-		<div className={Styles.colorPalette}>
+		<div className={styles.colorPalette}>
 			{colors.map(({ color, id }) => (
 				<button
 					key={id}
-					className={`${Styles.colorButton} ${classNames({
-						[Styles.selectedColor]: selectedColorFromPalette(color),
+					className={`${styles.colorButton} ${classNames({
+						[styles.selectedColor]: selectedColorFromPalette(color),
 					})}`}
 					style={{ backgroundColor: color }}
 					onClick={() => onSelectColor(color)}
