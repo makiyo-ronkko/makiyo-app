@@ -1,6 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import { v4 as uuid } from 'uuid';
-import Styles from './NewTodoForm.module.css';
+import styles from './NewTodoForm.module.css';
 
 interface NewTotoFormProp {
 	createTodo: ({ id: string, completed: boolean }) => void;
@@ -21,7 +21,7 @@ export const NewTodoForm = ({ createTodo }: NewTotoFormProp) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className={Styles.newTodoForm}>
+		<form onSubmit={handleSubmit} className={styles.newTodoForm}>
 			<label htmlFor='task'>Enter your new todo</label>
 			<input
 				type='text'
@@ -31,7 +31,7 @@ export const NewTodoForm = ({ createTodo }: NewTotoFormProp) => {
 				value={newTodo.task}
 				onChange={handleChange}
 			/>
-			<button id='formBtn' className={Styles.button}>
+			<button id='formBtn' className={styles.button}>
 				Create
 			</button>
 		</form>

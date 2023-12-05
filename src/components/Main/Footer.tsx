@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './MainStyle.module.css';
+import styles from './MainStyle.module.css';
 
 interface FooterProp {
 	isDarkMode: boolean;
@@ -8,8 +8,8 @@ interface FooterProp {
 export const Footer = ({ isDarkMode }: FooterProp) => {
 	return (
 		<p
-			className={`${Styles.copyright} ${
-				isDarkMode ? Styles.darkModeColor : Styles.defaultModeColor
+			className={`${styles.copyright} ${
+				isDarkMode ? styles.darkModeColor : styles.defaultModeColor
 			}`}
 		>
 			COPYRIGHT &copy; {new Date().getFullYear()} MAKIYO RÖNKKÖ

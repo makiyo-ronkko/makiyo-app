@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './Loader.module.css';
+import style from './Loader.module.css';
 
 type Width =
 	| 'auto'
@@ -34,7 +34,7 @@ export const Loader = ({
 
 	return (
 		<div
-			className={`${Styles.loader} ${className}`}
+			className={`${style.loader} ${className}`}
 			style={{
 				...style,
 				...loaderWidth,

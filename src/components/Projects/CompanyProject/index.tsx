@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Styles from './CompanyProject.module.css';
-import ModeStyles from '../../Main/MainStyle.module.css';
+import styles from './CompanyProject.module.css';
+import modeStyles from '../../Main/MainStyle.module.css';
 import { CircularProgress } from '@mui/material';
 import { ScrollToTop } from '../../../helpers/scroll';
 import { useTheme } from '../../hooks/ThemeContext';
@@ -22,29 +22,29 @@ export const CompanyProject = () => {
 
 	return (
 		<div
-			className={`${Styles.companyProjectWrapper} ${
+			className={`${styles.companyProjectWrapper} ${
 				isDarkMode
-					? ModeStyles.darkModeBackground
-					: ModeStyles.defaultModeBackground
+					? modeStyles.darkModeBackground
+					: modeStyles.defaultModeBackground
 			}`}
 		>
 			<ScrollToTop />
-			<div className={Styles.button}>
+			<div className={styles.button}>
 				<Link
 					to={'/'}
-					className={`${Styles.backButton} ${
-						isDarkMode ? Styles.darkModeButton : Styles.defaultModeButton
+					className={`${styles.backButton} ${
+						isDarkMode ? styles.darkModeButton : styles.defaultModeButton
 					}`}
 				>
 					Back
 				</Link>
 			</div>
-			<p className={Styles.header}>
+			<p className={styles.header}>
 				<a
 					href='https://haltian.com/solutions/empathic-building-for-offices/'
 					target='_blank'
 					rel='noopener noreferrer'
-					className={Styles.aTag}
+					className={styles.aTag}
 				>
 					Empathic Building for Offices
 				</a>
@@ -56,73 +56,73 @@ export const CompanyProject = () => {
 					href='https://haltian.com/solutions/empathic-building-for-offices/'
 					target='_blank'
 					rel='noopener noreferrer'
-					className={Styles.aTag}
+					className={styles.aTag}
 				>
 					<img
 						src='/assets/screenshots/empathic-building-for-offices.png'
 						alt='screenshot'
-						className={Styles.screenshot}
+						className={styles.screenshot}
 						onLoad={handleImageLoad}
 					/>
 				</a>
 			)}
-			<div className={Styles.notepadWrapper}>
-				<div className={Styles.notepad}>
-					<div className={Styles.top} />
-					<div className={Styles.paper}>
-						<div className={Styles.timeline}>
-							<p className={`${Styles.subHeader} ${Styles.letterSpacing}`}>
+			<div className={styles.notepadWrapper}>
+				<div className={styles.notepad}>
+					<div className={styles.top} />
+					<div className={styles.paper}>
+						<div className={styles.timeline}>
+							<p className={`${styles.subHeader} ${styles.letterSpacing}`}>
 								<b>Project Kickoff:</b>
 							</p>
-							<p className={Styles.indentation}>October 2021</p>
-							<p className={Styles.subHeader}>
+							<p className={styles.indentation}>October 2021</p>
+							<p className={styles.subHeader}>
 								<b>Development Phases:</b>
 							</p>
-							<p className={Styles.indentation}>
+							<p className={styles.indentation}>
 								Created components in the library
 							</p>
-							<p className={Styles.indentation}>
+							<p className={styles.indentation}>
 								<a
 									href='https://design.empathicbuilding.com/'
 									target='_blank'
 									rel='noopener noreferrer'
-									className={Styles.hrefColor}
+									className={styles.hrefColor}
 								>
 									design.empathicbuilding.com
 								</a>
 							</p>
-							<p className={Styles.indentation}>
+							<p className={styles.indentation}>
 								Integrated customized components into the office application
 							</p>
-							<p className={Styles.indentation}>
+							<p className={styles.indentation}>
 								Developed the complete application
 							</p>
-							<p className={Styles.subHeader}>
+							<p className={styles.subHeader}>
 								<b>Launch Date:</b>
 							</p>
-							<p className={Styles.indentation}>January 2023</p>
-							<p className={Styles.indentation}>
+							<p className={styles.indentation}>January 2023</p>
+							<p className={styles.indentation}>
 								<a
 									href=' https://office.empathicbuilding.com/'
 									target='_blank'
 									rel='noopener noreferrer'
-									className={Styles.hrefColor}
+									className={styles.hrefColor}
 								>
 									office.empathicbuilding.com
 								</a>
 							</p>
-							<p className={Styles.subHeader}>
+							<p className={styles.subHeader}>
 								<b>Technologies:</b>
 							</p>
-							<p className={Styles.indentation}>
+							<p className={styles.indentation}>
 								Javascript, Typescript, HTML5, CSS3, React, MUI
 							</p>
 						</div>
 					</div>
 				</div>
-				<div className={Styles.notepad}>
-					<div className={Styles.top} />
-					<div className={Styles.paper}>
+				<div className={styles.notepad}>
+					<div className={styles.top} />
+					<div className={styles.paper}>
 						<p>
 							Responsible for developing Empathic Building for Offices with one
 							lead developer, two frontend developers, one UI/UX desginer and

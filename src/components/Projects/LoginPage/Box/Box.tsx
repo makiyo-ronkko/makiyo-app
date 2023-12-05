@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './Box.module.css';
+import styles from './Box.module.css';
 
 interface BoxProps {
 	children: React.ReactNode;
@@ -7,10 +7,10 @@ interface BoxProps {
 
 export const Box = ({ children }: BoxProps) => {
 	return (
-		<div className={Styles.wrapper}>
-			<div className={Styles.container}>
-				<div className={`${Styles.block} ${Styles.graphic}`}></div>
-				<div className={`${Styles.block} ${Styles.form}`}>{children}</div>
+		<div className={styles.wrapper}>
+			<div className={styles.container}>
+				<div className={`${styles.block} ${styles.graphic}`}></div>
+				<div className={`${styles.block} ${styles.form}`}>{children}</div>
 			</div>
 		</div>
 	);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Divider, Grid, Typography } from '@mui/material';
 
-import Styles from './MultiColumnLayout.module.css';
+import styles from './MultiColumnLayout.module.css';
 import { ScrollToTop } from '../../../helpers/scroll';
 import { Header } from './Header';
 import { GridCard } from './Card';
@@ -144,13 +144,13 @@ export const MultiColumnLayout = () => {
 	return (
 		<div
 			className={
-				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 			}
 		>
 			<Grid item>
 				<ScrollToTop />
-				<div className={Styles.button}>
-					<Link to={'/'} className={Styles.backButton}>
+				<div className={styles.button}>
+					<Link to={'/'} className={styles.backButton}>
 						Back
 					</Link>
 				</div>

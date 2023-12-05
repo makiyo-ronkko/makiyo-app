@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
-import Styles from './MultiColumnLayout.module.css';
+import styles from './MultiColumnLayout.module.css';
 
 interface HeaderProp {
 	isDarkMode: boolean;
@@ -17,9 +17,9 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 				<Toolbar
 					className={`${
 						isDarkMode
-							? Styles.darkModeBackground
-							: Styles.defaultModeBackground
-					} ${Styles.backgroundColor}`}
+							? styles.darkModeBackground
+							: styles.defaultModeBackground
+					} ${styles.backgroundColor}`}
 				>
 					<Typography variant='h6' paddingRight='2rem'>
 						LOGO
@@ -28,13 +28,13 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 						<MenuItem
 							onClick={() => console.log()}
 							key={page}
-							className={Styles.menuItem}
+							className={styles.menuItem}
 						>
 							<Typography textAlign='center'>{page}</Typography>
 						</MenuItem>
 					))}
-					<div className={Styles.button}>
-						<Link to={'/'} className={Styles.backButton}>
+					<div className={styles.button}>
+						<Link to={'/'} className={styles.backButton}>
 							Back
 						</Link>
 					</div>

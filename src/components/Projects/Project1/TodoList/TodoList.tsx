@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Styles from './TodoList.module.css';
+import styles from './TodoList.module.css';
 import { NewTodoForm } from '../NewTodoForm/NewTodoForm';
 import { Todo } from '../Todo/Todo';
 
@@ -63,12 +63,12 @@ export const TodoList = () => {
 		});
 
 	return (
-		<div className={Styles.todoList}>
+		<div className={styles.todoList}>
 			<h1>
 				TODO LIST APP
 				<span>Create Your Todo List</span>
 			</h1>
-			<div className={Styles.listContainer}>
+			<div className={styles.listContainer}>
 				<ul>{renderTodos()}</ul>
 				<NewTodoForm createTodo={create} />
 			</div>

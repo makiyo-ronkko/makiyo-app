@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Styles from './MainStyle.module.css';
+import styles from './MainStyle.module.css';
 import { Skills } from './Skills';
 import { CompanyProject } from './CompanyProject';
 
@@ -19,19 +19,19 @@ export const Body = () => {
 		<>
 			<Skills />
 			<CompanyProject />
-			<div className={`${Styles.projectWrapper} ${Styles.paddingBottom}`}>
-				<p className={Styles.subTitle}>Mini Projects</p>
-				<div className={Styles.projectContainer}>
+			<div className={`${styles.projectWrapper} ${styles.paddingBottom}`}>
+				<p className={styles.subTitle}>Mini Projects</p>
+				<div className={styles.projectContainer}>
 					{PROJECTS.map((project) => {
 						return (
 							<Link
 								to={project.link}
-								className={Styles.link}
+								className={styles.link}
 								key={project.link}
 							>
-								<div className={`${Styles.project}`}>
-									<button className={Styles.projectButton}>
-										<b className={Styles.projectTitle}>{project.name}</b>
+								<div className={`${styles.project}`}>
+									<button className={styles.projectButton}>
+										<b className={styles.projectTitle}>{project.name}</b>
 									</button>
 								</div>
 							</Link>

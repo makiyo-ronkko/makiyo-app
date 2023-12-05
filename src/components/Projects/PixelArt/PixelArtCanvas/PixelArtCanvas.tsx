@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Styles from './PixelArtCanvas.module.css';
+import styles from './PixelArtCanvas.module.css';
 
 interface PixelArtCanvasProps {
 	selectedColor: string | undefined;
@@ -67,11 +67,11 @@ export const PixelArtCanvas = ({
 	};
 
 	return (
-		<div className={Styles.pixelCanvas} id={id}>
+		<div className={styles.pixelCanvas} id={id}>
 			{pixels.map((color, index) => (
 				<div
 					key={index}
-					className={Styles.pixel}
+					className={styles.pixel}
 					style={{ backgroundColor: color }}
 					onClick={() => handlePixelClick(index)}
 					onMouseDown={() => handleMouseDown(index)}

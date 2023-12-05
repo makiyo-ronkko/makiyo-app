@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
-import Styles from './SingleColumnLayout.module.css';
+import styles from './SingleColumnLayout.module.css';
 
 interface HeaderProp {
 	isDarkMode: boolean;
@@ -12,13 +12,13 @@ const pages = ['Home', 'About us', 'Contact'];
 
 export const Header = ({ isDarkMode }: HeaderProp) => {
 	return (
-		<Grid item className={Styles.header}>
+		<Grid item className={styles.header}>
 			<AppBar position='static'>
 				<Toolbar
-					className={`${Styles.backgroundColor} ${
+					className={`${styles.backgroundColor} ${
 						isDarkMode
-							? Styles.darkModeBackground
-							: Styles.defaultModeBackground
+							? styles.darkModeBackground
+							: styles.defaultModeBackground
 					}`}
 				>
 					<Typography variant='h6' paddingRight='2rem'>
@@ -28,18 +28,18 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 						<MenuItem
 							onClick={() => console.log()}
 							key={page}
-							className={Styles.menuItem}
+							className={styles.menuItem}
 						>
 							<Typography textAlign='center'>{page}</Typography>
 						</MenuItem>
 					))}
-					<div className={Styles.button}>
+					<div className={styles.button}>
 						<Link
 							to={'/'}
-							className={`${Styles.backButton} ${
+							className={`${styles.backButton} ${
 								isDarkMode
-									? Styles.darkModeBackground
-									: Styles.defaultModeBackground
+									? styles.darkModeBackground
+									: styles.defaultModeBackground
 							}`}
 						>
 							Back

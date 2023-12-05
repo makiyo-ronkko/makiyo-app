@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Styles from './PixelArtDesign.module.css';
+import styles from './PixelArtDesign.module.css';
 import { Typography } from '@mui/material';
 import PixelArtApp from './PixelArt/PixelArt';
 import { ScrollToTop } from '../../../helpers/scroll';
@@ -11,17 +11,17 @@ export const PixelArt = () => {
 
 	return (
 		<div
-			className={`${Styles.wrapper} ${
-				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+			className={`${styles.wrapper} ${
+				isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 			}`}
 		>
 			<ScrollToTop />
-			<div className={Styles.buttonWrapper}>
-				<Link to={'/'} className={Styles.backButton}>
+			<div className={styles.buttonWrapper}>
+				<Link to={'/'} className={styles.backButton}>
 					BACK
 				</Link>
 			</div>
-			<div className={Styles.textWrapper}>
+			<div className={styles.textWrapper}>
 				<Typography
 					variant='h2'
 					sx={{

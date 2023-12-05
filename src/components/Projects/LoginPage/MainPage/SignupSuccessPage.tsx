@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './MainPage.module.css';
+import styles from './MainPage.module.css';
 import { Typography, Button } from '@mui/material';
 import { useAppContext } from '../AppContext';
 
@@ -19,12 +19,12 @@ export const SignupSuccessPage = () => {
 	};
 
 	return (
-		<div className={Styles.wrapper}>
-			<Typography variant='h3' className={Styles.successText}>
+		<div className={styles.wrapper}>
+			<Typography variant='h3' className={styles.successText}>
 				Welcome!
 				<Button
 					variant='contained'
-					className={Styles.button}
+					className={styles.button}
 					onClick={handleSubmit}
 					sx={{ backgroundColor: 'var(--color-sky)' }}
 				>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Styles from './MainStyle.module.css';
+import styles from './MainStyle.module.css';
 
 interface HeaderProp {
 	isDarkMode: boolean;
@@ -17,12 +17,12 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 	};
 
 	return (
-		<div className={Styles.nameContainer}>
+		<div className={styles.nameContainer}>
 			<p
-				className={`${Styles.bubbleSpeech} ${
+				className={`${styles.bubbleSpeech} ${
 					isDarkMode
-						? Styles.darkModeBubbleSpeech
-						: Styles.defaultModeBubbleSpeech
+						? styles.darkModeBubbleSpeech
+						: styles.defaultModeBubbleSpeech
 				}`}
 			>
 				{isMouseOver ? 'Please scroll down！' : 'Hello! Moi! こんにちは！'}
@@ -30,11 +30,11 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 			<img
 				src='/makiyo.png'
 				alt='makiyo'
-				className={Styles.image}
+				className={styles.image}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			/>
-			<span className={Styles.name}>Makiyo Rönkkö</span>
+			<span className={styles.name}>Makiyo Rönkkö</span>
 		</div>
 	);
 };

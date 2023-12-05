@@ -1,5 +1,5 @@
 import React, { RefObject } from 'react';
-import FloatingButtonStyles from './FloatingButton.module.css';
+import style from './FloatingButton.module.css';
 import { IconButton } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
@@ -31,7 +31,7 @@ export const FloatingButton = ({
 				height: 'var(--element-sm)',
 				visibility: isButtonVisible ? 'visible' : 'hidden',
 			}}
-			className={FloatingButtonStyles.floatingButton}
+			className={style.floatingButton}
 			onClick={handleScrollToTop}
 		>
 			<FontAwesomeIcon icon={faArrowAltCircleUp} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './ECLayout.module.css';
+import styles from './ECLayout.module.css';
 import { Grid, Typography } from '@mui/material';
 
 interface FooterProp {
@@ -10,7 +10,7 @@ export const Footer = ({ isDarkMode }: FooterProp) => {
 	return (
 		<footer
 			className={
-				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 			}
 		>
 			<Grid height={100}>

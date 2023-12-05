@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Styles from './ECLayout.module.css';
+import styles from './ECLayout.module.css';
 import { generateRandomText } from '../../../helpers/textGenerator';
 
 const productList = [
@@ -124,7 +124,7 @@ export const Main = ({ isDarkMode }: MainProp) => {
 
 	const getImages = useMemo(() => {
 		return (
-			<div className={Styles.productImgWrapper}>
+			<div className={styles.productImgWrapper}>
 				{isLoading ? (
 					<CircularProgress
 						sx={{
@@ -140,7 +140,7 @@ export const Main = ({ isDarkMode }: MainProp) => {
 								justifyContent: 'center',
 								paddingBottom: 0,
 							}}
-							className={Styles.imageListItem}
+							className={styles.imageListItem}
 						>
 							<Card
 								sx={{
@@ -156,18 +156,18 @@ export const Main = ({ isDarkMode }: MainProp) => {
 								}}
 							>
 								<>
-									<div className={Styles.productImgContainer}>
+									<div className={styles.productImgContainer}>
 										<img
 											src={product.img}
 											alt={product.id}
-											className={Styles.productImg}
+											className={styles.productImg}
 											ref={cardRef}
 										/>
 									</div>
 									<ImageListItemBar
 										title={product.label}
 										subtitle={
-											<span className={Styles.fontSize}>{product.price} €</span>
+											<span className={styles.fontSize}>{product.price} €</span>
 										}
 										position='below'
 										sx={{ padding: 'var(--padding-xxs)' }}
@@ -184,7 +184,7 @@ export const Main = ({ isDarkMode }: MainProp) => {
 	return (
 		<main
 			className={
-				isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground
+				isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground
 			}
 		>
 			<Grid>
@@ -245,12 +245,12 @@ export const Main = ({ isDarkMode }: MainProp) => {
 							scrollBehavior: 'smooth',
 							margin: 'var(--margin-sm) var(--margin-xs)',
 						}}
-						className={Styles.imageList}
+						className={styles.imageList}
 						ref={containerRef}
 					>
 						{getImages}
 					</ImageList>
-					<div className={Styles.buttonWrapper}>
+					<div className={styles.buttonWrapper}>
 						<IconButton
 							type='button'
 							sx={{
