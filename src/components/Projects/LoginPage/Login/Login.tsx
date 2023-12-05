@@ -8,6 +8,7 @@ import {
 	InputAdornment,
 	IconButton,
 	Typography,
+	FormHelperText,
 } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Visibility from '@mui/icons-material/Visibility';
@@ -23,6 +24,32 @@ export const Login = () => {
 		password: '',
 	});
 	const [showPassword, setShowPassword] = useState<boolean>(false);
+	const [isUsernameValid, setIsUsernameValid] = useState<boolean>();
+	const [isPasswordValid, setIsPasswordValid] = useState<boolean>();
+
+	const validateInput = (name: string, value: string) => {
+		switch (name) {
+			case 'username':
+				if (value === '') {
+					return setIsUsernameValid(false);
+				} else return setIsUsernameValid(true);
+
+			case 'password':
+				if (value === '') {
+					return setIsPasswordValid(false);
+				} else return setIsPasswordValid(true);
+		}
+	};
+
+	const handleValidate = () => {
+		if (formData.username === '') {
+			setIsUsernameValid(false);
+		} else setIsUsernameValid(true);
+
+		if (formData.password === '') {
+			setIsPasswordValid(false);
+		} else setIsPasswordValid(true);
+	};
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -37,10 +64,14 @@ export const Login = () => {
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
 		setFormData({ ...formData, [name]: value });
+		validateInput(name, value);
 	};
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
+		handleValidate();
+
+		if (!isUsernameValid || !isPasswordValid) return;
 
 		setProgress('loading');
 
@@ -66,7 +97,11 @@ export const Login = () => {
 					</Typography>
 				</div>
 				<div className={styles.inputField}>
-					<FormControl className={styles.textField} variant='outlined'>
+					<FormControl
+						className={styles.textField}
+						variant='outlined'
+						error={isUsernameValid === false}
+					>
 						<InputLabel required htmlFor='username'>
 							Username
 						</InputLabel>
@@ -82,8 +117,15 @@ export const Login = () => {
 							value={formData.username}
 							onChange={handleInputChange}
 						/>
+						<FormHelperText id='component-error-text'>
+							{isUsernameValid === false ? 'Please fill' : ' '}
+						</FormHelperText>
 					</FormControl>
-					<FormControl className={styles.textField} variant='outlined'>
+					<FormControl
+						className={styles.textField}
+						variant='outlined'
+						error={isPasswordValid === false}
+					>
 						<InputLabel required htmlFor='password'>
 							Password
 						</InputLabel>
@@ -108,6 +150,9 @@ export const Login = () => {
 							onChange={handleInputChange}
 							autoComplete='on'
 						/>
+						<FormHelperText id='component-error-text'>
+							{isPasswordValid === false ? 'Please fill' : ' '}
+						</FormHelperText>
 					</FormControl>
 					<Button
 						type='submit'
