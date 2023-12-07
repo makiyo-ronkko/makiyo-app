@@ -83,6 +83,11 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 								aria-label='go to a customer care page'
 								style={themeStyles}
 								disableRipple
+								sx={{
+									'&.MuiButtonBase-root:hover': {
+										bgcolor: 'transparent',
+									},
+								}}
 							>
 								Customer Care
 							</Button>
@@ -174,6 +179,9 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 												color: isDarkMode
 													? 'var(--color-default)'
 													: 'var(--color-mud)',
+												'&.MuiButtonBase-root:hover': {
+													bgcolor: 'transparent',
+												},
 											}}
 											disableRipple
 										>
@@ -216,6 +224,9 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 											: 'var(--color-mud)',
 										width: 'var(--element-xxxs)',
 										display: { xs: 'none', md: 'flex' },
+										'&.MuiButtonBase-root:hover': {
+											bgcolor: 'transparent',
+										},
 									}}
 									disableRipple
 								>
@@ -266,6 +277,11 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
 								key={category}
 								style={themeStyles}
 								disableRipple
+								sx={{
+									'&.MuiButtonBase-root:hover': {
+										bgcolor: 'transparent',
+									},
+								}}
 							>
 								{category}
 							</Button>

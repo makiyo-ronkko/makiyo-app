@@ -69,6 +69,9 @@ export const Nav = ({ isDarkMode }: NavProp) => {
 											: 'var(--color-mud)',
 										height: 'var(--element-xxs)',
 										width: 'var(--content-sm)',
+										'&.MuiButtonBase-root:hover': {
+											bgcolor: 'transparent',
+										},
 									}}
 									disableRipple
 								>

@@ -53,7 +53,3 @@
 	width: var(--content-xxxs);
 	color: var(--color-primary-dark);
 }
-
-.signupButton:hover {
-	background-color: transparent;
-}
