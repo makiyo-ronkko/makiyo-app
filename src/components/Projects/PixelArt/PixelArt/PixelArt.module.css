@@ -12,6 +12,11 @@
 	margin-bottom: var(--margin-lg);
 }
 
+.icon {
+	width: var(--element-xxs);
+	height: var(--element-xxs);
+}
+
 @media screen and (max-width: 860px) {
 	.wrapper {
 		gap: 2rem;

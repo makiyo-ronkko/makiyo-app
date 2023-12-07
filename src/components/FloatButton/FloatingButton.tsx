@@ -27,8 +27,6 @@ export const FloatingButton = ({
 			size='medium'
 			sx={{
 				position: 'fixed',
-				width: 'var(--element-sm)',
-				height: 'var(--element-sm)',
 				visibility: isButtonVisible ? 'visible' : 'hidden',
 			}}
 			className={style.floatingButton}

@@ -95,7 +95,7 @@ const PixelArtApp = ({ isDarkMode }: PixelArtAppProp) => {
 						size='small'
 						color='default'
 						onClick={handleUndo}
-						sx={{ width: 'var(--element-xxs)', height: 'var(--element-xxs)' }}
+						className={styles.icon}
 					>
 						<FontAwesomeIcon
 							icon={faArrowRotateLeft}
@@ -109,7 +109,7 @@ const PixelArtApp = ({ isDarkMode }: PixelArtAppProp) => {
 						size='small'
 						color='default'
 						onClick={handleClear}
-						sx={{ width: 'var(--element-xxs)', height: 'var(--element-xxs)' }}
+						className={styles.icon}
 					>
 						<FontAwesomeIcon
 							icon={faTrashCan}

@@ -61,6 +61,25 @@
 	border: 2px var(--color-default) solid;
 }
 
+.card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cardMedia {
+	cursor: pointer;
+}
+
+.iconButton {
+	width: var(--element-lg);
+	cursor: pointer;
+}
+
+.icon {
+	height: var(--element-xxxxs);
+}
+
 @media screen and (max-width: 860px) {
 	.modalWrapper {
 		width: 90vw;
