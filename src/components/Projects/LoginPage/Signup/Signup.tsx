@@ -209,6 +209,12 @@ export const Signup = () => {
 								disableRipple
 								className={styles.signupButton}
 								onClick={handleLoginPage}
+								sx={{
+									'&.MuiButtonBase-root:hover': {
+										bgcolor: 'transparent',
+										color: 'var(--color-primary-dark)',
+									},
+								}}
 							>
 								Log in
 							</Button>
