@@ -2,4 +2,6 @@
 	right: var(--padding-xs);
 	bottom: var(--padding-xs);
 	z-index: var(--z-index-modal);
+	width: var(--element-sm);
+	height: var(--element-sm);
 }
