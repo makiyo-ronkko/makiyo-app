@@ -46,7 +46,7 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 	const handleClose = () => setOpen(false);
 
 	const handleLike = (id: number) => {
-		setLiked({ id: id, liked: !liked.liked });
+		setLiked({ id, liked: !liked.liked });
 	};
 
 	return (
@@ -97,9 +97,6 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 			</Modal>
 			<Card
 				sx={{
-					height: '100%',
-					display: 'flex',
-					flexDirection: 'column',
 					backgroundColor: isDarkMode
 						? 'var(--color-night)'
 						: 'var(--color-default)',
@@ -109,6 +106,7 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 						: 'var(--color-cloud)',
 				}}
 				variant='outlined'
+				className={styles.card}
 			>
 				<CardContent sx={{ flexGrow: 1 }}>
 					<Typography gutterBottom variant='h5' component='h2'>
@@ -121,10 +119,10 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 						component='div'
 						sx={{
 							pt: '56.25%',
-							cursor: 'pointer',
 						}}
 						image={card.image}
 						onClick={handleOpen}
+						className={styles.cardMedis}
 					>
 						<img
 							src={card.image}
@@ -147,36 +145,33 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
 						size='small'
 						color='default'
 						disableRipple
-						sx={{ width: 'var(--element-lg)', cursor: 'pointer' }}
+						className={styles.iconButton}
 						onClick={handleOpen}
 					>
 						<FontAwesomeIcon
 							icon={faEye}
-							style={{ height: 'var(--element-xxxxs)' }}
-							className={
+							className={`${
 								isDarkMode
 									? styles.darkModeBackground
 									: styles.defaultModeBackground
-							}
+							} ${styles.icon}`}
 						/>
 					</IconButton>
 					<IconButton
 						aria-label='like a picture'
 						size='small'
-						color={liked.liked && card.id === liked.id ? 'error' : 'default'}
+						color={
+							liked.liked && card.id === liked.id
+								? 'error'
+								: isDarkMode
+								? 'inherit'
+								: 'default'
+						}
 						disableRipple
 						onClick={() => handleLike(card.id)}
-						sx={{ width: 'var(--element-lg)' }}
+						className={styles.iconButton}
 					>
-						<FontAwesomeIcon
-							icon={faHeart}
-							style={{ height: 'var(--element-xxxxs)' }}
-							className={
-								isDarkMode
-									? styles.darkModeBackground
-									: styles.defaultModeBackground
-							}
-						/>
+						<FontAwesomeIcon icon={faHeart} className={styles.icon} />
 					</IconButton>
 				</CardActions>
 			</Card>
