@@ -26,6 +26,12 @@
 	padding-top: var(--padding-md);
 }
 
+.headerText {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}
+
 .buttonWrapper {
 	position: absolute;
 	top: 0;

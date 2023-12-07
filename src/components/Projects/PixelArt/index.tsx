@@ -22,14 +22,7 @@ export const PixelArt = () => {
 				</Link>
 			</div>
 			<div className={styles.textWrapper}>
-				<Typography
-					variant='h2'
-					sx={{
-						textTransform: 'uppercase',
-						fontWeight: 'bold',
-						textAlign: 'center',
-					}}
-				>
+				<Typography variant='h2' className={styles.headerText}>
 					Create a pixel art
 				</Typography>
 				<div>
