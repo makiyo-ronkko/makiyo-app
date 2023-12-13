@@ -1,0 +1,66 @@
+.chatHistory {
+	height: calc(var(--content-xl) * 2);
+	width: var(--content-xxxl);
+	border: 2px solid var(--color-cloud);
+	border-radius: 0.5rem;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.darkModeBackground {
+	background-color: var(--color-navy);
+	color: var(--color-default);
+}
+
+.defaultModeBackground {
+	background-color: #ffffff;
+	color: var(--color-mud);
+}
+
+.chat {
+	display: flex;
+	margin: var(--margin-xs);
+}
+
+.userMessage {
+	align-self: flex-end;
+}
+
+.botMessage {
+	align-self: flex-start;
+}
+
+.messageBubble {
+	padding: var(--padding-xs);
+	border-radius: 0.5rem;
+}
+
+.messageBubbleDarkMode {
+	background-color: var(--color-cobalt);
+	color: var(--color-default);
+}
+
+.messageBubbleDefault {
+	background-color: var(--color-ivory);
+	color: var(--color-mud);
+}
+
+.inputWrapper {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: var(--margin-sm);
+}
+
+.input {
+	width: var(--content-xl);
+	height: var(--element-xxs);
+	border: 2px solid var(--color-cloud);
+	border-radius: 0.25rem;
+}
+
+.sendButton {
+	width: var(--element-sm);
+	background-color: var(--color-mud);
+	border-radius: 0.25rem;
+}
