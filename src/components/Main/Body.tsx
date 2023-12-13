@@ -12,6 +12,7 @@ const PROJECTS = [
 	{ link: 'multi-column-layout', name: 'Multi-Column Layout' },
 	{ link: 'pixel-art', name: 'Pixel Art' },
 	{ link: 'todo-app', name: 'TODO App' },
+	{ link: 'chat-box', name: 'Chat Box' },
 ];
 
 export const Body = () => {

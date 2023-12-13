@@ -15,6 +15,7 @@ import { ECLayout } from './components/Projects/ECLayout';
 import { MultiColumnLayout } from './components/Projects/MultiColumnLayout';
 import { CompanyProject } from './components/Projects/CompanyProject';
 import { LoginPage } from './components/Projects/LoginPage';
+import { ChatBox } from './components/Projects/ChatBoxes';
 
 const AppWrapper = () => {
 	const router = createBrowserRouter([
@@ -61,6 +62,11 @@ const AppWrapper = () => {
 		{
 			path: '/login-page',
 			element: <LoginPage />,
+			errorElement: <ErrorPage />,
+		},
+		{
+			path: '/chat-box',
+			element: <ChatBox />,
 			errorElement: <ErrorPage />,
 		},
 	]);
