@@ -59,6 +59,18 @@
 	border-radius: 0.25rem;
 }
 
+.emojiList {
+	width: var(--content-xl);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding-top: var(--padding-xs);
+}
+
+.emoji {
+	cursor: pointer;
+}
+
 .sendButton {
 	width: var(--element-sm);
 	background-color: var(--color-mud);

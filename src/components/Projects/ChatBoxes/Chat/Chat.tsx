@@ -19,6 +19,26 @@ const botResponses = [
 	'I am just a bot.',
 	'Good to hear!',
 	'Sorry, I do not understand.',
+	'😂',
+	'Nice 🤗',
+	'😴',
+	'Boo! 👻',
+	'🧡',
+	'💬',
+];
+
+const emojiList = [
+	'😊',
+	'😂',
+	'😍',
+	'😇',
+	'🤓',
+	'👍',
+	'👋',
+	'🎉',
+	'❤️',
+	'✨',
+	'🔥',
 ];
 
 const getRandomResponse = () => {
@@ -27,14 +47,26 @@ const getRandomResponse = () => {
 };
 
 export const Chat = ({ isDarkMode }: ChatProp) => {
-	const [userMessage, setUserMessage] = useState<string>('');
+	const [userMessage, setUserMessage] = useState<{
+		message: string;
+		type: string;
+	}>({ message: '', type: '' });
 	const [chatHistory, setChatHistory] = useState<ChatHistory>([]);
 	const chatContainerRef = useRef<HTMLDivElement>(null);
+	const inputRef = useRef<HTMLInputElement>(null);
 
-	const handleInput = (e: {
-		target: { value: React.SetStateAction<string> };
-	}) => {
-		setUserMessage(e.target.value);
+	const handleEmojiClick = (emoji: string) => {
+		setUserMessage((prevMessage) =>
+			prevMessage
+				? { message: prevMessage.message + emoji, type: 'emoji' }
+				: { message: emoji, type: 'emoji' }
+		);
+		if (!inputRef.current) return;
+		inputRef.current.focus();
+	};
+
+	const handleInput = (e: { target: { value: string } }) => {
+		setUserMessage({ message: e.target.value, type: 'text' });
 	};
 
 	const handleBot = (updatedChatHistory: ChatHistory) => {
@@ -46,14 +78,14 @@ export const Chat = ({ isDarkMode }: ChatProp) => {
 	};
 
 	const handleSendMessage = () => {
-		if (userMessage.trim() === '') return;
+		if (userMessage.message.trim() === '') return;
 
 		const updatedChatHistory = [
 			...chatHistory,
-			{ role: 'user', message: userMessage, id: uuidv4() },
+			{ role: 'user', message: userMessage.message, id: uuidv4() },
 		];
 		setChatHistory(updatedChatHistory);
-		setUserMessage('');
+		setUserMessage({ message: '', type: '' });
 
 		const timeoutId = setTimeout(() => {
 			handleBot(updatedChatHistory);
@@ -104,18 +136,33 @@ export const Chat = ({ isDarkMode }: ChatProp) => {
 				))}
 			</div>
 			<div className={styles.inputWrapper}>
-				<input
-					type='text'
-					value={userMessage}
-					onChange={handleInput}
-					onKeyDown={handleKeyDown}
-					placeholder='Type a message...'
-					className={`${styles.input} ${
-						isDarkMode
-							? styles.darkModeBackground
-							: styles.defaultModeBackground
-					}`}
-				/>
+				<div>
+					<input
+						type='text'
+						value={userMessage.message}
+						onChange={handleInput}
+						onKeyDown={handleKeyDown}
+						placeholder='Type a message...'
+						className={`${styles.input} ${
+							isDarkMode
+								? styles.darkModeBackground
+								: styles.defaultModeBackground
+						}`}
+						ref={inputRef}
+					/>
+					<div className={styles.emojiList}>
+						{emojiList.map((emoji) => (
+							<span
+								key={emoji}
+								className={styles.emoji}
+								onClick={() => handleEmojiClick(emoji)}
+								onKeyDown={handleKeyDown}
+							>
+								{emoji}
+							</span>
+						))}
+					</div>
+				</div>
 				<button className={styles.sendButton} onClick={handleSendMessage}>
 					Send
 				</button>
