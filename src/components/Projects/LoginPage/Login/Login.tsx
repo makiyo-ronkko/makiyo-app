@@ -165,7 +165,7 @@ export const Login = () => {
 					</Button>
 					<div>
 						<Typography variant='button'>
-							Don't have an account yet?
+							Don&apos;t have an account yet?
 							<Button
 								variant='text'
 								disableRipple
