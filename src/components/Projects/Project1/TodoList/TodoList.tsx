@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
-import styles from './TodoList.module.css'
-import { NewTodoForm } from '../NewTodoForm/NewTodoForm'
-import { Todo } from '../Todo/Todo'
+import React, { useState } from 'react';
+import styles from './TodoList.module.css';
+import { NewTodoForm } from '../NewTodoForm/NewTodoForm';
+import { Todo } from '../Todo/Todo';
 
 export type Todo = {
-  task: string
-  id: string
-  isCompleted: boolean
-}
+  task: string;
+  id: string;
+  isCompleted: boolean;
+};
 
 export const TodoList = () => {
-  const [todos, setTodos] = useState<Todo[]>([])
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const create = (newTodo: Todo) => {
-    setTodos([...todos, newTodo])
-  }
+    setTodos([...todos, newTodo]);
+  };
 
   const remove = (id: string) => {
-    setTodos(todos.filter((t) => t.id !== id))
-  }
+    setTodos(todos.filter((t) => t.id !== id));
+  };
 
   const update = (id: string, updatedTask: { task: string }) => {
     const updatedTodos = todos.map((todo) => {
@@ -26,12 +26,12 @@ export const TodoList = () => {
         return {
           ...todo,
           task: updatedTask,
-        }
+        };
       }
-      return todo
-    })
-    setTodos(updatedTodos as Todo[])
-  }
+      return todo;
+    });
+    setTodos(updatedTodos as Todo[]);
+  };
 
   const toggleCompletion = (id: string) => {
     const updatedTodos = todos.map((todo) => {
@@ -39,13 +39,13 @@ export const TodoList = () => {
         return {
           ...todo,
           isCompleted: !todo.isCompleted,
-        }
+        };
       }
-      return todo
-    })
+      return todo;
+    });
 
-    setTodos(updatedTodos)
-  }
+    setTodos(updatedTodos);
+  };
 
   const renderTodos = () =>
     todos.map((todo) => {
@@ -59,8 +59,8 @@ export const TodoList = () => {
           updateTodo={update}
           toggleTodo={toggleCompletion}
         />
-      )
-    })
+      );
+    });
 
   return (
     <div className={styles.todoList}>
@@ -73,5 +73,5 @@ export const TodoList = () => {
         <NewTodoForm createTodo={create} />
       </div>
     </div>
-  )
-}
+  );
+};

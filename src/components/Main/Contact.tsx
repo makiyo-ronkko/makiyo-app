@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './MainStyle.module.css'
+import React from 'react';
+import styles from './MainStyle.module.css';
 
 interface ContactProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
 export const Contact = ({ isDarkMode }: ContactProp) => {
@@ -20,5 +20,5 @@ export const Contact = ({ isDarkMode }: ContactProp) => {
         </a>
       </div>
     </>
-  )
-}
+  );
+};

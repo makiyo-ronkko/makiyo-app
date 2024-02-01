@@ -1,43 +1,43 @@
-import React, { useState } from 'react'
-import styles from './Todo.module.css'
-import { classNames } from '../../../../utils/classNames'
+import React, { useState } from 'react';
+import styles from './Todo.module.css';
+import { classNames } from '../../../../utils/classNames';
 
 interface TodoProps {
-  id: string
-  task: string
-  isCompleted: boolean
-  removeTodo: (id: string) => void
-  updateTodo: (id: string, todo: { task: string }) => void
-  toggleTodo: (id: string) => void
+  id: string;
+  task: string;
+  isCompleted: boolean;
+  removeTodo: (id: string) => void;
+  updateTodo: (id: string, todo: { task: string }) => void;
+  toggleTodo: (id: string) => void;
 }
 
 export const Todo = ({ id, task, isCompleted, removeTodo, updateTodo, toggleTodo }: TodoProps) => {
-  const [isEditing, setIsEditing] = useState<boolean>(false)
-  const [todo, setTodo] = useState({ task })
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [todo, setTodo] = useState({ task });
 
   const handleRemove = () => {
-    removeTodo(id)
-  }
+    removeTodo(id);
+  };
 
   const toggleForm = () => {
-    setIsEditing(!isEditing)
-  }
+    setIsEditing(!isEditing);
+  };
 
   const handleUpdate = (e: React.FormEvent) => {
-    e.preventDefault()
-    updateTodo(id, todo)
-    setIsEditing(false)
-  }
+    e.preventDefault();
+    updateTodo(id, todo);
+    setIsEditing(false);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTodo({ task: e.target.value })
-  }
+    setTodo({ task: e.target.value });
+  };
 
   const handleToggle = () => {
-    toggleTodo(id)
-  }
+    toggleTodo(id);
+  };
 
-  let result
+  let result;
 
   if (isEditing) {
     result = (
@@ -49,7 +49,7 @@ export const Todo = ({ id, task, isCompleted, removeTodo, updateTodo, toggleTodo
           </div>
         </form>
       </div>
-    )
+    );
   } else {
     result = (
       <div className={styles.todo}>
@@ -68,9 +68,9 @@ export const Todo = ({ id, task, isCompleted, removeTodo, updateTodo, toggleTodo
           </button>
         </div>
       </div>
-    )
+    );
   }
-  return result
-}
+  return result;
+};
 
-export default Todo
+export default Todo;

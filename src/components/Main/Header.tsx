@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import styles from './MainStyle.module.css'
+import React, { useState } from 'react';
+import styles from './MainStyle.module.css';
 
 interface HeaderProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
 export const Header = ({ isDarkMode }: HeaderProp) => {
-  const [isMouseOver, setIsMouseOver] = useState<boolean>(false)
+  const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
   const handleMouseEnter = () => {
-    setIsMouseOver(true)
-  }
+    setIsMouseOver(true);
+  };
 
   const handleMouseLeave = () => {
-    setIsMouseOver(false)
-  }
+    setIsMouseOver(false);
+  };
 
   return (
     <div className={styles.nameContainer}>
@@ -34,5 +34,5 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
       />
       <span className={styles.name}>Makiyo Rönkkö</span>
     </div>
-  )
-}
+  );
+};

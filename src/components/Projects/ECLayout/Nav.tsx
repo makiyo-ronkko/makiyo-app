@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './ECLayout.module.css'
-import { Button, Grid, Toolbar, Typography } from '@mui/material'
+import React from 'react';
+import styles from './ECLayout.module.css';
+import { Button, Grid, Toolbar, Typography } from '@mui/material';
 
 const subNavigation = [
   {
@@ -15,10 +15,10 @@ const subNavigation = [
     title: 'Flequently asked questions',
     subTitle: ['Navigate 1', 'Navigate 2', 'Navigate 3'],
   },
-]
+];
 
 interface NavProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
 export const Nav = ({ isDarkMode }: NavProp) => {
@@ -71,5 +71,5 @@ export const Nav = ({ isDarkMode }: NavProp) => {
         ))}
       </Toolbar>
     </nav>
-  )
-}
+  );
+};

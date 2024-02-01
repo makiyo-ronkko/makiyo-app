@@ -1,5 +1,5 @@
 export const generateRandomText = (numSentences: number, isPeriod = true, isShort = false) => {
-  const sentences = []
+  const sentences = [];
   const words = [
     'Lorem',
     'ipsum',
@@ -70,19 +70,19 @@ export const generateRandomText = (numSentences: number, isPeriod = true, isShor
     'id',
     'est',
     'laborum',
-  ]
+  ];
 
   for (let i = 0; i < numSentences; i++) {
-    const numWordsInSentence = isShort ? Math.floor(Math.random() * 6) + 2 : Math.floor(Math.random() * 6) + 5 // Randomly select 5 to 10 words per sentence
-    const sentenceWords = []
+    const numWordsInSentence = isShort ? Math.floor(Math.random() * 6) + 2 : Math.floor(Math.random() * 6) + 5; // Randomly select 5 to 10 words per sentence
+    const sentenceWords = [];
     for (let j = 0; j < numWordsInSentence; j++) {
-      const randomWordIndex = Math.floor(Math.random() * words.length)
-      sentenceWords.push(words[randomWordIndex])
+      const randomWordIndex = Math.floor(Math.random() * words.length);
+      sentenceWords.push(words[randomWordIndex]);
     }
-    let sentence = isPeriod ? sentenceWords.join(' ') + '.' : sentenceWords.join(' ')
-    sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1)
-    sentences.push(sentence)
+    let sentence = isPeriod ? sentenceWords.join(' ') + '.' : sentenceWords.join(' ');
+    sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
+    sentences.push(sentence);
   }
 
-  return sentences.join(' ')
-}
+  return sentences.join(' ');
+};

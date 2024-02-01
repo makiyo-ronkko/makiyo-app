@@ -1,68 +1,68 @@
-import React, { useState } from 'react'
-import html2canvas from 'html2canvas'
-import { saveAs } from 'file-saver'
+import React, { useState } from 'react';
+import html2canvas from 'html2canvas';
+import { saveAs } from 'file-saver';
 
-import styles from './PixelArt.module.css'
-import { Button, Grid, IconButton } from '@mui/material'
-import { PixelArtCanvas } from '../PixelArtCanvas/PixelArtCanvas'
-import { ColorPalette } from '../ColorPalette/ColorPalette'
-import ConfirmationModal from '../ConfirmationModal/ConfirmationModal'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons'
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
+import styles from './PixelArt.module.css';
+import { Button, Grid, IconButton } from '@mui/material';
+import { PixelArtCanvas } from '../PixelArtCanvas/PixelArtCanvas';
+import { ColorPalette } from '../ColorPalette/ColorPalette';
+import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
 interface PixelArtAppProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
-const ID = 'pixel-canvas'
+const ID = 'pixel-canvas';
 
 const PixelArtApp = ({ isDarkMode }: PixelArtAppProp) => {
-  const [pixels, setPixels] = useState<string[]>(Array(256).fill('#ffffff')) // 16x16 grid with initial white pixels
-  const [pixelHistory, setPixelHistory] = useState<string[][]>([pixels])
-  const [selectedColor, setSelectedColor] = useState<string>()
-  const [confirmationModalOpen, setConfirmationModalOpen] = useState<boolean>(false)
+  const [pixels, setPixels] = useState<string[]>(Array(256).fill('#ffffff')); // 16x16 grid with initial white pixels
+  const [pixelHistory, setPixelHistory] = useState<string[][]>([pixels]);
+  const [selectedColor, setSelectedColor] = useState<string>();
+  const [confirmationModalOpen, setConfirmationModalOpen] = useState<boolean>(false);
 
   const handleModal = () => {
-    setConfirmationModalOpen(true)
-  }
+    setConfirmationModalOpen(true);
+  };
 
   const handleModalClose = () => {
-    setConfirmationModalOpen(false)
-  }
+    setConfirmationModalOpen(false);
+  };
 
   const handleSaveFile = () => {
     if (confirmationModalOpen) {
-      saveAsPNG()
+      saveAsPNG();
     }
-    handleModalClose()
-  }
+    handleModalClose();
+  };
 
   const saveAsPNG = async () => {
-    const canvas = document.getElementById(ID)
-    if (!canvas) return
+    const canvas = document.getElementById(ID);
+    if (!canvas) return;
 
-    const screenshot = await html2canvas(canvas)
+    const screenshot = await html2canvas(canvas);
     screenshot.toBlob(function (blob) {
-      if (!blob) return
+      if (!blob) return;
 
-      saveAs(blob, 'pixel-art.png')
-    })
-  }
+      saveAs(blob, 'pixel-art.png');
+    });
+  };
 
   const handleClear = () => {
-    setPixels(Array(256).fill('#ffffff'))
-    setPixelHistory([pixels])
-  }
+    setPixels(Array(256).fill('#ffffff'));
+    setPixelHistory([pixels]);
+  };
 
   const handleUndo = () => {
     if (pixelHistory.length > 1) {
-      const newHistory = [...pixelHistory]
-      newHistory.pop()
-      setPixelHistory(newHistory)
-      setPixels(newHistory[newHistory.length - 1])
+      const newHistory = [...pixelHistory];
+      newHistory.pop();
+      setPixelHistory(newHistory);
+      setPixels(newHistory[newHistory.length - 1]);
     }
-  }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -110,7 +110,7 @@ const PixelArtApp = ({ isDarkMode }: PixelArtAppProp) => {
         <ConfirmationModal open={confirmationModalOpen} handleClose={handleModalClose} handleConfirm={handleSaveFile} />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default PixelArtApp
+export default PixelArtApp;

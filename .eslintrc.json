@@ -20,9 +20,10 @@
   "rules": {
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
-    "prettier/prettier": ["error", {}, { "usePrettierrc": true,  "endOfLine": "auto" }],
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true, "endOfLine": "auto" }],
     "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/ban-ts-comment": "error"
+    "@typescript-eslint/ban-ts-comment": "error",
+    "semi": ["error", "always"]
   },
   "settings": {
     "react": {

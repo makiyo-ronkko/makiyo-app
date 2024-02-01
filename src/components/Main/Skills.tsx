@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './MainStyle.module.css'
+import React from 'react';
+import styles from './MainStyle.module.css';
 
 export const Skills = () => {
   return (
@@ -32,5 +32,5 @@ export const Skills = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

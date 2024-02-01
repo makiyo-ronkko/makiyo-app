@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styles from './Signup.module.css'
+import React, { useState } from 'react';
+import styles from './Signup.module.css';
 import {
   Button,
   FormControl,
@@ -9,96 +9,96 @@ import {
   IconButton,
   Typography,
   FormHelperText,
-} from '@mui/material'
-import Email from '@mui/icons-material/Email'
-import AccountCircle from '@mui/icons-material/AccountCircle'
-import Visibility from '@mui/icons-material/Visibility'
-import VisibilityOff from '@mui/icons-material/VisibilityOff'
-import { useAppContext } from '../AppContext'
+} from '@mui/material';
+import Email from '@mui/icons-material/Email';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useAppContext } from '../AppContext';
 
 export const Signup = () => {
   const [formData, setFormData] = useState<{
-    username: string
-    email: string
-    password: string
+    username: string;
+    email: string;
+    password: string;
   }>({
     username: '',
     email: '',
     password: '',
-  })
-  const [showPassword, setShowPassword] = useState<boolean>(false)
-  const [isUsernameValid, setIsUsernameValid] = useState<boolean>()
-  const [isEmailValid, setIsEmailValid] = useState<boolean>()
-  const [isPasswordValid, setIsPasswordValid] = useState<boolean>()
+  });
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [isUsernameValid, setIsUsernameValid] = useState<boolean>();
+  const [isEmailValid, setIsEmailValid] = useState<boolean>();
+  const [isPasswordValid, setIsPasswordValid] = useState<boolean>();
 
   const validateInput = (name: string, value: string) => {
     switch (name) {
       case 'username':
         if (value === '') {
-          return setIsUsernameValid(false)
-        } else return setIsUsernameValid(true)
+          return setIsUsernameValid(false);
+        } else return setIsUsernameValid(true);
 
       case 'email':
         if (value === '') {
-          return setIsEmailValid(false)
-        } else return setIsEmailValid(true)
+          return setIsEmailValid(false);
+        } else return setIsEmailValid(true);
 
       case 'password':
         if (value === '') {
-          return setIsPasswordValid(false)
-        } else return setIsPasswordValid(true)
+          return setIsPasswordValid(false);
+        } else return setIsPasswordValid(true);
     }
-  }
+  };
 
   const handleValidate = () => {
     if (formData.username === '') {
-      setIsUsernameValid(false)
-    } else setIsUsernameValid(true)
+      setIsUsernameValid(false);
+    } else setIsUsernameValid(true);
 
     if (formData.email === '') {
-      setIsEmailValid(false)
-    } else setIsEmailValid(true)
+      setIsEmailValid(false);
+    } else setIsEmailValid(true);
 
     if (formData.password === '') {
-      setIsPasswordValid(false)
-    } else setIsPasswordValid(true)
-  }
+      setIsPasswordValid(false);
+    } else setIsPasswordValid(true);
+  };
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show)
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
-  }
+    event.preventDefault();
+  };
 
-  const { setProgress, setNotification, setShowAlert } = useAppContext()
+  const { setProgress, setNotification, setShowAlert } = useAppContext();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
 
-    validateInput(name, value)
-  }
+    validateInput(name, value);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    handleValidate()
+    e.preventDefault();
+    handleValidate();
 
-    if (!isUsernameValid || !isEmailValid || !isPasswordValid) return
+    if (!isUsernameValid || !isEmailValid || !isPasswordValid) return;
 
-    setProgress('loading')
+    setProgress('loading');
 
     const timeoutId = setTimeout(() => {
-      setProgress('signupSuccess')
-      setNotification('Signup successful!')
-      setShowAlert(true)
-    }, 1000)
+      setProgress('signupSuccess');
+      setNotification('Signup successful!');
+      setShowAlert(true);
+    }, 1000);
 
-    return () => clearTimeout(timeoutId)
-  }
+    return () => clearTimeout(timeoutId);
+  };
 
   const handleLoginPage = () => {
-    setProgress('login')
-  }
+    setProgress('login');
+  };
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
@@ -203,5 +203,5 @@ export const Signup = () => {
         </div>
       </div>
     </form>
-  )
-}
+  );
+};

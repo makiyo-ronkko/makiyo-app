@@ -10,4 +10,4 @@ module.exports = {
   testEnvironment: 'node',
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-}
+};

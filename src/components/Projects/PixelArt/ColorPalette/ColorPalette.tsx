@@ -1,10 +1,10 @@
-import React from 'react'
-import styles from './ColorPalette.module.css'
-import { classNames } from '../../../../utils/classNames'
+import React from 'react';
+import styles from './ColorPalette.module.css';
+import { classNames } from '../../../../utils/classNames';
 
 interface ColorPaletteProp {
-  onSelectColor: (val: string) => void
-  selectedColor: string | undefined
+  onSelectColor: (val: string) => void;
+  selectedColor: string | undefined;
 }
 
 const colors = [
@@ -41,13 +41,13 @@ const colors = [
   { id: 31, color: 'var(--color-night)' },
   { id: 32, color: '#000000' },
   { id: 33, color: '#ffffff' },
-]
+];
 
 export const ColorPalette = ({ onSelectColor, selectedColor }: ColorPaletteProp) => {
   const selectedColorFromPalette = (color: string) => {
-    if (!selectedColor && !color) return
-    return selectedColor === color
-  }
+    if (!selectedColor && !color) return;
+    return selectedColor === color;
+  };
 
   return (
     <div className={styles.colorPalette}>
@@ -62,5 +62,5 @@ export const ColorPalette = ({ onSelectColor, selectedColor }: ColorPaletteProp)
         ></button>
       ))}
     </div>
-  )
-}
+  );
+};

@@ -1,9 +1,9 @@
-import React from 'react'
-import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material'
+import React from 'react';
+import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
-import styles from './FullScreenLayout.module.css'
+import styles from './FullScreenLayout.module.css';
 
-const pages = ['Home', 'About us', 'Contact']
+const pages = ['Home', 'About us', 'Contact'];
 
 export const Header = () => {
   return (
@@ -21,5 +21,5 @@ export const Header = () => {
         </Toolbar>
       </AppBar>
     </Grid>
-  )
-}
+  );
+};

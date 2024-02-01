@@ -1,7 +1,7 @@
-import React from 'react'
-import style from './App.module.css'
-import { MainStyle } from '../Main/index'
-import { ScrollToTop } from '../../helpers/scroll'
+import React from 'react';
+import style from './App.module.css';
+import { MainStyle } from '../Main/index';
+import { ScrollToTop } from '../../helpers/scroll';
 
 export const App = () => {
   return (
@@ -9,5 +9,5 @@ export const App = () => {
       <ScrollToTop />
       <MainStyle />
     </div>
-  )
-}
+  );
+};

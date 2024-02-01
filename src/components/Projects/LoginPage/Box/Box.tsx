@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './Box.module.css'
+import React from 'react';
+import styles from './Box.module.css';
 
 interface BoxProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export const Box = ({ children }: BoxProps) => {
@@ -13,5 +13,5 @@ export const Box = ({ children }: BoxProps) => {
         <div className={`${styles.block} ${styles.form}`}>{children}</div>
       </div>
     </div>
-  )
-}
+  );
+};

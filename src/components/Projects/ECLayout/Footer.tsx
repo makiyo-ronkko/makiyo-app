@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './ECLayout.module.css'
-import { Grid, Typography } from '@mui/material'
+import React from 'react';
+import styles from './ECLayout.module.css';
+import { Grid, Typography } from '@mui/material';
 
 interface FooterProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
 export const Footer = ({ isDarkMode }: FooterProp) => {
@@ -22,5 +22,5 @@ export const Footer = ({ isDarkMode }: FooterProp) => {
         </Typography>
       </Grid>
     </footer>
-  )
-}
+  );
+};

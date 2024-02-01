@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './PixelArtDesign.module.css'
-import { Typography } from '@mui/material'
-import PixelArtApp from './PixelArt/PixelArt'
-import { ScrollToTop } from '../../../helpers/scroll'
-import { useTheme } from '../../hooks/ThemeContext'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './PixelArtDesign.module.css';
+import { Typography } from '@mui/material';
+import PixelArtApp from './PixelArt/PixelArt';
+import { ScrollToTop } from '../../../helpers/scroll';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const PixelArt = () => {
-  const { isDarkMode } = useTheme()
+  const { isDarkMode } = useTheme();
 
   return (
     <div className={`${styles.wrapper} ${isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}`}>
@@ -28,5 +28,5 @@ export const PixelArt = () => {
       </div>
       <PixelArtApp isDarkMode={isDarkMode} />
     </div>
-  )
-}
+  );
+};

@@ -1,21 +1,21 @@
-import React, { RefObject } from 'react'
-import style from './FloatingButton.module.css'
-import { IconButton } from '@mui/material'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons'
+import React, { RefObject } from 'react';
+import style from './FloatingButton.module.css';
+import { IconButton } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
 
 export interface FloatingButtonProps {
-  contentRef: RefObject<HTMLDivElement>
-  isButtonVisible: boolean
-  setIsButtonVisible: (value: boolean) => void
+  contentRef: RefObject<HTMLDivElement>;
+  isButtonVisible: boolean;
+  setIsButtonVisible: (value: boolean) => void;
 }
 
 export const FloatingButton = ({ contentRef, isButtonVisible, setIsButtonVisible }: FloatingButtonProps) => {
   const handleScrollToTop = () => {
-    if (!contentRef.current) return
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    setIsButtonVisible(false)
-  }
+    if (!contentRef.current) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsButtonVisible(false);
+  };
 
   return (
     <IconButton
@@ -30,5 +30,5 @@ export const FloatingButton = ({ contentRef, isButtonVisible, setIsButtonVisible
     >
       <FontAwesomeIcon icon={faArrowAltCircleUp} />
     </IconButton>
-  )
-}
+  );
+};

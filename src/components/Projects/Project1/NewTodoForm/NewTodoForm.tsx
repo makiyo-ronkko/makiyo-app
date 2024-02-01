@@ -1,30 +1,30 @@
-import React, { useState, FormEvent } from 'react'
-import { v4 as uuid } from 'uuid'
-import styles from './NewTodoForm.module.css'
-import { Todo } from '../TodoList/TodoList'
+import React, { useState, FormEvent } from 'react';
+import { v4 as uuid } from 'uuid';
+import styles from './NewTodoForm.module.css';
+import { Todo } from '../TodoList/TodoList';
 
 interface NewTotoFormProp {
-  createTodo: (val: Todo) => void
+  createTodo: (val: Todo) => void;
 }
 
 export const NewTodoForm = ({ createTodo }: NewTotoFormProp) => {
   const [newTodo, setNewTodo] = useState<{ [x: string]: string }>({
     task: '',
-  })
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewTodo({ [e.target.name]: e.target.value })
-  }
+    setNewTodo({ [e.target.name]: e.target.value });
+  };
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     createTodo({
       ...newTodo,
       id: uuid(),
       isCompleted: false,
       task: '',
-    })
-    setNewTodo({ task: '' })
-  }
+    });
+    setNewTodo({ task: '' });
+  };
 
   return (
     <form onSubmit={handleSubmit} className={styles.newTodoForm}>
@@ -34,5 +34,5 @@ export const NewTodoForm = ({ createTodo }: NewTotoFormProp) => {
         Create
       </button>
     </form>
-  )
-}
+  );
+};

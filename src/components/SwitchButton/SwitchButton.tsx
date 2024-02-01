@@ -1,10 +1,10 @@
-import React from 'react'
-import styles from './SwitchButton.module.css'
-import { classNames } from '../../utils/classNames'
+import React from 'react';
+import styles from './SwitchButton.module.css';
+import { classNames } from '../../utils/classNames';
 
 interface SwitchButtonProps {
-  handleClick: () => void
-  active: boolean
+  handleClick: () => void;
+  active: boolean;
 }
 
 export const SwitchButton = ({ handleClick, active }: SwitchButtonProps) => {
@@ -23,5 +23,5 @@ export const SwitchButton = ({ handleClick, active }: SwitchButtonProps) => {
         ></div>
       </button>
     </div>
-  )
-}
+  );
+};

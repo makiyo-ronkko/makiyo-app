@@ -1,50 +1,50 @@
-import React, { useRef, useState } from 'react'
-import { AppBar, Box, Button, Grid, IconButton, InputBase, Paper, Toolbar } from '@mui/material'
-import Styles from './ECLayout.module.css'
+import React, { useRef, useState } from 'react';
+import { AppBar, Box, Button, Grid, IconButton, InputBase, Paper, Toolbar } from '@mui/material';
+import Styles from './ECLayout.module.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faGlobe, faHeart, faSearch, faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons'
-import { faFontAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faGlobe, faHeart, faSearch, faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faFontAwesomeAlt } from '@fortawesome/free-brands-svg-icons';
 
-const gender = ['WOMEN', 'MEN', 'KIDS', 'HOME', 'ART']
+const gender = ['WOMEN', 'MEN', 'KIDS', 'HOME', 'ART'];
 
-const categories = ['NEW', 'CLOTHING', 'SHOES', 'BAGS', 'ACCESSORIES', 'SALE']
+const categories = ['NEW', 'CLOTHING', 'SHOES', 'BAGS', 'ACCESSORIES', 'SALE'];
 
 interface HeaderProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
 const getThemeStyles = (isDarkMode: boolean) => {
-  const style: React.CSSProperties = {}
+  const style: React.CSSProperties = {};
   if (!isDarkMode) {
-    style.color = 'var(--color-mud)'
-    return style
+    style.color = 'var(--color-mud)';
+    return style;
   }
 
-  style.color = 'var(--color-default)'
-  return style
-}
+  style.color = 'var(--color-default)';
+  return style;
+};
 
 export const Header = ({ isDarkMode }: HeaderProp) => {
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleHorizontalScroll = (e: { deltaY: number }) => {
-    if (!containerRef.current) return
+    if (!containerRef.current) return;
     // Get the scroll amount from the mouse wheel
-    const scrollAmount = e.deltaY
-    containerRef.current.scrollLeft += scrollAmount
-  }
+    const scrollAmount = e.deltaY;
+    containerRef.current.scrollLeft += scrollAmount;
+  };
 
   const handleSearchClick = () => {
-    setIsSearchOpen(!isSearchOpen)
-  }
+    setIsSearchOpen(!isSearchOpen);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLDivElement>) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
 
-  const themeStyles = getThemeStyles(isDarkMode)
+  const themeStyles = getThemeStyles(isDarkMode);
 
   return (
     <header className={isDarkMode ? Styles.darkModeBackground : Styles.defaultModeBackground}>
@@ -249,5 +249,5 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
         </nav>
       </AppBar>
     </header>
-  )
-}
+  );
+};

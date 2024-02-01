@@ -1,14 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Grid, AppBar, Toolbar, Typography, MenuItem } from '@mui/material';
 
-import styles from './MultiColumnLayout.module.css'
+import styles from './MultiColumnLayout.module.css';
 
 interface HeaderProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
-const pages = ['Home', 'About us', 'Contact']
+const pages = ['Home', 'About us', 'Contact'];
 
 export const Header = ({ isDarkMode }: HeaderProp) => {
   return (
@@ -35,5 +35,5 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
         </Toolbar>
       </AppBar>
     </Grid>
-  )
-}
+  );
+};

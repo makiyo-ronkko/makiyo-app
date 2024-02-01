@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import styles from './PixelArtCanvas.module.css'
+import React, { useState } from 'react';
+import styles from './PixelArtCanvas.module.css';
 
 interface PixelArtCanvasProps {
-  selectedColor: string | undefined
-  id: string
-  setPixels: (value: string[]) => void
-  pixels: string[]
-  pixelHistory: string[][]
-  setPixelHistory: (value: string[][]) => void
+  selectedColor: string | undefined;
+  id: string;
+  setPixels: (value: string[]) => void;
+  pixels: string[];
+  pixelHistory: string[][];
+  setPixelHistory: (value: string[][]) => void;
 }
 
 export const PixelArtCanvas = ({
@@ -18,57 +18,57 @@ export const PixelArtCanvas = ({
   pixelHistory,
   setPixelHistory,
 }: PixelArtCanvasProps) => {
-  const [isDrawing, setIsDrawing] = useState<boolean>(false)
+  const [isDrawing, setIsDrawing] = useState<boolean>(false);
 
   const addToHistory = (newPixels: string[]) => {
-    const newHistory = [...pixelHistory]
-    newHistory.push(newPixels)
-    setPixelHistory(newHistory)
-  }
+    const newHistory = [...pixelHistory];
+    newHistory.push(newPixels);
+    setPixelHistory(newHistory);
+  };
 
   const handlePixelClick = (index: number) => {
-    const newPixels = [...pixels]
-    if (!selectedColor) return
+    const newPixels = [...pixels];
+    if (!selectedColor) return;
 
-    newPixels[index] = selectedColor
-    setPixels(newPixels)
-    addToHistory(newPixels)
-  }
+    newPixels[index] = selectedColor;
+    setPixels(newPixels);
+    addToHistory(newPixels);
+  };
 
   const handlePixelDrag = (index: number) => {
     if (isDrawing) {
-      const newPixels = [...pixels]
-      if (!selectedColor) return
+      const newPixels = [...pixels];
+      if (!selectedColor) return;
 
-      newPixels[index] = selectedColor
-      setPixels(newPixels)
-      addToHistory(newPixels)
+      newPixels[index] = selectedColor;
+      setPixels(newPixels);
+      addToHistory(newPixels);
     }
-  }
+  };
 
   const handleMouseDown = (index: number) => {
-    setIsDrawing(true)
-    handlePixelDrag(index)
-  }
+    setIsDrawing(true);
+    handlePixelDrag(index);
+  };
 
   const handleMouseUp = () => {
-    setIsDrawing(false)
-  }
+    setIsDrawing(false);
+  };
 
   const handleTouchStart = (index: number) => {
-    setIsDrawing(true)
-    handlePixelDrag(index)
-  }
+    setIsDrawing(true);
+    handlePixelDrag(index);
+  };
 
   const handleTouchMove = (index: number) => {
     if (isDrawing) {
-      handlePixelDrag(index)
+      handlePixelDrag(index);
     }
-  }
+  };
 
   const handleTouchEnd = () => {
-    setIsDrawing(false)
-  }
+    setIsDrawing(false);
+  };
 
   return (
     <div className={styles.pixelCanvas} id={id}>
@@ -87,5 +87,5 @@ export const PixelArtCanvas = ({
         ></div>
       ))}
     </div>
-  )
-}
+  );
+};

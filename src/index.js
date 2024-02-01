@@ -1,21 +1,21 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import reportWebVitals from './reportWebVitals'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import reportWebVitals from './reportWebVitals';
 
-import './index.css'
-import { ThemeProvider } from './components/hooks/ThemeContext'
-import { Root } from './routes/root'
-import { ErrorPage } from './routes/error'
-import { TodoApp } from './components/Projects/Project1'
-import { PixelArt } from './components/Projects/PixelArt'
-import { SingleColumnLayout } from './components/Projects/SingleColumnLayout'
-import { FullScreenLayout } from './components/Projects/FullScreenLayout'
-import { ECLayout } from './components/Projects/ECLayout'
-import { MultiColumnLayout } from './components/Projects/MultiColumnLayout'
-import { CompanyProject } from './components/Projects/CompanyProject'
-import { LoginPage } from './components/Projects/LoginPage'
-import { ChatBox } from './components/Projects/ChatBoxes'
+import './index.css';
+import { ThemeProvider } from './components/hooks/ThemeContext';
+import { Root } from './routes/root';
+import { ErrorPage } from './routes/error';
+import { TodoApp } from './components/Projects/Project1';
+import { PixelArt } from './components/Projects/PixelArt';
+import { SingleColumnLayout } from './components/Projects/SingleColumnLayout';
+import { FullScreenLayout } from './components/Projects/FullScreenLayout';
+import { ECLayout } from './components/Projects/ECLayout';
+import { MultiColumnLayout } from './components/Projects/MultiColumnLayout';
+import { CompanyProject } from './components/Projects/CompanyProject';
+import { LoginPage } from './components/Projects/LoginPage';
+import { ChatBox } from './components/Projects/ChatBoxes';
 
 const AppWrapper = () => {
   const router = createBrowserRouter([
@@ -69,21 +69,21 @@ const AppWrapper = () => {
       element: <ChatBox />,
       errorElement: <ErrorPage />,
     },
-  ])
+  ]);
   return (
     <ThemeProvider>
       <RouterProvider router={router} />
     </ThemeProvider>
-  )
-}
+  );
+};
 
-const container = document.getElementById('root')
+const container = document.getElementById('root');
 if (container) {
-  const root = createRoot(container)
-  root.render(<AppWrapper />)
+  const root = createRoot(container);
+  root.render(<AppWrapper />);
 }
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals();

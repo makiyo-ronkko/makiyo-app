@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './MainStyle.module.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styles from './MainStyle.module.css';
+import { Link } from 'react-router-dom';
 
 export const CompanyProject = () => {
   return (
@@ -23,5 +23,5 @@ export const CompanyProject = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};

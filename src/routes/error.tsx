@@ -1,28 +1,28 @@
-import React from 'react'
-import { useRouteError } from 'react-router-dom'
-import styles from './route.module.css'
-import { useTheme } from '../components/hooks/ThemeContext'
+import React from 'react';
+import { useRouteError } from 'react-router-dom';
+import styles from './route.module.css';
+import { useTheme } from '../components/hooks/ThemeContext';
 
 interface CustomError {
-  statusText?: string
-  message?: string
+  statusText?: string;
+  message?: string;
 }
 
 export const ErrorPage = () => {
-  const { isDarkMode } = useTheme()
+  const { isDarkMode } = useTheme();
 
-  const error: unknown = useRouteError()
+  const error: unknown = useRouteError();
 
   if (!error) {
     // Handle the case where there's no error
-    return <div>No error information available.</div>
+    return <div>No error information available.</div>;
   }
 
-  const customError = error as CustomError
+  const customError = error as CustomError;
   const errorMessage =
     typeof customError === 'object' && ('statusText' in customError || 'message' in customError)
       ? customError.statusText || customError.message
-      : 'An unknown error occurred.'
+      : 'An unknown error occurred.';
 
   return (
     <div className={`${styles.errorWrapper} ${isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}`}>
@@ -31,5 +31,5 @@ export const ErrorPage = () => {
         <i>{errorMessage}</i>
       </p>
     </div>
-  )
-}
+  );
+};

@@ -1,13 +1,13 @@
-import React from 'react'
-import { Grid, Typography, Paper, Divider, Box } from '@mui/material'
+import React from 'react';
+import { Grid, Typography, Paper, Divider, Box } from '@mui/material';
 
-import styles from './SingleColumnLayout.module.css'
-import { Header } from './Header'
-import { ScrollToTop } from '../../../helpers/scroll'
-import { useTheme } from '../../hooks/ThemeContext'
+import styles from './SingleColumnLayout.module.css';
+import { Header } from './Header';
+import { ScrollToTop } from '../../../helpers/scroll';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const SingleColumnLayout = () => {
-  const { isDarkMode } = useTheme()
+  const { isDarkMode } = useTheme();
 
   return (
     <div>
@@ -54,5 +54,5 @@ export const SingleColumnLayout = () => {
         </footer>
       </Grid>
     </div>
-  )
-}
+  );
+};

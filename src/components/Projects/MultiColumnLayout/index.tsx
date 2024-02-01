@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Container, Divider, Grid, Typography } from '@mui/material'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Divider, Grid, Typography } from '@mui/material';
 
-import styles from './MultiColumnLayout.module.css'
-import { ScrollToTop } from '../../../helpers/scroll'
-import { Header } from './Header'
-import { GridCard } from './Card'
-import { generateRandomText } from '../../../helpers/textGenerator'
-import { useTheme } from '../../hooks/ThemeContext'
+import styles from './MultiColumnLayout.module.css';
+import { ScrollToTop } from '../../../helpers/scroll';
+import { Header } from './Header';
+import { GridCard } from './Card';
+import { generateRandomText } from '../../../helpers/textGenerator';
+import { useTheme } from '../../hooks/ThemeContext';
 
 const cards = [
   {
@@ -136,10 +136,10 @@ const cards = [
     content: generateRandomText(2),
     image: 'https://source.unsplash.com/random?beauty',
   },
-]
+];
 
 export const MultiColumnLayout = () => {
-  const { isDarkMode } = useTheme()
+  const { isDarkMode } = useTheme();
 
   return (
     <div className={isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}>
@@ -172,5 +172,5 @@ export const MultiColumnLayout = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};

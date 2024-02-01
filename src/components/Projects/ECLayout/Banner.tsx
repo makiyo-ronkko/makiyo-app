@@ -1,8 +1,8 @@
-import React from 'react'
-import { Box, Button, Grid, Typography } from '@mui/material'
+import React from 'react';
+import { Box, Button, Grid, Typography } from '@mui/material';
 
 interface BannerProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
 export const Banner = ({ isDarkMode }: BannerProp) => {
@@ -60,5 +60,5 @@ export const Banner = ({ isDarkMode }: BannerProp) => {
         </Grid>
       </Box>
     </Grid>
-  )
-}
+  );
+};

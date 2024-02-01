@@ -1,6 +1,6 @@
-import React from 'react'
-import { CircularProgress } from '@mui/material'
-import styles from './Loading.module.css'
+import React from 'react';
+import { CircularProgress } from '@mui/material';
+import styles from './Loading.module.css';
 
 export const Loading = () => {
   return (
@@ -11,5 +11,5 @@ export const Loading = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

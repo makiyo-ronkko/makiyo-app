@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import styles from './CompanyProject.module.css'
-import modeStyles from '../../Main/MainStyle.module.css'
-import { CircularProgress } from '@mui/material'
-import { ScrollToTop } from '../../../helpers/scroll'
-import { useTheme } from '../../hooks/ThemeContext'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './CompanyProject.module.css';
+import modeStyles from '../../Main/MainStyle.module.css';
+import { CircularProgress } from '@mui/material';
+import { ScrollToTop } from '../../../helpers/scroll';
+import { useTheme } from '../../hooks/ThemeContext';
 
 export const CompanyProject = () => {
-  const [imageLoaded, setImageLoaded] = useState<boolean>(false)
-  const { isDarkMode } = useTheme()
+  const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+  const { isDarkMode } = useTheme();
 
   const handleImageLoad = () => {
-    setImageLoaded(true)
-  }
+    setImageLoaded(true);
+  };
 
   useEffect(() => {
-    setImageLoaded(true)
+    setImageLoaded(true);
 
-    return () => setImageLoaded(false)
-  }, [])
+    return () => setImageLoaded(false);
+  }, []);
 
   return (
     <div
@@ -124,5 +124,5 @@ export const CompanyProject = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
   Button,
@@ -9,11 +9,11 @@ import {
   ImageList,
   ImageListItem,
   ImageListItemBar,
-} from '@mui/material'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import styles from './ECLayout.module.css'
-import { generateRandomText } from '../../../helpers/textGenerator'
+} from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import styles from './ECLayout.module.css';
+import { generateRandomText } from '../../../helpers/textGenerator';
 
 const productList = [
   {
@@ -76,53 +76,53 @@ const productList = [
     label: generateRandomText(1, false, true),
     price: '180',
   },
-]
+];
 
 interface MainProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
 export const Main = ({ isDarkMode }: MainProp) => {
-  const [images, setImages] = useState<{ id: string; img: string; label: string; price: string }[]>()
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [images, setImages] = useState<{ id: string; img: string; label: string; price: string }[]>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const containerRef = useRef<HTMLUListElement>(null)
-  const cardRef = useRef<HTMLImageElement>(null)
+  const containerRef = useRef<HTMLUListElement>(null);
+  const cardRef = useRef<HTMLImageElement>(null);
 
   const handleLeftScroll = () => {
-    if (!containerRef.current) return
-    if (!cardRef.current) return
-    if (!isLoading) return
+    if (!containerRef.current) return;
+    if (!cardRef.current) return;
+    if (!isLoading) return;
 
-    containerRef.current.scrollLeft -= cardRef.current.width + 13
-  }
+    containerRef.current.scrollLeft -= cardRef.current.width + 13;
+  };
 
   const handleRightScroll = () => {
-    if (!containerRef.current) return
-    if (!cardRef.current) return
-    if (!isLoading) return
+    if (!containerRef.current) return;
+    if (!cardRef.current) return;
+    if (!isLoading) return;
 
-    containerRef.current.scrollLeft += cardRef.current.width + 13
-  }
+    containerRef.current.scrollLeft += cardRef.current.width + 13;
+  };
 
   useEffect(() => {
     const loadImages = async () => {
-      const loadedImages = []
+      const loadedImages = [];
       for (const imageObj of productList) {
         try {
-          const img = new Image()
-          img.src = imageObj.img
-          await img.decode() // Wait for the image to be fully loaded
-          loadedImages.push({ ...imageObj })
+          const img = new Image();
+          img.src = imageObj.img;
+          await img.decode(); // Wait for the image to be fully loaded
+          loadedImages.push({ ...imageObj });
         } catch (error) {
-          console.error('Error loading image:', imageObj.img)
+          console.error('Error loading image:', imageObj.img);
         }
       }
-      setImages(loadedImages)
-      setIsLoading(false)
-    }
-    loadImages()
-  }, [])
+      setImages(loadedImages);
+      setIsLoading(false);
+    };
+    loadImages();
+  }, []);
 
   const getImages = useMemo(() => {
     return (
@@ -171,8 +171,8 @@ export const Main = ({ isDarkMode }: MainProp) => {
           ))
         )}
       </div>
-    )
-  }, [images, isLoading, isDarkMode])
+    );
+  }, [images, isLoading, isDarkMode]);
 
   return (
     <main className={isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}>
@@ -270,5 +270,5 @@ export const Main = ({ isDarkMode }: MainProp) => {
         </Grid>
       </Box>
     </main>
-  )
-}
+  );
+};

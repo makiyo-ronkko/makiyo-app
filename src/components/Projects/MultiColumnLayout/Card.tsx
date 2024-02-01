@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react';
+import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   CardActions,
   CardContent,
@@ -13,41 +13,41 @@ import {
   Box,
   CardActionArea,
   CircularProgress,
-} from '@mui/material'
-import styles from './MultiColumnLayout.module.css'
+} from '@mui/material';
+import styles from './MultiColumnLayout.module.css';
 
 interface GridCardProps {
-  card: { id: number; title: string; content: string; image: string }
-  isDarkMode: boolean
+  card: { id: number; title: string; content: string; image: string };
+  isDarkMode: boolean;
 }
 
 const cardStyles = {
   boxShadow: 24,
   p: 4,
-}
+};
 
 export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
   const [liked, setLiked] = useState<{
-    id: number | undefined
-    liked: boolean
-  }>({ id: undefined, liked: false })
-  const [open, setOpen] = React.useState(false)
-  const [imageLoaded, setImageLoaded] = useState<boolean>(false)
+    id: number | undefined;
+    liked: boolean;
+  }>({ id: undefined, liked: false });
+  const [open, setOpen] = React.useState(false);
+  const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
   const handleImageLoad = () => {
-    setImageLoaded(true)
-  }
+    setImageLoaded(true);
+  };
 
   const handleImageError = () => {
-    setImageLoaded(false)
-  }
+    setImageLoaded(false);
+  };
 
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleLike = (id: number) => {
-    setLiked({ id, liked: !liked.liked })
-  }
+    setLiked({ id, liked: !liked.liked });
+  };
 
   return (
     <Grid item key={card.id} xs={12} sm={6} md={4}>
@@ -149,5 +149,5 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
         </CardActions>
       </Card>
     </Grid>
-  )
-}
+  );
+};

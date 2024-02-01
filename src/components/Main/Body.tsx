@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './MainStyle.module.css'
-import { Skills } from './Skills'
-import { CompanyProject } from './CompanyProject'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './MainStyle.module.css';
+import { Skills } from './Skills';
+import { CompanyProject } from './CompanyProject';
 
 const PROJECTS = [
   { link: 'login-page', name: 'Login Page' },
@@ -13,7 +13,7 @@ const PROJECTS = [
   { link: 'full-screen-layout', name: 'Full Screen Layout' },
   { link: 'ec-layout', name: 'E-Commerce Layout' },
   { link: 'multi-column-layout', name: 'Multi-Column Layout' },
-]
+];
 
 export const Body = () => {
   return (
@@ -32,10 +32,10 @@ export const Body = () => {
                   </button>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
       </div>
     </>
-  )
-}
+  );
+};

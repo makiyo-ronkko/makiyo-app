@@ -1,13 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import styles from './Chat.module.css'
-import { classNames } from '../../../../utils/classNames'
+import React, { useState, useRef, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import styles from './Chat.module.css';
+import { classNames } from '../../../../utils/classNames';
 
 interface ChatProp {
-  isDarkMode: boolean
+  isDarkMode: boolean;
 }
 
-type ChatHistory = { role: string; message: string; id: string }[]
+type ChatHistory = { role: string; message: string; id: string }[];
 
 const botResponses = [
   'Hello!',
@@ -25,66 +25,66 @@ const botResponses = [
   'Boo! 👻',
   '🧡',
   '💬',
-]
+];
 
-const emojiList = ['😊', '😂', '😍', '😇', '🤓', '👍', '👋', '🎉', '❤️', '✨', '🔥']
+const emojiList = ['😊', '😂', '😍', '😇', '🤓', '👍', '👋', '🎉', '❤️', '✨', '🔥'];
 
 const getRandomResponse = () => {
-  const randomIndex = Math.floor(Math.random() * botResponses.length)
-  return botResponses[randomIndex]
-}
+  const randomIndex = Math.floor(Math.random() * botResponses.length);
+  return botResponses[randomIndex];
+};
 
 export const Chat = ({ isDarkMode }: ChatProp) => {
   const [userMessage, setUserMessage] = useState<{
-    message: string
-    type: string
-  }>({ message: '', type: '' })
-  const [chatHistory, setChatHistory] = useState<ChatHistory>([])
-  const chatContainerRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
+    message: string;
+    type: string;
+  }>({ message: '', type: '' });
+  const [chatHistory, setChatHistory] = useState<ChatHistory>([]);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleEmojiClick = (emoji: string) => {
     setUserMessage((prevMessage) =>
       prevMessage ? { message: prevMessage.message + emoji, type: 'emoji' } : { message: emoji, type: 'emoji' },
-    )
-    if (!inputRef.current) return
-    inputRef.current.focus()
-  }
+    );
+    if (!inputRef.current) return;
+    inputRef.current.focus();
+  };
 
   const handleInput = (e: { target: { value: string } }) => {
-    setUserMessage({ message: e.target.value, type: 'text' })
-  }
+    setUserMessage({ message: e.target.value, type: 'text' });
+  };
 
   const handleBot = (updatedChatHistory: ChatHistory) => {
-    const randomResponse = getRandomResponse()
-    setChatHistory([...updatedChatHistory, { role: 'bot', message: randomResponse, id: uuidv4() }])
-  }
+    const randomResponse = getRandomResponse();
+    setChatHistory([...updatedChatHistory, { role: 'bot', message: randomResponse, id: uuidv4() }]);
+  };
 
   const handleSendMessage = () => {
-    if (userMessage.message.trim() === '') return
+    if (userMessage.message.trim() === '') return;
 
-    const updatedChatHistory = [...chatHistory, { role: 'user', message: userMessage.message, id: uuidv4() }]
-    setChatHistory(updatedChatHistory)
-    setUserMessage({ message: '', type: '' })
+    const updatedChatHistory = [...chatHistory, { role: 'user', message: userMessage.message, id: uuidv4() }];
+    setChatHistory(updatedChatHistory);
+    setUserMessage({ message: '', type: '' });
 
     const timeoutId = setTimeout(() => {
-      handleBot(updatedChatHistory)
-    }, 800)
-    return () => clearTimeout(timeoutId)
-  }
+      handleBot(updatedChatHistory);
+    }, 800);
+    return () => clearTimeout(timeoutId);
+  };
 
   const handleKeyDown = (e: { key: string; preventDefault: () => void }) => {
     if (e.key === 'Enter') {
-      e.preventDefault()
-      handleSendMessage()
+      e.preventDefault();
+      handleSendMessage();
     }
-  }
+  };
 
   useEffect(() => {
-    if (!chatContainerRef.current) return
+    if (!chatContainerRef.current) return;
 
-    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
-  }, [chatHistory])
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+  }, [chatHistory]);
 
   return (
     <div>
@@ -140,5 +140,5 @@ export const Chat = ({ isDarkMode }: ChatProp) => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};

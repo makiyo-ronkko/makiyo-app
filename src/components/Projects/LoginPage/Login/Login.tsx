@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styles from './Login.module.css'
+import React, { useState } from 'react';
+import styles from './Login.module.css';
 import {
   Button,
   FormControl,
@@ -9,82 +9,82 @@ import {
   IconButton,
   Typography,
   FormHelperText,
-} from '@mui/material'
-import AccountCircle from '@mui/icons-material/AccountCircle'
-import Visibility from '@mui/icons-material/Visibility'
-import VisibilityOff from '@mui/icons-material/VisibilityOff'
-import { useAppContext } from '../AppContext'
+} from '@mui/material';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useAppContext } from '../AppContext';
 
 export const Login = () => {
   const [formData, setFormData] = useState<{
-    username: string
-    password: string
+    username: string;
+    password: string;
   }>({
     username: '',
     password: '',
-  })
-  const [showPassword, setShowPassword] = useState<boolean>(false)
-  const [isUsernameValid, setIsUsernameValid] = useState<boolean>()
-  const [isPasswordValid, setIsPasswordValid] = useState<boolean>()
+  });
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [isUsernameValid, setIsUsernameValid] = useState<boolean>();
+  const [isPasswordValid, setIsPasswordValid] = useState<boolean>();
 
   const validateInput = (name: string, value: string) => {
     switch (name) {
       case 'username':
         if (value === '') {
-          return setIsUsernameValid(false)
-        } else return setIsUsernameValid(true)
+          return setIsUsernameValid(false);
+        } else return setIsUsernameValid(true);
 
       case 'password':
         if (value === '') {
-          return setIsPasswordValid(false)
-        } else return setIsPasswordValid(true)
+          return setIsPasswordValid(false);
+        } else return setIsPasswordValid(true);
     }
-  }
+  };
 
   const handleValidate = () => {
     if (formData.username === '') {
-      setIsUsernameValid(false)
-    } else setIsUsernameValid(true)
+      setIsUsernameValid(false);
+    } else setIsUsernameValid(true);
 
     if (formData.password === '') {
-      setIsPasswordValid(false)
-    } else setIsPasswordValid(true)
-  }
+      setIsPasswordValid(false);
+    } else setIsPasswordValid(true);
+  };
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show)
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
-  }
+    event.preventDefault();
+  };
 
-  const { setProgress, setNotification, setShowAlert } = useAppContext()
+  const { setProgress, setNotification, setShowAlert } = useAppContext();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-    validateInput(name, value)
-  }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    validateInput(name, value);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    handleValidate()
+    e.preventDefault();
+    handleValidate();
 
-    if (!isUsernameValid || !isPasswordValid) return
+    if (!isUsernameValid || !isPasswordValid) return;
 
-    setProgress('loading')
+    setProgress('loading');
 
     const timeoutId = setTimeout(() => {
-      setProgress('loginSuccess')
-      setNotification('Login successful!')
-      setShowAlert(true)
-    }, 1000)
+      setProgress('loginSuccess');
+      setNotification('Login successful!');
+      setShowAlert(true);
+    }, 1000);
 
-    return () => clearTimeout(timeoutId)
-  }
+    return () => clearTimeout(timeoutId);
+  };
 
   const handleSingupPage = () => {
-    setProgress('signup')
-  }
+    setProgress('signup');
+  };
 
   return (
     <form onSubmit={handleSubmit} className={styles.form} id="login-form">
@@ -171,5 +171,5 @@ export const Login = () => {
         </div>
       </div>
     </form>
-  )
-}
+  );
+};
