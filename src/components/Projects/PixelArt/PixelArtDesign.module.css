@@ -1,64 +1,64 @@
 .wrapper {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	gap: 3rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .darkModeBackground {
-	background-color: var(--color-navy);
-	color: var(--color-default);
+  background-color: var(--color-navy);
+  color: var(--color-default);
 }
 
 .defaultModeBackground {
-	background-color: var(--color-default);
-	color: var(--color-mud);
+  background-color: var(--color-default);
+  color: var(--color-mud);
 }
 
 .textWrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0.5rem;
-	padding-top: var(--padding-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: var(--padding-md);
 }
 
 .headerText {
-	text-transform: uppercase;
-	font-weight: bold;
-	text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
 }
 
 .buttonWrapper {
-	position: absolute;
-	top: 0;
-	right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .backButton {
-	height: 3rem;
-	width: 5rem;
-	border-radius: 0.5rem;
-	background-color: var(--color-default);
-	opacity: 0.9;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-decoration: none;
-	color: var(--color-mud);
-	margin: 1rem;
-	box-shadow: 6px 6px 0px 0px var(--color-cloud);
+  height: 3rem;
+  width: 5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-default);
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-mud);
+  margin: 1rem;
+  box-shadow: 6px 6px 0px 0px var(--color-cloud);
 }
 
 .backButton:hover {
-	opacity: 1;
+  opacity: 1;
 }
 
 @media screen and (max-width: 860px) {
-	.wrapper {
-		gap: 2rem;
-	}
+  .wrapper {
+    gap: 2rem;
+  }
 }

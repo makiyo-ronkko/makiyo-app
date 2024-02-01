@@ -1,91 +1,91 @@
 .backgroundColor {
-	width: 100%;
+  width: 100%;
 }
 
 .darkModeBackground {
-	color: var(--color-default);
-	background-color: var(--color-navy);
+  color: var(--color-default);
+  background-color: var(--color-navy);
 }
 
 .defaultModeBackground {
-	color: var(--color-mud);
-	background-color: var(--color-default);
+  color: var(--color-mud);
+  background-color: var(--color-default);
 }
 
 .modalWrapper {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	height: 80vh;
-	border: 2px solid var(--color-cloud);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  border: 2px solid var(--color-cloud);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .modalImage {
-	max-height: 80%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+  max-height: 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .loader {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 40;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 40;
 }
 
 .backButton {
-	height: var(--element-xs);
-	width: var(--element-xl);
-	border-radius: 0.5rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-decoration: none;
-	color: var(--color-default);
-	background-color: var(--color-cloud);
-	margin: var(--margin-xs) var(--margin-sm);
-	border: 2px var(--color-default) solid;
+  height: var(--element-xs);
+  width: var(--element-xl);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-default);
+  background-color: var(--color-cloud);
+  margin: var(--margin-xs) var(--margin-sm);
+  border: 2px var(--color-default) solid;
 }
 
 .card {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardMedia {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .iconButton {
-	width: var(--element-lg);
-	cursor: pointer;
+  width: var(--element-lg);
+  cursor: pointer;
 }
 
 .icon {
-	height: var(--element-xxxxs);
+  height: var(--element-xxxxs);
 }
 
 @media screen and (max-width: 860px) {
-	.modalWrapper {
-		width: 90vw;
-	}
+  .modalWrapper {
+    width: 90vw;
+  }
 
-	.modalImage {
-		width: 100%;
-	}
+  .modalImage {
+    width: 100%;
+  }
 }

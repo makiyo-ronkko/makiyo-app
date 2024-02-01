@@ -1,24 +1,24 @@
 .pixelCanvas {
-	display: grid;
-	grid-template-columns: repeat(16, 30px);
-	grid-template-rows: repeat(16, 30px);
-	gap: 1px;
+  display: grid;
+  grid-template-columns: repeat(16, 30px);
+  grid-template-rows: repeat(16, 30px);
+  gap: 1px;
 }
 
 .pixel {
-	width: 30px;
-	height: 30px;
-	border: 0.25px solid #ccc;
-	cursor: crosshair;
+  width: 30px;
+  height: 30px;
+  border: 0.25px solid #ccc;
+  cursor: crosshair;
 }
 
 @media screen and (max-width: 860px) {
-	.pixelCanvas {
-		grid-template-columns: repeat(16, 20px);
-		grid-template-rows: repeat(16, 20px);
-	}
-	.pixel {
-		width: 20px;
-		height: 20px;
-	}
+  .pixelCanvas {
+    grid-template-columns: repeat(16, 20px);
+    grid-template-rows: repeat(16, 20px);
+  }
+  .pixel {
+    width: 20px;
+    height: 20px;
+  }
 }

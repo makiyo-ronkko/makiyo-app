@@ -1,25 +1,25 @@
 .wrapper {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	gap: 3rem;
-	flex-wrap: wrap;
-	padding-bottom: var(--padding-md);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-bottom: var(--padding-md);
 }
 
 .button {
-	width: var(--content-md);
-	margin-bottom: var(--margin-lg);
+  width: var(--content-md);
+  margin-bottom: var(--margin-lg);
 }
 
 .icon {
-	width: var(--element-xxs);
-	height: var(--element-xxs);
+  width: var(--element-xxs);
+  height: var(--element-xxs);
 }
 
 @media screen and (max-width: 860px) {
-	.wrapper {
-		gap: 2rem;
-		width: 100%;
-	}
+  .wrapper {
+    gap: 2rem;
+    width: 100%;
+  }
 }

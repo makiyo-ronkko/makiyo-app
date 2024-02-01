@@ -1,16 +1,13 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
-	roots: ['/src'],
-	preset: 'ts-jest',
-	transform: {
-		'^.+\\.tsx?$': 'ts-jest',
-	},
-	setupFilesAfterEnv: [
-		'@testing-library/react/cleanup-after-each',
-		'@testing-library/jest-dom/extend-expect',
-	],
-	testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-	testEnvironment: 'node',
-	moduleDirectories: ['node_modules'],
-	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-};
+  roots: ['/src'],
+  preset: 'ts-jest',
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+  setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each', '@testing-library/jest-dom/extend-expect'],
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
+  testEnvironment: 'node',
+  moduleDirectories: ['node_modules'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+}

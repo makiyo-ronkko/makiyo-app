@@ -1,72 +1,72 @@
 .todo {
-	height: var(--element-xl);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0 -3rem 4px;
-	padding: var(--padding-xs) var(--padding-lg);
-	background: rgba(255, 255, 255, 0.2);
-	overflow: hidden;
-	transition: opacity 500ms ease-in-out;
+  height: var(--element-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -3rem 4px;
+  padding: var(--padding-xs) var(--padding-lg);
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: opacity 500ms ease-in-out;
 }
 
 .todoTask {
-	font-size: var(--font-size-body);
-	transition: opacity 0.4s linear;
-	cursor: crosshair;
+  font-size: var(--font-size-body);
+  transition: opacity 0.4s linear;
+  cursor: crosshair;
 }
 
 .isCompleted {
-	text-decoration: line-through;
-	color: var(--color-cloud);
+  text-decoration: line-through;
+  color: var(--color-cloud);
 }
 
 .todoButtons button {
-	border: none;
-	font-size: var(--font-size-body);
-	margin: 0.4rem;
-	background: none;
-	cursor: pointer;
-	color: var(--color-default);
-	-webkit-appearance: none;
+  border: none;
+  font-size: var(--font-size-body);
+  margin: 0.4rem;
+  background: none;
+  cursor: pointer;
+  color: var(--color-default);
+  -webkit-appearance: none;
 }
 
 .todoEditForm {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .todoEditForm input {
-	flex-grow: 1;
-	border: none;
-	background: var(--color-default);
-	padding: 0 var(--padding-md);
-	font-size: var(-font-size-body);
-	border-radius: 5px;
+  flex-grow: 1;
+  border: none;
+  background: var(--color-default);
+  padding: 0 var(--padding-md);
+  font-size: var(-font-size-body);
+  border-radius: 5px;
 }
 
 .todoEditForm button {
-	padding: 0 1.3rem;
-	border: none;
-	background-color: transparent;
-	color: var(--color-default);
-	text-transform: uppercase;
-	font-weight: bold;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	margin-left: 10px;
-	cursor: pointer;
-	transition: background 0.4s ease-out;
-	outline: none;
-	border-radius: 5px;
+  padding: 0 1.3rem;
+  border: none;
+  background-color: transparent;
+  color: var(--color-default);
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.4s ease-out;
+  outline: none;
+  border-radius: 5px;
 }
 
 .todoEditForm button:hover {
-	background-color: var(--color-nude);
+  background-color: var(--color-nude);
 }
 
 .todoEditForm input,
 .todoEditForm button {
-	height: var(--element-xs);
+  height: var(--element-xs);
 }
