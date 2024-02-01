@@ -111,6 +111,6 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     // "allowImportingTsExtensions": true,
   },
-  "include": ["src", "@types", "src/**/*.ts", "jest.config.js"],
+  "include": ["src", "@types", "src/**/*.ts", "jest.config.js", "globals.d.ts"],
   "exclude": ["node_modules", "build", ".yarn", "public", "scripts"],
 }
