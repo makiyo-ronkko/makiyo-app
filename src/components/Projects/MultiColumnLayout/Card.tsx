@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -34,6 +34,15 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
   const [open, setOpen] = React.useState(false);
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
   const { id, title, content, image } = card;
+
+  useEffect(() => {
+    if (open) {
+      const img = new Image();
+      img.src = image;
+      img.onload = handleImageLoad;
+      img.onerror = handleImageError;
+    }
+  }, [open, image]);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
