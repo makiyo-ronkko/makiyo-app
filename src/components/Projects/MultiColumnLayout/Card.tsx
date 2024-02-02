@@ -33,6 +33,7 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
   }>({ id: undefined, liked: false });
   const [open, setOpen] = React.useState(false);
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+  const { id, title, content, image } = card;
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -50,7 +51,7 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
   };
 
   return (
-    <Grid item key={card.id} xs={12} sm={6} md={4}>
+    <Grid item key={id} xs={12} sm={6} md={4}>
       <Modal
         open={open}
         onClose={handleClose}
@@ -62,7 +63,7 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
           className={`${styles.modalWrapper} ${isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}`}
         >
           {imageLoaded ? (
-            <img src={card.image} alt={card.image} className={styles.modalImage} />
+            image && <img src={image} alt={image} className={styles.modalImage} loading="lazy" />
           ) : (
             <div className={styles.loader}>
               <CircularProgress
@@ -74,10 +75,10 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
           )}
           <Grid container sx={{ flexDirection: 'column', paddingLeft: 'var(--padding-sm)' }}>
             <Typography variant="h6" component="h2">
-              {card.title}
+              {title}
             </Typography>
             <Typography variant="button" component="h2">
-              {card.content}
+              {content}
             </Typography>
           </Grid>
         </Box>
@@ -93,9 +94,9 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
       >
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="h2">
-            {card.title}
+            {title}
           </Typography>
-          <Typography>{card.content}</Typography>
+          <Typography>{content}</Typography>
         </CardContent>
         <CardActionArea>
           <CardMedia
@@ -103,17 +104,20 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
             sx={{
               pt: '56.25%',
             }}
-            image={card.image}
+            image={image}
             onClick={handleOpen}
             className={styles.cardMedis}
           >
-            <img
-              src={card.image}
-              alt={card.image}
-              style={{ display: 'none' }}
-              onLoad={handleImageLoad}
-              onError={handleImageError}
-            />
+            {image && (
+              <img
+                src={image}
+                alt={image}
+                style={{ display: 'none' }}
+                onLoad={handleImageLoad}
+                onError={handleImageError}
+                loading="lazy"
+              />
+            )}
           </CardMedia>
         </CardActionArea>
         <CardActions
@@ -139,9 +143,9 @@ export const GridCard = ({ card, isDarkMode }: GridCardProps) => {
           <IconButton
             aria-label="like a picture"
             size="small"
-            color={liked.liked && card.id === liked.id ? 'error' : isDarkMode ? 'inherit' : 'default'}
+            color={liked.liked && id === liked.id ? 'error' : isDarkMode ? 'inherit' : 'default'}
             disableRipple
-            onClick={() => handleLike(card.id)}
+            onClick={() => handleLike(id)}
             className={styles.iconButton}
           >
             <FontAwesomeIcon icon={faHeart} className={styles.icon} />
