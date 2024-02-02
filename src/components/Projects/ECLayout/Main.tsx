@@ -12,67 +12,70 @@ import {
 } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import styles from './ECLayout.module.css';
+
 import { generateRandomText } from '../../../helpers/textGenerator';
+import { imageUrls } from './images';
+
+import styles from './ECLayout.module.css';
 
 const productList = [
   {
     id: '1',
-    img: 'https://source.unsplash.com/random?fashion',
+    img: imageUrls.fashion,
     label: generateRandomText(1, false, true),
     price: '250',
   },
   {
     id: '2',
-    img: 'https://source.unsplash.com/random?woman',
+    img: imageUrls.woman,
     label: generateRandomText(1, false, true),
     price: '350',
   },
   {
     id: '3',
-    img: 'https://source.unsplash.com/random?dress',
+    img: imageUrls.dress,
     label: generateRandomText(1, false, true),
     price: '290',
   },
   {
     id: '4',
-    img: 'https://source.unsplash.com/random?jacket',
+    img: imageUrls.jacket,
     label: generateRandomText(1, false, true),
     price: '235',
   },
   {
     id: '5',
-    img: 'https://source.unsplash.com/random?bag',
+    img: imageUrls.bag,
     label: generateRandomText(1, false, true),
     price: '180',
   },
   {
     id: '6',
-    img: 'https://source.unsplash.com/random?accessories',
+    img: imageUrls.accessories,
     label: generateRandomText(1, false, true),
     price: '250',
   },
   {
     id: '7',
-    img: 'https://source.unsplash.com/random?fashion',
+    img: imageUrls.fashion,
     label: generateRandomText(1, false, true),
     price: '350',
   },
   {
     id: '8',
-    img: 'https://source.unsplash.com/random?women',
+    img: imageUrls.woman,
     label: generateRandomText(1, false, true),
     price: '290',
   },
   {
     id: '9',
-    img: 'https://source.unsplash.com/random?fashion',
+    img: imageUrls.fashion,
     label: generateRandomText(1, false, true),
     price: '235',
   },
   {
     id: '10',
-    img: 'https://source.unsplash.com/random?cosmetics',
+    img: imageUrls.cosmetics,
     label: generateRandomText(1, false, true),
     price: '180',
   },
@@ -157,7 +160,13 @@ export const Main = ({ isDarkMode }: MainProp) => {
               >
                 <>
                   <div className={styles.productImgContainer}>
-                    <img src={product.img} alt={product.id} className={styles.productImg} ref={cardRef} />
+                    <img
+                      src={product.img}
+                      alt={product.id}
+                      className={styles.productImg}
+                      ref={cardRef}
+                      loading="lazy"
+                    />
                   </div>
                   <ImageListItemBar
                     title={product.label}
