@@ -91,11 +91,13 @@ export const Main = ({ isDarkMode }: MainProp) => {
 
   const containerRef = useRef<HTMLUListElement>(null);
   const cardRef = useRef<HTMLImageElement>(null);
+  const [isScrollAtLeftEnd, setScrollAtLeftEnd] = useState<boolean>(true);
+  const [isScrollAtRightEnd, setScrollAtRightEnd] = useState<boolean>(false);
 
   const handleLeftScroll = () => {
     if (!containerRef.current) return;
     if (!cardRef.current) return;
-    if (!isLoading) return;
+    if (!cardRef.current && !isLoading) return;
 
     containerRef.current.scrollLeft -= cardRef.current.width + 13;
   };
@@ -103,7 +105,7 @@ export const Main = ({ isDarkMode }: MainProp) => {
   const handleRightScroll = () => {
     if (!containerRef.current) return;
     if (!cardRef.current) return;
-    if (!isLoading) return;
+    if (!cardRef.current && !isLoading) return;
 
     containerRef.current.scrollLeft += cardRef.current.width + 13;
   };
@@ -125,6 +127,23 @@ export const Main = ({ isDarkMode }: MainProp) => {
       setIsLoading(false);
     };
     loadImages();
+
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const container = containerRef.current;
+      const isAtLeftEnd = container.scrollLeft === 0;
+      const isAtRightEnd = container.scrollLeft + container.clientWidth === container.scrollWidth;
+
+      setScrollAtLeftEnd(isAtLeftEnd ? true : false);
+      setScrollAtRightEnd(isAtRightEnd ? true : false);
+    };
+
+    containerRef.current?.addEventListener('scroll', handleScroll);
+
+    return () => {
+      containerRef.current?.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const getImages = useMemo(() => {
@@ -252,7 +271,7 @@ export const Main = ({ isDarkMode }: MainProp) => {
                 width: 'var(--element-xxxs)',
                 height: 'var(--element-xxxs)',
                 backgroundColor: 'var(--color-default)',
-                opacity: '0.6',
+                opacity: isScrollAtLeftEnd ? 0 : 0.6,
               }}
               size="small"
               aria-label="left-arrow"
@@ -267,7 +286,7 @@ export const Main = ({ isDarkMode }: MainProp) => {
                 width: 'var(--element-xxxs)',
                 height: 'var(--element-xxxs)',
                 backgroundColor: 'var(--color-default)',
-                opacity: '0.6',
+                opacity: isScrollAtRightEnd ? 0 : 0.6,
               }}
               size="small"
               aria-label="right-arrow"
