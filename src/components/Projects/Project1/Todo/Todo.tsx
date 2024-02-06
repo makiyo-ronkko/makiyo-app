@@ -41,14 +41,12 @@ export const Todo = ({ id, task, isCompleted, removeTodo, updateTodo, toggleTodo
 
   if (isEditing) {
     result = (
-      <div className={styles.todo}>
-        <form onSubmit={handleUpdate} className={styles.todoEditForm}>
-          <input type="text" value={todo.task} name="task" onChange={handleChange} />
-          <div className={styles.todoButtons}>
-            <button>Save</button>
-          </div>
-        </form>
-      </div>
+      <form onSubmit={handleUpdate} className={styles.todoEditForm}>
+        <input type="text" value={todo.task} name="task" onChange={handleChange} />
+        <div>
+          <button>Save</button>
+        </div>
+      </form>
     );
   } else {
     result = (

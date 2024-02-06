@@ -21,7 +21,7 @@ export const NewTodoForm = ({ createTodo }: NewTotoFormProp) => {
       ...newTodo,
       id: uuid(),
       isCompleted: false,
-      task: '',
+      task: newTodo.task,
     });
     setNewTodo({ task: '' });
   };

@@ -40,6 +40,14 @@
   scrollbar-width: none; /* Firefox */
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: var(--margin-sm) 0;
+}
+
 .listContainer::-webkit-scrollbar {
   width: 0.4rem;
   height: 0.4rem;
