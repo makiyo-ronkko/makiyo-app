@@ -1,4 +1,4 @@
-.gradient1 {
+.gradient {
   background: linear-gradient(-45deg, var(--color-tomato), var(--color-nude), var(--color-sky), var(--color-primary));
   background-size: 400% 400%;
   animation: gradient 5000ms ease 10;
@@ -12,12 +12,6 @@
     var(--color-navy),
     var(--color-night)
   );
-  background-size: 400% 400%;
-  animation: gradient 5000ms ease 10;
-}
-
-.gradient2 {
-  background: linear-gradient(45deg, var(--color-tomato), var(--color-nude), var(--color-sky), var(--color-primary));
   background-size: 400% 400%;
   animation: gradient 5000ms ease 10;
 }
@@ -50,12 +44,15 @@
   color: var(--color-mud);
 }
 
-.section {
-  width: 100%;
-  min-height: 100vh;
+.flexCentered {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
   flex-direction: column;
   text-align: center;
 }
@@ -70,9 +67,6 @@
   width: 100%;
   min-height: 10vh;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .container {
@@ -86,10 +80,8 @@
 }
 
 .nameContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 1rem;
+  flex-direction: column;
 }
 
 .image {
@@ -181,9 +173,7 @@
 .skillWrapper {
   height: 100%;
   width: 100%;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   padding: var(--padding-xl) 0;
   gap: 3rem;
 }
@@ -208,10 +198,7 @@
 .card {
   height: var(--content-sm);
   width: 100%;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 0.5rem;
   letter-spacing: 2px;
   font-size: var(--font-size-h6);
@@ -335,9 +322,6 @@
 .project {
   height: var(--content-xs);
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--color-forest);
   box-shadow: 0.5rem 0.5rem var(--color-forest-dark);
   cursor: pointer;
@@ -393,10 +377,6 @@ button {
     display: flex;
     justify-content: center;
   }
-
-  .projectContainer {
-    padding-bottom: var(--padding-xxl);
-  }
 }
 
 @media screen and (max-width: 732px) {
@@ -410,6 +390,7 @@ button {
   }
 
   .copyright {
+    letter-spacing: 0.25rem;
     font-size: var(--font-caption-text);
   }
 }

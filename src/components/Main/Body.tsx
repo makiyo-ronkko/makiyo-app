@@ -26,7 +26,7 @@ export const Body = () => {
           {PROJECTS.map((project) => {
             return (
               <Link to={project.link} className={styles.link} key={project.link}>
-                <div className={`${styles.project}`}>
+                <div className={`${styles.flexCentered} ${styles.project}`}>
                   <button className={styles.projectButton}>
                     <b className={styles.projectTitle}>{project.name}</b>
                   </button>
