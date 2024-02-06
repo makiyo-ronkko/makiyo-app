@@ -17,7 +17,7 @@ export const Header = ({ isDarkMode }: HeaderProp) => {
   };
 
   return (
-    <div className={styles.nameContainer}>
+    <div className={`${styles.flexCentered} ${styles.nameContainer}`}>
       <p
         className={`${styles.bubbleSpeech} ${
           isDarkMode ? styles.darkModeBubbleSpeech : styles.defaultModeBubbleSpeech

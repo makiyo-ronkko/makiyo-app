@@ -12,20 +12,22 @@ export const MainStyle = () => {
 
   return (
     <>
-      <div className={`${isDarkMode ? styles.darkGradient : styles.gradient1} ${styles.section}`}>
+      <div className={`${isDarkMode ? styles.darkGradient : styles.gradient} ${styles.section} ${styles.flexCentered}`}>
         <Header isDarkMode={isDarkMode} />
       </div>
       <div className={`${styles.section2} ${isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}`}>
         <Body />
       </div>
       <div
-        className={`${isDarkMode ? styles.darkGradient : styles.gradient2} ${
+        className={`${isDarkMode ? styles.darkGradient : styles.gradient} ${
           styles.section
-        } ${styles.container} ${styles.paddingXXL}`}
+        } ${styles.flexCentered} ${styles.container} ${styles.paddingXXL}`}
       >
         <Contact isDarkMode={isDarkMode} />
       </div>
-      <div className={`${styles.section3} ${isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}`}>
+      <div
+        className={`${styles.section3} ${styles.flexCentered} ${isDarkMode ? styles.darkModeBackground : styles.defaultModeBackground}`}
+      >
         <Footer isDarkMode={isDarkMode} />
       </div>
       <SwitchButton handleClick={handleToggleTheme} active={isDarkMode} />
