@@ -1,16 +1,15 @@
 .todo {
-  height: var(--element-xl);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 -3rem 4px;
-  padding: var(--padding-xs) var(--padding-lg);
+  padding: var(--padding-xs) var(--padding-md);
   background: rgba(255, 255, 255, 0.2);
   overflow: hidden;
   transition: opacity 500ms ease-in-out;
 }
 
 .todoTask {
+  flex-basis: 90%;
   font-size: var(--font-size-body);
   transition: opacity 0.4s linear;
   cursor: crosshair;
@@ -21,10 +20,14 @@
   color: var(--color-cloud);
 }
 
+.todoButtons {
+  flex-basis: 10%;
+}
+
 .todoButtons button {
   border: none;
   font-size: var(--font-size-body);
-  margin: 0.4rem;
+  margin: var(--margin-xs);
   background: none;
   cursor: pointer;
   color: var(--color-default);
@@ -32,14 +35,12 @@
 }
 
 .todoEditForm {
-  width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .todoEditForm input {
-  flex-grow: 1;
+  flex-basis: 75%;
   border: none;
   background: var(--color-default);
   padding: 0 var(--padding-md);
@@ -69,4 +70,10 @@
 .todoEditForm input,
 .todoEditForm button {
   height: var(--element-xs);
+}
+
+@media screen and (max-width: 732px) {
+  .todoEditForm input {
+    flex-basis: 65%;
+  }
 }

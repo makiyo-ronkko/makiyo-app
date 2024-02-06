@@ -69,7 +69,7 @@ export const TodoList = () => {
         <span>Create Your Todo List</span>
       </h1>
       <div className={styles.listContainer}>
-        <ul>{renderTodos()}</ul>
+        <ul className={styles.list}>{renderTodos()}</ul>
         <NewTodoForm createTodo={create} />
       </div>
     </div>
