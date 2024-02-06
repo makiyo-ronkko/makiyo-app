@@ -70,12 +70,12 @@ export const CompanyProject = () => {
               <p className={`${styles.subHeader} ${styles.letterSpacing}`}>
                 <b>Project Kickoff:</b>
               </p>
-              <p className={styles.indentation}>October 2021</p>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>October 2021</p>
               <p className={styles.subHeader}>
                 <b>Development Phases:</b>
               </p>
-              <p className={styles.indentation}>Created components in the library</p>
-              <p className={styles.indentation}>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>Created components in the library</p>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>
                 <a
                   href="https://design.empathicbuilding.com/"
                   target="_blank"
@@ -85,13 +85,15 @@ export const CompanyProject = () => {
                   design.empathicbuilding.com
                 </a>
               </p>
-              <p className={styles.indentation}>Integrated customized components into the office application</p>
-              <p className={styles.indentation}>Developed the complete application</p>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>
+                Integrated customized components into the office application
+              </p>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>Developed the complete application</p>
               <p className={styles.subHeader}>
                 <b>Launch Date:</b>
               </p>
-              <p className={styles.indentation}>January 2023</p>
-              <p className={styles.indentation}>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>January 2023</p>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>
                 <a
                   href=" https://office.empathicbuilding.com/"
                   target="_blank"
@@ -104,13 +106,15 @@ export const CompanyProject = () => {
               <p className={styles.subHeader}>
                 <b>Technologies:</b>
               </p>
-              <p className={styles.indentation}>Javascript, Typescript, HTML5, CSS3, React, MUI</p>
+              <p className={`${styles.indentation} ${styles.mobileFontSize}`}>
+                Javascript, Typescript, HTML5, CSS3, React, MUI
+              </p>
             </div>
           </div>
         </div>
         <div className={styles.notepad}>
           <div className={styles.top} />
-          <div className={styles.paper}>
+          <div className={`${styles.paper} ${styles.mobileFontSize}`}>
             <p>
               Responsible for developing Empathic Building for Offices with one lead developer, two frontend developers,
               one UI/UX desginer and one graphic designer and collaboration with Dead Set Bit developers.
