@@ -123,3 +123,9 @@
   color: var(--color-default);
   border-color: var(--color-default);
 }
+
+@media screen and (max-width: 732px) {
+  .mobileFontSize {
+    font-size: var(--font-size-h6);
+  }
+}
