@@ -75,4 +75,5 @@
   width: var(--element-sm);
   background-color: var(--color-mud);
   border-radius: 0.25rem;
+  padding: 0;
 }
